@@ -1,0 +1,2726 @@
+<!doctype html>
+<html lang="gu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <style>
+        :root {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        [hidden] {
+            display: none !important
+        }
+    </style>
+</head>
+
+<body>
+    <title>મૂર્તિ પ્રતિષ્ઠા મહોત્સવ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&family=Shrikhand&display=swap">
+    <style>
+        /* Layout: dusk-lit hero with a gold line-art mandir and a dated invitation card; then marble-toned sections: rituals, day-wise schedule, illustrated seva with a WhatsApp registration form, facilities, FAQ, location, contact. */
+        :root {
+            --bg: #FBF6F5;
+            --surface: #FFFFFF;
+            --surface-2: #F6EAE6;
+            --ink: #2A0F12;
+            --muted: #6E4D50;
+            --line: #E8D6D0;
+            --head: #7A0F1B;
+            --accent: #8F1220;
+            --accent-ink: #FFFFFF;
+            --mark: #8A5F08;
+            --halo: #F9E3D5;
+            --sky-top: #12030A;
+            --hero-1: #2B060C;
+            --hero-2: #4A0B14;
+            --hero-ink: #FBEBD6;
+            --hero-muted: #E7C9AE;
+            --gold: #F2C14E;
+            --saffron: #F08A24;
+            --stone: #5B1B25;
+            --glow-soft: rgba(240, 138, 36, 0.30);
+            --glow-lit: rgba(240, 138, 36, 0.16);
+            --glow-gate: rgba(240, 138, 36, 0.45);
+            --gold-line: rgba(242, 193, 78, 0.42);
+            --hero-glass: rgba(20, 2, 5, 0.40);
+            --glass-hi: rgba(255, 255, 255, 0.06);
+            --badge-bg: #F2C14E;
+            --badge-fg: #2A0F12;
+            --display: "Shrikhand", "Noto Serif Gujarati", serif;
+            --body: "Hind Vadodara", "Noto Sans Gujarati", system-ui, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #170608;
+                --surface: #220C10;
+                --surface-2: #2C1116;
+                --ink: #F6E8E3;
+                --muted: #C4A5A0;
+                --line: #3E2227;
+                --head: #F6C98A;
+                --accent: #F2A33A;
+                --accent-ink: #2A0F12;
+                --mark: #F2C14E;
+                --halo: #34151A;
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #170608;
+            --surface: #220C10;
+            --surface-2: #2C1116;
+            --ink: #F6E8E3;
+            --muted: #C4A5A0;
+            --line: #3E2227;
+            --head: #F6C98A;
+            --accent: #F2A33A;
+            --accent-ink: #2A0F12;
+            --mark: #F2C14E;
+            --halo: #34151A;
+            color-scheme: dark;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--body);
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        dl,
+        dd,
+        ul,
+        ol {
+            margin: 0;
+        }
+
+        ul,
+        ol {
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--mark);
+            outline-offset: 3px;
+        }
+
+        .wrap {
+            width: min(1120px, 100%);
+            margin-inline: auto;
+            padding-inline: clamp(16px, 4vw, 32px);
+        }
+
+        section[id] {
+            scroll-margin-top: 76px;
+        }
+
+        .sec {
+            padding-block: clamp(3rem, 8vw, 5.5rem);
+        }
+
+        .band {
+            background: var(--surface-2);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            color: var(--mark);
+            font-size: 0.98rem;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 0.55rem;
+            height: 0.55rem;
+            background: var(--mark);
+            transform: rotate(45deg);
+        }
+
+        .h2 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.7rem, 4.6vw, 2.6rem);
+            line-height: 1.45;
+            color: var(--head);
+            text-wrap: balance;
+        }
+
+        .sec-head {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+            justify-items: start;
+        }
+
+        .sec-head p {
+            color: var(--muted);
+            max-width: 60ch;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0.5rem 1.4rem;
+            border-radius: 999px;
+            font: inherit;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid transparent;
+            cursor: pointer;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--hero-1);
+        }
+
+        .btn-gold:hover {
+            background: #F7D071;
+        }
+
+        .btn-ghost {
+            border-color: var(--gold-line);
+            color: var(--hero-ink);
+            background: transparent;
+        }
+
+        .btn-ghost:hover {
+            background: var(--hero-glass);
+        }
+
+        .btn-solid {
+            background: var(--accent);
+            color: var(--accent-ink);
+        }
+
+        .btn-solid:hover {
+            filter: brightness(1.08);
+        }
+
+        .btn-line {
+            border-color: var(--accent);
+            color: var(--head);
+            background: transparent;
+        }
+
+        .btn-line:hover {
+            background: var(--surface-2);
+        }
+
+        /* svg symbol styling (shared) */
+        .defs g *,
+        .defs symbol * {
+            vector-effect: non-scaling-stroke;
+        }
+
+        .pl {
+            fill: none;
+            stroke: var(--gold-line);
+            stroke-width: 1.1;
+        }
+
+        .pl2 {
+            fill: none;
+            stroke: var(--gold-line);
+            stroke-width: 1.4;
+        }
+
+        .flm {
+            fill: var(--saffron);
+            stroke: none;
+        }
+
+        .l2 {
+            stroke: var(--gold-line);
+        }
+
+        .lit {
+            fill: var(--glow-lit);
+            stroke: none;
+        }
+
+        .cap,
+        .sari {
+            fill: var(--saffron);
+            fill-opacity: 0.92;
+        }
+
+        .ico {
+            width: 34px;
+            height: 34px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex: none;
+        }
+
+        /* header */
+        .top {
+            position: sticky;
+            top: env(safe-area-inset-top, 0px);
+            z-index: 20;
+            background: var(--hero-1);
+            border-bottom: 1px solid var(--gold-line);
+            color: var(--hero-ink);
+        }
+
+        .top .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 60px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            font-weight: 700;
+            line-height: 1.4;
+            min-width: 0;
+        }
+
+        .brand svg {
+            flex: none;
+            width: 30px;
+            height: 30px;
+        }
+
+        .brand span {
+            overflow-wrap: anywhere;
+        }
+
+        .nav {
+            display: none;
+            gap: 1.2rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--hero-muted);
+            font-weight: 500;
+            padding-block: 0.4rem;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .top .btn {
+            min-height: 40px;
+            padding-block: 0.15rem;
+            flex: none;
+        }
+
+        @media (min-width: 980px) {
+            .nav {
+                display: flex;
+            }
+        }
+
+        /* hero */
+        .hero {
+            background: radial-gradient(60% 45% at 50% 86%, var(--glow-soft), transparent 72%), linear-gradient(180deg, var(--sky-top) 0%, var(--hero-1) 62%);
+            color: var(--hero-ink);
+            padding-top: clamp(2rem, 5vw, 3.5rem);
+            overflow: hidden;
+        }
+
+        .hero-top {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            align-items: center;
+        }
+
+        .hero-copy {
+            display: grid;
+            gap: 1rem;
+            justify-items: start;
+            min-width: 0;
+        }
+
+        .hello {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.2rem 1rem 0.2rem 0.8rem;
+            border: 1px solid var(--gold-line);
+            border-radius: 999px;
+            color: var(--gold);
+            font-weight: 600;
+            background: var(--hero-glass);
+        }
+
+        .hello i {
+            width: 0.6rem;
+            height: 0.8rem;
+            background: var(--saffron);
+            border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+            box-shadow: 0 0 10px 2px var(--saffron);
+        }
+
+        .hero h1 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(2.6rem, 7.4vw, 4.9rem);
+            line-height: 1.3;
+            text-wrap: balance;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--gold);
+        }
+
+        .temple {
+            font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+            font-weight: 600;
+        }
+
+        .lead {
+            color: var(--hero-muted);
+            max-width: 54ch;
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.3rem;
+        }
+
+        .invite {
+            position: relative;
+            padding: 1.6rem clamp(1.1rem, 3vw, 1.8rem);
+            border: 1px solid var(--gold-line);
+            border-radius: 1.2rem;
+            background: linear-gradient(160deg, var(--glass-hi), transparent), var(--hero-glass);
+            display: grid;
+            gap: 1rem;
+            min-width: 0;
+        }
+
+        .invite::before {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px solid var(--gold-line);
+            border-radius: 0.85rem;
+            pointer-events: none;
+        }
+
+        .invite h2 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: var(--gold);
+        }
+
+        .invite .cap-t {
+            color: var(--hero-muted);
+            font-size: 0.95rem;
+        }
+
+        .count {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.55rem;
+        }
+
+        .unit {
+            padding: 0.25rem 0.3rem 0.4rem;
+            border: 1px solid var(--gold-line);
+            border-radius: 0.7rem;
+            background: var(--hero-glass);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .unit b {
+            display: block;
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            line-height: 1.35;
+            color: var(--gold);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .unit span {
+            font-size: 0.85rem;
+            color: var(--hero-muted);
+        }
+
+        .count-msg {
+            font-family: var(--display);
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: var(--gold);
+        }
+
+        .rows>div {
+            display: grid;
+            grid-template-columns: 5.4rem minmax(0, 1fr);
+            gap: 0.75rem;
+            padding-block: 0.55rem;
+            border-top: 1px solid var(--gold-line);
+        }
+
+        .rows dt {
+            color: var(--hero-muted);
+            font-size: 0.95rem;
+        }
+
+        .rows dd {
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .scene {
+            width: min(100%, 1500px);
+            margin: clamp(1rem, 3vw, 2rem) auto 0;
+            aspect-ratio: 1200 / 720;
+            max-height: 82vh;
+        }
+
+        .scene svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .scene canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gl {
+            fill: var(--stone);
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .gl *,
+        .folk * {
+            vector-effect: non-scaling-stroke;
+        }
+
+        .folk {
+            fill: var(--hero-1);
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .gnd {
+            fill: var(--hero-1);
+            stroke: none;
+        }
+
+        .gate {
+            fill: var(--glow-gate);
+            stroke: none;
+        }
+
+        .diyas {
+            filter: drop-shadow(0 0 3px var(--saffron));
+        }
+
+        .stars circle {
+            fill: var(--gold);
+            opacity: 0.85;
+            animation: tw 3.2s ease-in-out infinite;
+            animation-delay: var(--d, 0s);
+        }
+
+        .flag {
+            transform-box: fill-box;
+            transform-origin: left center;
+            animation: wave 2.4s ease-in-out infinite;
+        }
+
+        @keyframes tw {
+
+            0%,
+            100% {
+                opacity: 0.35;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: scaleX(1) skewY(0deg);
+            }
+
+            50% {
+                transform: scaleX(0.86) skewY(5deg);
+            }
+        }
+
+        .toran {
+            height: 22px;
+            margin-top: -1px;
+            background: conic-gradient(from -45deg at 50% 100%, var(--saffron) 0 90deg, transparent 0) 0 0 / 22px 22px repeat-x;
+        }
+
+        @media (max-width: 859px) {
+            .hero-top {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .scene {
+                aspect-ratio: 5 / 4;
+            }
+        }
+
+        /* intro */
+        .intro {
+            display: grid;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            align-items: start;
+        }
+
+        .intro-copy {
+            display: grid;
+            gap: 1rem;
+            justify-items: start;
+            min-width: 0;
+        }
+
+        .intro-copy p {
+            color: var(--muted);
+            max-width: 62ch;
+        }
+
+        .facts {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            padding: 0.4rem clamp(1rem, 3vw, 1.5rem);
+            min-width: 0;
+        }
+
+        .facts div {
+            padding-block: 0.9rem;
+            border-top: 1px solid var(--line);
+            display: grid;
+            gap: 0.1rem;
+        }
+
+        .facts div:first-child {
+            border-top: 0;
+        }
+
+        .facts dt {
+            font-size: 0.92rem;
+            color: var(--mark);
+            font-weight: 600;
+        }
+
+        .facts dd {
+            font-weight: 600;
+            font-size: 1.12rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 819px) {
+            .intro {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        /* ritual steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1.25rem;
+            position: relative;
+        }
+
+        .steps::before {
+            content: "";
+            position: absolute;
+            left: 32px;
+            right: 32px;
+            top: 32px;
+            border-top: 2px dotted var(--accent);
+            opacity: 0.5;
+        }
+
+        .step {
+            position: relative;
+            display: grid;
+            gap: 0.7rem;
+            justify-items: start;
+            align-content: start;
+        }
+
+        .ring {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 1.5px solid var(--accent);
+            background: var(--surface);
+            color: var(--head);
+            display: grid;
+            place-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step .no {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--mark);
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--head);
+            font-weight: 700;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 0.98rem;
+            line-height: 1.75;
+        }
+
+        .step-note {
+            margin-top: 1.75rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 959px) {
+            .steps {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1.5rem;
+            }
+
+            .steps::before {
+                left: 32px;
+                right: auto;
+                top: 32px;
+                bottom: 32px;
+                border-top: 0;
+                border-left: 2px dotted var(--accent);
+            }
+
+            .step {
+                grid-template-columns: 64px minmax(0, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        /* schedule */
+        .tabs {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .tablist {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.4rem;
+        }
+
+        .tab {
+            flex: 0 0 auto;
+            min-width: 9.6rem;
+            text-align: left;
+            display: grid;
+            gap: 0.05rem;
+            padding: 0.6rem 1rem;
+            border: 1.5px solid var(--line);
+            border-radius: 0.8rem;
+            background: var(--surface);
+            color: var(--ink);
+            font: inherit;
+            line-height: 1.55;
+            cursor: pointer;
+        }
+
+        .tab .d {
+            font-weight: 700;
+        }
+
+        .tab .s {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .tab:hover {
+            border-color: var(--accent);
+        }
+
+        .tab[aria-selected="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--accent-ink);
+        }
+
+        .tab[aria-selected="true"] .s {
+            color: inherit;
+            opacity: 0.92;
+        }
+
+        .panel {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            padding: clamp(1rem, 3vw, 1.75rem);
+            min-width: 0;
+        }
+
+        .panel-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.6rem 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .panel-head h3 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.3rem, 3.4vw, 1.7rem);
+            line-height: 1.5;
+            color: var(--head);
+        }
+
+        .badge {
+            background: var(--badge-bg);
+            color: var(--badge-fg);
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 0.05rem 0.8rem;
+            border-radius: 999px;
+        }
+
+        .ev {
+            display: grid;
+            grid-template-columns: 7.4rem minmax(0, 1fr);
+            gap: 1rem;
+            padding-block: 1rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .ev:first-child {
+            border-top: 0;
+        }
+
+        .ev time {
+            font-weight: 700;
+            color: var(--head);
+            font-variant-numeric: tabular-nums;
+            line-height: 1.6;
+        }
+
+        .ev h4 {
+            font-size: 1.12rem;
+            line-height: 1.6;
+        }
+
+        .ev p {
+            color: var(--muted);
+        }
+
+        .ev>div {
+            min-width: 0;
+        }
+
+        .note {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 479px) {
+            .ev {
+                grid-template-columns: 5.6rem minmax(0, 1fr);
+                gap: 0.75rem;
+            }
+        }
+
+        @media (min-width: 860px) {
+            .tabs {
+                grid-template-columns: 250px minmax(0, 1fr);
+                gap: 1.75rem;
+                align-items: start;
+            }
+
+            .tablist {
+                flex-direction: column;
+                overflow: visible;
+                position: sticky;
+                top: 84px;
+            }
+
+            .tab {
+                min-width: 0;
+            }
+        }
+
+        /* seva */
+        .seva-grid {
+            display: grid;
+            gap: clamp(1rem, 3vw, 1.75rem);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .seva-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            display: grid;
+            align-content: start;
+            min-width: 0;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .seva-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .seva-art {
+            background: var(--surface-2);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .seva-art svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .seva-art .halo {
+            fill: var(--halo);
+            stroke: none;
+        }
+
+        .seva-art .gline {
+            fill: none;
+            stroke: var(--line);
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        .seva-art .fig2 {
+            fill: var(--surface);
+            stroke: var(--head);
+            stroke-width: 1.9;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .seva-art .fig2 *,
+        .seva-art .gline {
+            vector-effect: non-scaling-stroke;
+        }
+
+        .seva-art .board {
+            fill: var(--accent);
+            stroke: none;
+        }
+
+        .seva-art text {
+            fill: var(--accent-ink);
+            font-weight: 700;
+            font-size: 15px;
+            font-family: var(--body);
+        }
+
+        .seva-art .arrow {
+            fill: none;
+            stroke: var(--accent-ink);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .seva-body {
+            padding: 1.1rem 1.3rem 1.4rem;
+            display: grid;
+            gap: 0.5rem;
+            justify-items: start;
+        }
+
+        .seva-body h3 {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--head);
+            font-weight: 700;
+        }
+
+        .seva-body p {
+            color: var(--muted);
+        }
+
+        .reg {
+            margin-top: clamp(1.75rem, 4vw, 2.75rem);
+            border-radius: 1.2rem;
+            background: linear-gradient(160deg, var(--hero-2), var(--hero-1));
+            color: var(--hero-ink);
+            color-scheme: dark;
+            padding: clamp(1.25rem, 4vw, 2.25rem);
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            align-items: start;
+            border: 1px solid var(--gold-line);
+        }
+
+        .reg h3 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            line-height: 1.5;
+            color: var(--gold);
+        }
+
+        .reg p {
+            color: var(--hero-muted);
+            margin-top: 0.5rem;
+        }
+
+        .form {
+            display: grid;
+            gap: 0.9rem;
+            min-width: 0;
+        }
+
+        .field {
+            display: grid;
+            gap: 0.3rem;
+        }
+
+        .field label {
+            font-weight: 600;
+        }
+
+        .field input,
+        .field select {
+            min-height: 48px;
+            border-radius: 0.7rem;
+            border: 1px solid var(--gold-line);
+            background: var(--hero-glass);
+            color: var(--hero-ink);
+            font: inherit;
+            padding: 0.4rem 0.9rem;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .field select option {
+            background: var(--hero-2);
+            color: var(--hero-ink);
+        }
+
+        .field input::placeholder {
+            color: var(--hero-muted);
+            opacity: 0.7;
+        }
+
+        .hint {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        @media (max-width: 819px) {
+
+            .seva-grid,
+            .reg {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        /* facilities, guidelines, faq */
+        .fac {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .fac li {
+            background: var(--surface);
+            padding: 1.3rem;
+            display: grid;
+            gap: 0.5rem;
+            justify-items: start;
+            align-content: start;
+            color: var(--head);
+        }
+
+        .fac h3 {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            font-weight: 700;
+        }
+
+        .fac p {
+            color: var(--muted);
+            font-size: 0.98rem;
+            line-height: 1.75;
+        }
+
+        .rules {
+            margin-top: clamp(2rem, 5vw, 3rem);
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            align-items: start;
+        }
+
+        .rules h3 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.4rem, 3.4vw, 1.8rem);
+            line-height: 1.5;
+            color: var(--head);
+        }
+
+        .rules li {
+            display: grid;
+            grid-template-columns: 28px minmax(0, 1fr);
+            gap: 0.75rem;
+            padding-block: 0.7rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .rules li:first-child {
+            border-top: 0;
+        }
+
+        .rules .ico {
+            width: 26px;
+            height: 26px;
+            color: var(--accent);
+            margin-top: 0.15rem;
+        }
+
+        .faq {
+            max-width: 820px;
+            border-top: 1px solid var(--line);
+        }
+
+        .faq details {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .faq summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding-block: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--head);
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq summary::after {
+            content: "";
+            flex: none;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+            margin-right: 0.25rem;
+        }
+
+        .faq details[open] summary::after {
+            transform: rotate(-135deg);
+        }
+
+        .faq details p {
+            color: var(--muted);
+            padding-bottom: 1.1rem;
+            max-width: 64ch;
+        }
+
+        @media (max-width: 859px) {
+            .fac {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .rules {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 539px) {
+            .fac {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        /* location, contact, footer */
+        .place {
+            display: grid;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: start;
+        }
+
+        .addr {
+            display: grid;
+            gap: 1rem;
+            justify-items: start;
+            min-width: 0;
+        }
+
+        .addr address {
+            font-style: normal;
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .addr p {
+            color: var(--muted);
+        }
+
+        .aarti {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            padding: clamp(1rem, 3vw, 1.5rem);
+            min-width: 0;
+        }
+
+        .aarti h3 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: var(--head);
+            margin-bottom: 0.4rem;
+        }
+
+        .aarti li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-block: 0.7rem;
+            border-top: 1px solid var(--line);
+        }
+
+        .aarti li:first-of-type {
+            border-top: 0;
+        }
+
+        .aarti li span:last-child {
+            font-weight: 700;
+            color: var(--head);
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .contacts {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            max-width: 820px;
+        }
+
+        .person {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            padding: 1.1rem 1.25rem;
+            display: grid;
+            gap: 0.5rem;
+            justify-items: start;
+            min-width: 0;
+        }
+
+        .person h3 {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--head);
+            font-weight: 700;
+        }
+
+        .person .num {
+            font-family: var(--display);
+            font-size: 1.45rem;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+            user-select: all;
+        }
+
+        .person .btn {
+            min-height: 42px;
+            padding-block: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .share {
+            margin-top: clamp(1.5rem, 4vw, 2.25rem);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .share p {
+            color: var(--muted);
+        }
+
+        .foot {
+            background: linear-gradient(160deg, var(--hero-2), var(--hero-1));
+            color: var(--hero-ink);
+            padding-block: clamp(2.5rem, 7vw, 4rem);
+        }
+
+        .foot .wrap {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .foot b {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.7rem, 5vw, 2.6rem);
+            line-height: 1.5;
+            color: var(--gold);
+        }
+
+        .foot p {
+            color: var(--hero-muted);
+        }
+
+        @media (max-width: 819px) {
+            .place {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 619px) {
+            .contacts {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .stars circle,
+            .flag {
+                animation: none;
+            }
+
+            .seva-card {
+                transition: none;
+            }
+        }
+    </style>
+    <svg class="defs" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <pattern id="p-arch" width="12" height="15" patternUnits="userSpaceOnUse">
+                <path class="pl" d="M1 15 V8.5 Q6 1 11 8.5 V15" />
+            </pattern>
+            <pattern id="p-merlon" width="10" height="12" patternUnits="userSpaceOnUse">
+                <path class="pl" d="M1 12 V7 L5 1 L9 7 V12" />
+            </pattern>
+            <pattern id="p-frieze" width="16" height="20" patternUnits="userSpaceOnUse">
+                <path class="pl" d="M2 20 V11 Q8 1 14 11 V20" />
+                <circle class="pl" cx="8" cy="12" r="1.6" />
+            </pattern>
+            <pattern id="p-diya" width="20" height="9" patternUnits="userSpaceOnUse">
+                <path class="flm" d="M10 0 C12.5 2 12.5 4.5 10 6.5 C7.5 4.5 7.5 2 10 0Z" />
+                <path class="pl2" d="M6 8 H14" />
+            </pattern>
+
+            <g id="bay" fill="none">
+                <path class="lit" d="M6 46 C6 31 14 20 25 12 C36 20 44 31 44 46 Z" fill="currentColor"
+                    style="fill:var(--glow-lit)" />
+                <path d="M0 0 V110 M-4 0 H4 M-4 7 H4 M-5 110 H5 M-4 102 H4" />
+                <path d="M0 46 C0 24 12 12 25 3 C38 12 50 24 50 46" />
+                <path class="l2" d="M6 46 C6 31 14 20 25 12 C36 20 44 31 44 46" />
+                <path class="l2" d="M0 80 H50 M10 80 V110 M20 80 V110 M30 80 V110 M40 80 V110" />
+            </g>
+
+            <g id="chhatri">
+                <path d="M-32 0 H32 M-29 -5 H29" fill="none" />
+                <path
+                    d="M-24 -5 V-56 M-8 -5 V-56 M8 -5 V-56 M24 -5 V-56 M-24 -56 Q-16 -44 -8 -56 M-8 -56 Q0 -44 8 -56 M8 -56 Q16 -44 24 -56"
+                    fill="none" />
+                <path d="M-35 -56 H35 M-37 -60 Q0 -70 37 -60" fill="none" />
+                <path d="M-26 -62 C-30 -88 -10 -100 0 -104 C10 -100 30 -88 26 -62 Z" />
+                <path class="l2" d="M-12 -64 C-14 -82 -6 -96 0 -102 M12 -64 C14 -82 6 -96 0 -102" fill="none" />
+                <path d="M0 -104 V-112 M-3 -108 H3" fill="none" />
+                <circle cx="0" cy="-115" r="2.6" />
+            </g>
+
+            <g id="tower">
+                <rect x="-110" y="-30" width="220" height="30" />
+                <rect x="-110" y="-30" width="220" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-119 -26 L-114 -30 H114 L119 -26" fill="none" />
+                <rect x="-95" y="-60" width="190" height="30" />
+                <rect x="-95" y="-60" width="190" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-104 -56 L-99 -60 H99 L104 -56" fill="none" />
+                <rect x="-80" y="-90" width="160" height="30" />
+                <rect x="-80" y="-90" width="160" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-89 -86 L-84 -90 H84 L89 -86" fill="none" />
+                <rect x="-66" y="-120" width="132" height="30" />
+                <rect x="-66" y="-120" width="132" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-75 -116 L-70 -120 H70 L75 -116" fill="none" />
+                <rect x="-53" y="-150" width="106" height="30" />
+                <rect x="-53" y="-150" width="106" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-62 -146 L-57 -150 H57 L62 -146" fill="none" />
+                <rect x="-41" y="-180" width="82" height="30" />
+                <rect x="-41" y="-180" width="82" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-50 -176 L-45 -180 H45 L50 -176" fill="none" />
+                <rect x="-30" y="-210" width="60" height="30" />
+                <rect x="-30" y="-210" width="60" height="30" fill="url(#p-arch)" stroke="none" />
+                <path d="M-39 -206 L-34 -210 H34 L39 -206" fill="none" />
+                <ellipse cx="0" cy="-218" rx="24" ry="7" />
+                <ellipse cx="0" cy="-227" rx="17" ry="5" />
+                <path d="M-8 -231 V-240 H8 V-231" />
+                <path d="M-9 -240 C-14 -252 -6 -258 0 -258 C6 -258 14 -252 9 -240 Z" />
+                <path d="M0 -258 V-272" fill="none" />
+                <use href="#chhatri" transform="translate(-100 -30) scale(.28)" />
+                <use href="#chhatri" transform="translate(100 -30) scale(.28)" />
+                <use href="#chhatri" transform="translate(-86 -60) scale(.24)" />
+                <use href="#chhatri" transform="translate(86 -60) scale(.24)" />
+                <use href="#chhatri" transform="translate(-72 -90) scale(.2)" />
+                <use href="#chhatri" transform="translate(72 -90) scale(.2)" />
+            </g>
+
+            <g id="fm">
+                <circle cx="0" cy="-52" r="7" />
+                <path class="cap" d="M-7 -55 Q0 -65 7 -55 Q0 -58 -7 -55 Z" />
+                <path d="M-10 -43 Q0 -46 10 -43 L12 -14 H-12 Z" />
+                <path d="M-5 -14 V0 M5 -14 V0 M-8 0 H-3 M3 0 H8" fill="none" />
+            </g>
+            <g id="fw">
+                <circle cx="0" cy="-52" r="7" />
+                <circle cx="5" cy="-57" r="3.5" />
+                <path d="M-8 -44 Q0 -47 8 -44 L16 0 H-16 Z" />
+                <path class="sari" d="M-8 -43 L4 -43 L16 0 H8 Z" />
+            </g>
+            <g id="kalash">
+                <path d="M-6 0 C-9 -6 -7 -11 -3 -12 H3 C7 -11 9 -6 6 0 Z" />
+                <path d="M-3 -12 V-14 H3 V-12 M-4 -15 L-8 -19 M4 -15 L8 -19" fill="none" />
+                <circle cx="0" cy="-17" r="3.2" />
+            </g>
+            <g id="flame">
+                <path class="flm" d="M0 0 C4 -4 4 -9 0 -14 C-4 -9 -4 -4 0 0Z" />
+            </g>
+
+            <symbol id="i-diya" viewBox="0 0 48 48">
+                <path d="M8 28 H40 C40 38 32 42 24 42 C16 42 8 38 8 28 Z" />
+                <path d="M24 26 C18 20 20 12 24 6 C28 12 30 20 24 26 Z" />
+                <path d="M11 20 L8 17 M37 20 L40 17" />
+            </symbol>
+            <symbol id="i-kalash" viewBox="0 0 48 48">
+                <path d="M14 22 C10 30 12 40 20 42 H28 C36 40 38 30 34 22 Z" />
+                <path d="M18 22 V18 H30 V22" />
+                <path d="M24 18 C18 12 14 12 12 14 M24 18 C30 12 34 12 36 14" />
+                <circle cx="24" cy="10" r="4" />
+            </symbol>
+            <symbol id="i-fire" viewBox="0 0 48 48">
+                <path d="M8 36 H40 L36 42 H12 Z" />
+                <path d="M24 34 C14 28 18 18 24 8 C24 16 32 18 30 26 C34 24 34 30 24 34 Z" />
+            </symbol>
+            <symbol id="i-drops" viewBox="0 0 48 48">
+                <path d="M24 6 C16 18 12 24 12 30 A12 12 0 0 0 36 30 C36 24 32 18 24 6 Z" />
+                <path d="M18 31 A6 6 0 0 0 24 37" />
+            </symbol>
+            <symbol id="i-lotus" viewBox="0 0 48 48">
+                <path d="M24 8 C30 16 30 28 24 36 C18 28 18 16 24 8 Z" />
+                <path d="M24 36 C14 34 8 26 8 18 C16 18 22 26 24 36 Z" />
+                <path d="M24 36 C34 34 40 26 40 18 C32 18 26 26 24 36 Z" />
+                <path d="M14 41 H34" />
+            </symbol>
+            <symbol id="i-aid" viewBox="0 0 48 48">
+                <rect x="6" y="14" width="36" height="26" rx="5" />
+                <path d="M18 14 V9 H30 V14 M24 20 V34 M17 27 H31" />
+            </symbol>
+            <symbol id="i-car" viewBox="0 0 48 48">
+                <path d="M7 32 L12 21 H36 L41 32 V38 H7 Z" />
+                <circle cx="15" cy="38" r="3" />
+                <circle cx="33" cy="38" r="3" />
+                <path d="M13 27 H35" />
+            </symbol>
+            <symbol id="i-chair" viewBox="0 0 48 48">
+                <path d="M16 8 V28 H34 M16 28 V42 M34 28 V42 M16 18 H28" />
+            </symbol>
+            <symbol id="i-shoe" viewBox="0 0 48 48">
+                <path d="M6 34 C6 28 16 26 26 30 C34 32 42 32 42 36 C42 40 38 40 34 40 H10 C8 40 6 38 6 34 Z" />
+                <path d="M16 29 C18 22 24 22 26 30" />
+            </symbol>
+            <symbol id="i-search" viewBox="0 0 48 48">
+                <circle cx="21" cy="21" r="11" />
+                <path d="M29 29 L40 40" />
+            </symbol>
+            <symbol id="i-check" viewBox="0 0 48 48">
+                <path d="M10 25 L20 34 L38 14" />
+            </symbol>
+        </defs>
+    </svg>
+    <div lang="gu">
+
+        <header class="top">
+            <div class="wrap">
+                <a class="brand" href="#top" aria-label="શ્રી સ્વામિનારાયણ મંદિર">
+                    <svg viewBox="0 0 40 40" aria-hidden="true">
+                        <g fill="none" stroke="#F2C14E" stroke-width="1.6">
+                            <ellipse cx="20" cy="11" rx="4.2" ry="9" />
+                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(60 20 20)" />
+                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(120 20 20)" />
+                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(180 20 20)" />
+                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(240 20 20)" />
+                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(300 20 20)" />
+                        </g>
+                        <circle cx="20" cy="20" r="3.2" fill="#F08A24" />
+                    </svg>
+                    <span>શ્રી સ્વામિનારાયણ મંદિર</span>
+                </a>
+                <nav class="nav" aria-label="મુખ્ય મેનુ">
+                    <a href="#parichay">પરિચય</a>
+                    <a href="#vidhi">વિધિ</a>
+                    <a href="#karyakram">કાર્યક્રમ</a>
+                    <a href="#seva">સેવા</a>
+                    <a href="#suvidha">સુવિધા</a>
+                    <a href="#sampark">સંપર્ક</a>
+                </nav>
+                <a class="btn btn-gold" href="#karyakram">કાર્યક્રમ જુઓ</a>
+            </div>
+        </header>
+
+        <main id="top">
+
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="wrap hero-top">
+                    <div class="hero-copy">
+                        <span class="hello"><i aria-hidden="true"></i>જય સ્વામિનારાયણ</span>
+                        <h1 id="hero-title">મૂર્તિ પ્રતિષ્ઠા <span>મહોત્સવ</span></h1>
+                        <p class="temple">શ્રી સ્વામિનારાયણ મંદિર</p>
+                        <p class="lead">ભગવાન શ્રી સ્વામિનારાયણની કૃપાથી ભવ્ય મંદિરમાં મૂર્તિ પ્રતિષ્ઠાનો અલૌકિક અવસર.
+                            પાંચ દિવસના આ ભક્તિમય મહોત્સવમાં સપરિવાર પધારવા આપ સૌને હાર્દિક નિમંત્રણ.</p>
+                        <div class="cta">
+                            <a class="btn btn-gold" href="#karyakram">કાર્યક્રમ જુઓ</a>
+                            <a class="btn btn-ghost" href="#seva">સેવામાં જોડાઓ</a>
+                        </div>
+                    </div>
+
+                    <div class="invite">
+                        <h2>સહર્ષ નિમંત્રણ</h2>
+                        <p class="cap-t" id="count-cap">મહોત્સવ શરૂ થવામાં બાકી સમય</p>
+                        <div class="count" id="count" role="timer" aria-labelledby="count-cap">
+                            <div class="unit"><b id="c-d">૦૦</b><span>દિવસ</span></div>
+                            <div class="unit"><b id="c-h">૦૦</b><span>કલાક</span></div>
+                            <div class="unit"><b id="c-m">૦૦</b><span>મિનિટ</span></div>
+                            <div class="unit"><b id="c-s">૦૦</b><span>સેકન્ડ</span></div>
+                        </div>
+                        <p class="count-msg" id="count-msg" hidden></p>
+                        <dl class="rows">
+                            <div>
+                                <dt>તારીખ</dt>
+                                <dd>૧૮ થી ૨૨ ડિસેમ્બર, ૨૦૨૬</dd>
+                            </div>
+                            <div>
+                                <dt>પ્રતિષ્ઠા</dt>
+                                <dd>સોમવાર, ૨૧ ડિસેમ્બર</dd>
+                            </div>
+                            <div>
+                                <dt>સ્થળ</dt>
+                                <dd>શ્રી સ્વામિનારાયણ મંદિર પરિસર</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="scene" aria-hidden="true"><canvas id="temple3d"></canvas></div>
+            </section>
+            <div class="toran" aria-hidden="true"></div>
+            <section class="sec" id="parichay" aria-labelledby="parichay-h">
+                <div class="wrap intro">
+                    <div class="intro-copy">
+                        <span class="eyebrow">પરિચય</span>
+                        <h2 class="h2" id="parichay-h">ભવ્ય મંદિર, અલૌકિક મહોત્સવ</h2>
+                        <p>ભગવાન શ્રી સ્વામિનારાયણની અસીમ કૃપાથી અમારા મંદિરમાં મૂર્તિ પ્રતિષ્ઠાનો મંગલ અવસર આવી
+                            પહોંચ્યો છે. ઊંચા શિખર, કોતરણીવાળા થાંભલા અને ભવ્ય મંડપથી શોભતું આ મંદિર ભક્તિ અને કળાનો
+                            સુંદર સંગમ છે.</p>
+                        <p>પાંચ દિવસ સુધી પોથીયાત્રા, કળશયાત્રા, યજ્ઞ, અધિવાસ, પ્રતિષ્ઠા વિધિ, કથા અને સત્સંગ સભાનો લાભ
+                            મળશે. આપ સૌ સપરિવાર પધારી દર્શન, સેવા અને મહાપ્રસાદનો લાભ લો એવી નમ્ર વિનંતી.</p>
+                    </div>
+                    <dl class="facts">
+                        <div>
+                            <dt>મુખ્ય પ્રતિષ્ઠા દિવસ</dt>
+                            <dd>સોમવાર, ૨૧ ડિસેમ્બર ૨૦૨૬</dd>
+                        </div>
+                        <div>
+                            <dt>દૈનિક મહાપ્રસાદ</dt>
+                            <dd>બપોરે ૧૨:૦૦ વાગ્યાથી</dd>
+                        </div>
+                        <div>
+                            <dt>પ્રવેશ</dt>
+                            <dd>સૌ માટે નિઃશુલ્ક</dd>
+                        </div>
+                        <div>
+                            <dt>સ્થળ</dt>
+                            <dd>શ્રી સ્વામિનારાયણ મંદિર પરિસર</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="sec band" id="vidhi" aria-labelledby="vidhi-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">વિધિ</span>
+                        <h2 class="h2" id="vidhi-h">મૂર્તિ પ્રતિષ્ઠાની વિધિ</h2>
+                        <p>પાંચ દિવસ દરમિયાન થતી મુખ્ય વિધિઓને સરળ ભાષામાં સમજો.</p>
+                    </div>
+                    <ol class="steps">
+                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-diya" />
+                                </svg></span>
+                            <div><span class="no">ચરણ ૧</span>
+                                <h3>ગણેશ પૂજન</h3>
+                                <p>દરેક શુભ કાર્યની શરૂઆત વિઘ્નહર્તા ગણપતિના પૂજનથી થાય છે.</p>
+                            </div>
+                        </li>
+                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-kalash" />
+                                </svg></span>
+                            <div><span class="no">ચરણ ૨</span>
+                                <h3>કળશયાત્રા</h3>
+                                <p>પવિત્ર જળથી ભરેલા કળશ સાથે બહેનો શોભાયાત્રામાં જોડાય છે.</p>
+                            </div>
+                        </li>
+                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-fire" />
+                                </svg></span>
+                            <div><span class="no">ચરણ ૩</span>
+                                <h3>યજ્ઞ</h3>
+                                <p>વૈદિક મંત્રો અને આહુતિ સાથે વાતાવરણ અને મન પવિત્ર થાય છે.</p>
+                            </div>
+                        </li>
+                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-drops" />
+                                </svg></span>
+                            <div><span class="no">ચરણ ૪</span>
+                                <h3>અધિવાસ</h3>
+                                <p>મૂર્તિઓને જળ, અન્ન અને પુષ્પમાં વિધિપૂર્વક અધિવાસ કરાવાય છે.</p>
+                            </div>
+                        </li>
+                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-lotus" />
+                                </svg></span>
+                            <div><span class="no">ચરણ ૫</span>
+                                <h3>પ્રતિષ્ઠા</h3>
+                                <p>શુભ મુહૂર્તે ભગવાનને ગર્ભગૃહમાં બિરાજમાન કરી પ્રતિષ્ઠા થાય છે.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p class="step-note">છેલ્લા દિવસે અન્નકૂટ દર્શન અને પૂર્ણાહુતિ આરતી સાથે મહોત્સવ સંપન્ન થાય છે.</p>
+                </div>
+            </section>
+
+            <section class="sec" id="karyakram" aria-labelledby="karyakram-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">કાર્યક્રમ</span>
+                        <h2 class="h2" id="karyakram-h">દિવસ મુજબ કાર્યક્રમ</h2>
+                        <p>દિવસ પસંદ કરો અને તે દિવસના બધા કાર્યક્રમ અને સમય જુઓ.</p>
+                    </div>
+                    <div class="tabs">
+                        <div class="tablist" role="tablist" aria-label="મહોત્સવના દિવસો">
+                            <button class="tab" role="tab" id="t0" aria-controls="p0" aria-selected="true"><span
+                                    class="d">દિવસ ૧</span><span class="s">શુક્રવાર, ૧૮ ડિસેમ્બર</span></button>
+                            <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૨</span><span class="s">શનિવાર, ૧૯
+                                    ડિસેમ્બર</span></button>
+                            <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૩</span><span class="s">રવિવાર, ૨૦
+                                    ડિસેમ્બર</span></button>
+                            <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૪</span><span class="s">સોમવાર, ૨૧
+                                    ડિસેમ્બર</span></button>
+                            <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૫</span><span class="s">મંગળવાર, ૨૨
+                                    ડિસેમ્બર</span></button>
+                        </div>
+                        <div>
+                            <div class="panel" role="tabpanel" id="p0" aria-labelledby="t0">
+                                <div class="panel-head">
+                                    <h3>પ્રારંભ અને શોભાયાત્રા</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૭:૦૦</time>
+                                        <div>
+                                            <h4>પોથીયાત્રા</h4>
+                                            <p>શણગારેલા રથમાં ગ્રંથની ભવ્ય શોભાયાત્રા, ભજન-કીર્તન સાથે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૯:૩૦</time>
+                                        <div>
+                                            <h4>ગણેશ પૂજન</h4>
+                                            <p>મહોત્સવનો મંગલ પ્રારંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે પંગતમાં પ્રસાદ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૪:૦૦</time>
+                                        <div>
+                                            <h4>કળશયાત્રા</h4>
+                                            <p>જલયાત્રા સાથે બહેનોની કળશયાત્રા.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી અને દીપ પ્રાગટ્ય</h4>
+                                            <p>મહોત્સવનો દીપ પ્રગટાવી આરતી.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૭:૩૦</time>
+                                        <div>
+                                            <h4>ઉદ્ઘાટન સત્સંગ સભા</h4>
+                                            <p>સંતોના આશીર્વચન અને મહોત્સવનો પરિચય.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1" hidden>
+                                <div class="panel-head">
+                                    <h3>યજ્ઞ અને જલાધિવાસ</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૮:૦૦</time>
+                                        <div>
+                                            <h4>યજ્ઞ પ્રારંભ</h4>
+                                            <p>વૈદિક મંત્રોચ્ચાર સાથે હવન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૫:૦૦</time>
+                                        <div>
+                                            <h4>જલાધિવાસ વિધિ</h4>
+                                            <p>મૂર્તિઓનો જલમાં અધિવાસ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>સમૂહ આરતી અને સ્તુતિ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>રાત્રે ૮:૦૦</time>
+                                        <div>
+                                            <h4>કથા અને કીર્તન</h4>
+                                            <p>સંતો દ્વારા કથાવાર્તા અને ભક્તિસંગીત.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+                                <div class="panel-head">
+                                    <h3>અધિવાસ અને સાંસ્કૃતિક સંધ્યા</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૮:૦૦</time>
+                                        <div>
+                                            <h4>અન્નાધિવાસ અને યજ્ઞ</h4>
+                                            <p>મૂર્તિઓનો અન્નમાં અધિવાસ અને હવન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૪:૦૦</time>
+                                        <div>
+                                            <h4>પુષ્પાધિવાસ</h4>
+                                            <p>પુષ્પોમાં મૂર્તિઓનો અધિવાસ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>સમૂહ આરતી અને સ્તુતિ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>રાત્રે ૮:૦૦</time>
+                                        <div>
+                                            <h4>સાંસ્કૃતિક કાર્યક્રમ</h4>
+                                            <p>રાસ-ગરબા અને ભક્તિ નૃત્ય.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+                                <div class="panel-head">
+                                    <h3>મૂર્તિ પ્રતિષ્ઠા</h3><span class="badge">મુખ્ય દિવસ</span>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૫:૦૦</time>
+                                        <div>
+                                            <h4>મહાપૂજા</h4>
+                                            <p>પ્રતિષ્ઠા પહેલાંની વિશેષ પૂજા.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૭:૦૦</time>
+                                        <div>
+                                            <h4>મૂર્તિ પ્રતિષ્ઠા વિધિ</h4>
+                                            <p>શુભ મુહૂર્તે ભગવાનની મૂર્તિઓની પ્રતિષ્ઠા.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૧૦:૦૦</time>
+                                        <div>
+                                            <h4>પ્રતિષ્ઠા મહા આરતી</h4>
+                                            <p>પ્રથમ દર્શન અને મહા આરતી.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૩૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૫:૦૦</time>
+                                        <div>
+                                            <h4>સંતોના આશીર્વચન</h4>
+                                            <p>પધારેલા સંતો દ્વારા આશીર્વચન સભા.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૭:૦૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>પ્રતિષ્ઠા દિવસની વિશેષ આરતી.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+                                <div class="panel-head">
+                                    <h3>અન્નકૂટ અને પૂર્ણાહુતિ</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૯:૦૦</time>
+                                        <div>
+                                            <h4>અન્નકૂટ દર્શન</h4>
+                                            <p>ભગવાનને ધરાવેલા વિવિધ ભોગનાં દર્શન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૧૧:૦૦</time>
+                                        <div>
+                                            <h4>પૂર્ણાહુતિ આરતી</h4>
+                                            <p>સેવકો અને સંતોનું સન્માન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>મહોત્સવનો અંતિમ મહાપ્રસાદ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૩:૦૦</time>
+                                        <div>
+                                            <h4>પ્રસાદ વિતરણ અને વિદાય</h4>
+                                            <p>સૌ ભક્તોને પ્રસાદ આપી ભાવભીની વિદાય.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p class="note">સમય અને કાર્યક્રમમાં મંદિર દ્વારા જરૂર મુજબ ફેરફાર થઈ શકે છે.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sec band" id="seva" aria-labelledby="seva-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">સેવા</span>
+                        <h2 class="h2" id="seva-h">સેવા એ જ સાચી ભક્તિ</h2>
+                        <p>ભગવાનના મહોત્સવમાં સેવા આપવી એ જીવનનો અમૂલ્ય લહાવો છે. ભાઈઓ અને બહેનો, સૌ આ સેવાઓમાં જોડાઈ
+                            શકે છે.</p>
+                    </div>
+
+                    <div class="seva-grid">
+                        <article class="seva-card">
+                            <div class="seva-art">
+                                <svg viewBox="0 0 320 240" role="img" aria-label="સ્વયંસેવકો મહાપ્રસાદ પીરસતા">
+                                    <circle class="halo" cx="160" cy="120" r="100" />
+                                    <path class="gline" d="M16 210 H304" />
+                                    <g class="fig2">
+                                        <path d="M214 112 H290" />
+                                        <path d="M218 112 C206 132 214 164 230 172 H274 C290 164 298 132 286 112" />
+                                        <circle cx="212" cy="122" r="4" fill="none" />
+                                        <circle cx="292" cy="122" r="4" fill="none" />
+                                        <path d="M222 172 L216 196 M282 172 L288 196 M212 196 H292" fill="none" />
+                                        <path
+                                            d="M236 102 C230 94 242 90 236 80 M252 102 C246 94 258 90 252 80 M268 102 C262 94 274 90 268 80"
+                                            fill="none" />
+                                        <use href="#flame" transform="translate(236 196) scale(1.3)" />
+                                        <use href="#flame" transform="translate(252 196) scale(1.3)" />
+                                        <use href="#flame" transform="translate(268 196) scale(1.3)" />
+                                    </g>
+                                    <g class="fig2" transform="translate(180 210) scale(1.75)">
+                                        <use href="#fm" />
+                                        <path d="M-9 -41 L-22 -34 L-32 -30 M-32 -30 L-40 -42 M9 -41 L14 -26"
+                                            fill="none" />
+                                        <path d="M-45 -45 Q-41 -35 -35 -42" fill="none" />
+                                    </g>
+                                    <g class="fig2" transform="translate(76 210) scale(1.75)">
+                                        <use href="#fw" />
+                                        <path d="M8 -42 Q20 -36 28 -32 M-8 -42 Q6 -34 22 -31" fill="none" />
+                                        <ellipse cx="30" cy="-31" rx="12" ry="3.5" />
+                                        <path d="M22 -34 Q30 -43 38 -34" fill="none" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="seva-body">
+                                <h3>મહાપ્રસાદ સેવા</h3>
+                                <p>રસોઈ, પીરસણ અને પંગતની વ્યવસ્થામાં જોડાઈ ભક્તોને પ્રેમથી જમાડો.</p>
+                                <a class="btn btn-line" href="#seva-form" data-seva="મહાપ્રસાદ સેવા">આ સેવા નોંધાવો</a>
+                            </div>
+                        </article>
+
+                        <article class="seva-card">
+                            <div class="seva-art">
+                                <svg viewBox="0 0 320 240" role="img"
+                                    aria-label="બહેનો કળશયાત્રામાં કળશ ધારણ કરીને ચાલતી">
+                                    <circle class="halo" cx="160" cy="120" r="100" />
+                                    <path class="gline" d="M16 212 H304" />
+                                    <path class="gline" d="M0 52 Q80 22 160 52 T320 52" />
+                                    <path class="sari" d="M44 40 H60 L52 56 Z" />
+                                    <path class="sari" d="M110 40 H126 L118 56 Z" />
+                                    <path class="sari" d="M192 40 H208 L200 56 Z" />
+                                    <path class="sari" d="M262 40 H278 L270 56 Z" />
+                                    <g class="fig2" transform="translate(70 214) scale(1.85)">
+                                        <use href="#fw" />
+                                        <path d="M-8 -42 Q-17 -54 -5 -62 M8 -42 Q17 -54 5 -62" fill="none" />
+                                        <use href="#kalash" transform="translate(0 -58)" />
+                                    </g>
+                                    <g class="fig2" transform="translate(160 214) scale(1.85)">
+                                        <use href="#fw" />
+                                        <path d="M-8 -42 Q-17 -54 -5 -62 M8 -42 Q17 -54 5 -62" fill="none" />
+                                        <use href="#kalash" transform="translate(0 -58)" />
+                                    </g>
+                                    <g class="fig2" transform="translate(250 214) scale(1.85)">
+                                        <use href="#fw" />
+                                        <path d="M-8 -42 Q-17 -54 -5 -62 M8 -42 Q17 -54 5 -62" fill="none" />
+                                        <use href="#kalash" transform="translate(0 -58)" />
+                                    </g>
+                                    <g class="fig2">
+                                        <use href="#flame" transform="translate(30 224) scale(.5)" />
+                                        <use href="#flame" transform="translate(112 226) scale(.5)" />
+                                        <use href="#flame" transform="translate(205 226) scale(.5)" />
+                                        <use href="#flame" transform="translate(290 224) scale(.5)" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="seva-body">
+                                <h3>કળશયાત્રા અને જલસેવા</h3>
+                                <p>કળશ ધારણ કરી શોભાયાત્રામાં જોડાઓ અથવા દર્શનાર્થીઓને શીતળ જળ પીરસો.</p>
+                                <a class="btn btn-line" href="#seva-form" data-seva="કળશયાત્રા અને જલસેવા">આ સેવા
+                                    નોંધાવો</a>
+                            </div>
+                        </article>
+
+                        <article class="seva-card">
+                            <div class="seva-art">
+                                <svg viewBox="0 0 320 240" role="img" aria-label="સ્વયંસેવકો ભક્તોને માર્ગ બતાવતા">
+                                    <circle class="halo" cx="160" cy="120" r="100" />
+                                    <path class="gline" d="M16 210 H304" />
+                                    <path class="gline" d="M262 60 V210" />
+                                    <rect class="board" x="206" y="40" width="104" height="38" rx="7" />
+                                    <text x="218" y="65">દર્શન</text>
+                                    <path class="arrow" d="M280 59 H298 M292 52 L298 59 L292 66" />
+                                    <rect class="board" x="206" y="88" width="104" height="38" rx="7" />
+                                    <text x="244" y="113">પાર્કિંગ</text>
+                                    <path class="arrow" d="M236 107 H218 M224 100 L218 107 L224 114" />
+                                    <g class="fig2" transform="translate(150 210) scale(1.85)">
+                                        <use href="#fm" />
+                                        <path d="M9 -41 L26 -50 L38 -58 M-9 -41 L-14 -27" fill="none" />
+                                    </g>
+                                    <g class="fig2" transform="translate(70 210) scale(1.85)">
+                                        <use href="#fw" />
+                                        <path d="M9 -40 L14 -30 M14 -30 V-92 M-8 -42 L-12 -28" fill="none" />
+                                        <path class="sari" d="M14 -92 L40 -85 L14 -78 Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="seva-body">
+                                <h3>માર્ગદર્શન અને વાહન વ્યવસ્થા</h3>
+                                <p>દર્શન લાઈન, પાર્કિંગ અને સૂચના બોર્ડ દ્વારા ભક્તોને સાચો માર્ગ બતાવો.</p>
+                                <a class="btn btn-line" href="#seva-form" data-seva="માર્ગદર્શન અને વાહન વ્યવસ્થા">આ
+                                    સેવા નોંધાવો</a>
+                            </div>
+                        </article>
+
+                        <article class="seva-card">
+                            <div class="seva-art">
+                                <svg viewBox="0 0 320 240" role="img" aria-label="સ્વયંસેવકો સફાઈ અને પાણીની સેવા કરતા">
+                                    <circle class="halo" cx="160" cy="120" r="100" />
+                                    <path class="gline" d="M16 210 H304" />
+                                    <g class="fig2" transform="translate(76 210) scale(1.85)">
+                                        <use href="#fm" />
+                                        <path d="M9 -41 L18 -32 M-9 -41 L12 -34 M16 -34 L36 2" fill="none" />
+                                        <path d="M30 -6 L44 -2 L48 6 L34 8 Z" />
+                                    </g>
+                                    <g class="fig2" transform="translate(176 210) scale(1.85)">
+                                        <use href="#fw" />
+                                        <path d="M8 -41 Q20 -38 26 -34 M-8 -42 L-12 -28" fill="none" />
+                                        <path d="M22 -40 H32 L30 -28 H24 Z" />
+                                    </g>
+                                    <g class="fig2">
+                                        <path
+                                            d="M236 142 H266 M240 142 C226 152 228 184 244 192 H258 C274 184 276 152 262 142" />
+                                        <path d="M232 192 L226 210 M270 192 L276 210 M230 200 H272 M266 168 H282 V176"
+                                            fill="none" />
+                                        <path d="M283 182 Q280 188 283 192 M289 182 Q286 188 289 192" fill="none" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="seva-body">
+                                <h3>સ્વચ્છતા સેવા</h3>
+                                <p>પરિસરની સફાઈ અને પ્રસાદ મંડપની વ્યવસ્થામાં હાથ બટાવી મહોત્સવને નિર્મળ રાખો.</p>
+                                <a class="btn btn-line" href="#seva-form" data-seva="સ્વચ્છતા સેવા">આ સેવા નોંધાવો</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="reg" id="seva-form">
+                        <div>
+                            <h3>સેવા નોંધણી</h3>
+                            <p>નામ અને સેવા પસંદ કરો. નોંધણી WhatsApp સંદેશ તરીકે મહોત્સવ સમિતિને મોકલી શકાશે.</p>
+                        </div>
+                        <form class="form" id="sv-form" novalidate>
+                            <div class="field"><label for="sv-name">તમારું નામ</label><input id="sv-name" type="text"
+                                    autocomplete="name" placeholder="પૂરું નામ લખો"></div>
+                            <div class="field"><label for="sv-type">સેવાનો પ્રકાર</label>
+                                <select id="sv-type">
+                                    <option>મહાપ્રસાદ સેવા</option>
+                                    <option>કળશયાત્રા અને જલસેવા</option>
+                                    <option>માર્ગદર્શન અને વાહન વ્યવસ્થા</option>
+                                    <option>સ્વચ્છતા સેવા</option>
+                                    <option>અન્ય સેવા</option>
+                                </select>
+                            </div>
+                            <div class="field"><label for="sv-when">સમય</label>
+                                <select id="sv-when">
+                                    <option>પાંચ દિવસ</option>
+                                    <option>ફક્ત સવારે</option>
+                                    <option>ફક્ત સાંજે</option>
+                                    <option>ફક્ત પ્રતિષ્ઠા દિવસે</option>
+                                </select>
+                            </div>
+                            <p class="hint" id="sv-hint" hidden>પહેલા તમારું નામ લખો.</p>
+                            <a class="btn btn-gold" id="sv-send" href="https://wa.me/" target="_blank"
+                                rel="noopener">WhatsApp પર નોંધણી મોકલો</a>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sec" id="suvidha" aria-labelledby="suvidha-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">સુવિધા</span>
+                        <h2 class="h2" id="suvidha-h">દર્શનાર્થીઓ માટે સુવિધા</h2>
+                        <p>પરિવાર સાથે નિશ્ચિંત થઈને દર્શન કરી શકાય તે માટે આ વ્યવસ્થાઓ રહેશે.</p>
+                    </div>
+                    <ul class="fac">
+                        <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                <use href="#i-drops" />
+                            </svg>
+                            <h3>પીવાનું પાણી</h3>
+                            <p>દર્શન લાઈન અને પરિસરમાં ઠંડા પાણીની વ્યવસ્થા.</p>
+                        </li>
+                        <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                <use href="#i-aid" />
+                            </svg>
+                            <h3>પ્રાથમિક સારવાર</h3>
+                            <p>તબીબી સહાય કેન્દ્ર સતત ઉપલબ્ધ.</p>
+                        </li>
+                        <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                <use href="#i-car" />
+                            </svg>
+                            <h3>વાહન પાર્કિંગ</h3>
+                            <p>સ્વયંસેવકોના માર્ગદર્શન સાથે નિર્ધારિત પાર્કિંગ.</p>
+                        </li>
+                        <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                <use href="#i-chair" />
+                            </svg>
+                            <h3>બેઠક વ્યવસ્થા</h3>
+                            <p>વડીલો અને નાના બાળકો સાથે આવેલા પરિવારો માટે.</p>
+                        </li>
+                        <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                <use href="#i-shoe" />
+                            </svg>
+                            <h3>જૂતાઘર</h3>
+                            <p>જૂતા-ચંપલ સુરક્ષિત રાખવાની વ્યવસ્થા.</p>
+                        </li>
+                        <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                <use href="#i-search" />
+                            </svg>
+                            <h3>ખોવાયું-મળ્યું</h3>
+                            <p>કાર્યાલય પાસે માહિતી અને સહાય કેન્દ્ર.</p>
+                        </li>
+                    </ul>
+
+                    <div class="rules">
+                        <h3>દર્શન માટે સૂચનાઓ</h3>
+                        <ul>
+                            <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-check" />
+                                </svg><span>મંદિરમાં મર્યાદાપૂર્ણ વસ્ત્રો પહેરીને પ્રવેશ કરો.</span></li>
+                            <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-check" />
+                                </svg><span>જૂતા-ચંપલ નિર્ધારિત જૂતાઘરમાં જ મૂકો.</span></li>
+                            <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-check" />
+                                </svg><span>મોબાઈલ સાયલન્ટ રાખો અને ગર્ભગૃહમાં ફોટો-વીડિયો ન લો.</span></li>
+                            <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-check" />
+                                </svg><span>દર્શન લાઈનમાં શિસ્ત જાળવો અને વડીલો-બાળકોને પહેલા તક આપો.</span></li>
+                            <li><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
+                                    <use href="#i-check" />
+                                </svg><span>કીમતી વસ્તુઓ સાથે ન લાવો અને સ્વયંસેવકોની સૂચનાનું પાલન કરો.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sec band" id="faq" aria-labelledby="faq-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">પ્રશ્નોત્તરી</span>
+                        <h2 class="h2" id="faq-h">વારંવાર પુછાતા પ્રશ્નો</h2>
+                    </div>
+                    <div class="faq">
+                        <details>
+                            <summary>પ્રવેશ માટે ટિકિટ કે ફી છે?</summary>
+                            <p>ના. મહોત્સવના તમામ કાર્યક્રમોમાં પ્રવેશ સૌ માટે નિઃશુલ્ક છે.</p>
+                        </details>
+                        <details>
+                            <summary>મહાપ્રસાદ કેટલા વાગ્યે મળશે?</summary>
+                            <p>સામાન્ય રીતે દરરોજ બપોરે ૧૨:૦૦ વાગ્યાથી. પ્રતિષ્ઠા દિવસે ૧૨:૩૦ અને છેલ્લા દિવસે ૧:૦૦
+                                વાગ્યે મહાપ્રસાદ શરૂ થશે.</p>
+                        </details>
+                        <details>
+                            <summary>બહેનો કળશયાત્રામાં કેવી રીતે જોડાઈ શકે?</summary>
+                            <p>પહેલા દિવસે સાંજે ૪:૦૦ વાગ્યે નિયત સ્થળે પધારો. આગોતરું નામ નોંધાવવા માટે સંપર્ક વિભાગમાં
+                                આપેલા નંબર પર સંપર્ક કરો.</p>
+                        </details>
+                        <details>
+                            <summary>વાહન પાર્કિંગની શું વ્યવસ્થા છે?</summary>
+                            <p>મંદિર પરિસર પાસે નિર્ધારિત પાર્કિંગ રહેશે અને સ્વયંસેવકો વાહન ગોઠવવામાં માર્ગદર્શન આપશે.
+                                ભીડના સમયે ચાલીને આવવું અનુકૂળ રહેશે.</p>
+                        </details>
+                        <details>
+                            <summary>વડીલો માટે શું સુવિધા છે?</summary>
+                            <p>વડીલો માટે બેઠક વ્યવસ્થા અને સ્વયંસેવકોની સહાય ઉપલબ્ધ રહેશે. જરૂર પડે તો સહાય કેન્દ્રનો
+                                સંપર્ક કરો.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+            <section class="sec" id="sthal" aria-labelledby="sthal-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">સ્થળ</span>
+                        <h2 class="h2" id="sthal-h">મંદિર સુધી પહોંચવા માટે</h2>
+                    </div>
+                    <div class="place">
+                        <div class="addr">
+                            <address>શ્રી સ્વામિનારાયણ મંદિર<br>મંદિર માર્ગ, ગામ/શહેરનું નામ<br>ગુજરાત, ૦૦૦૦૦૦</address>
+                            <p>નકશામાં મંદિરનું સ્થાન જોઈ સીધું માર્ગદર્શન મેળવો.</p>
+                            <a class="btn btn-solid"
+                                href="https://www.google.com/maps/search/?api=1&amp;query=Swaminarayan+Mandir"
+                                target="_blank" rel="noopener">Google નકશામાં જુઓ</a>
+                        </div>
+                        <div class="aarti">
+                            <h3>નિત્ય આરતીનો સમય</h3>
+                            <ul>
+                                <li><span>મંગળા આરતી</span><span>સવારે ૬:૦૦</span></li>
+                                <li><span>શણગાર આરતી</span><span>સવારે ૮:૩૦</span></li>
+                                <li><span>રાજભોગ આરતી</span><span>બપોરે ૧૨:૦૦</span></li>
+                                <li><span>સંધ્યા આરતી</span><span>સાંજે ૭:૦૦</span></li>
+                                <li><span>શયન આરતી</span><span>રાત્રે ૮:૩૦</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sec band" id="sampark" aria-labelledby="sampark-h">
+                <div class="wrap">
+                    <div class="sec-head">
+                        <span class="eyebrow">સંપર્ક</span>
+                        <h2 class="h2" id="sampark-h">વધુ માહિતી માટે સંપર્ક</h2>
+                        <p>સેવા, દાન અથવા કાર્યક્રમ વિશે પૂછવા માટે નીચેના નંબર પર સંપર્ક કરો.</p>
+                    </div>
+                    <div class="contacts">
+                        <div class="person">
+                            <h3>મંદિર કાર્યાલય</h3>
+                            <p class="num" id="n1">+૯૧ ૦૦૦૦૦ ૦૦૦૦૦</p>
+                            <button class="btn btn-line" type="button" data-copy="+91 00000 00000" data-target="n1">નંબર
+                                કૉપિ કરો</button>
+                        </div>
+                        <div class="person">
+                            <h3>મહોત્સવ સમિતિ</h3>
+                            <p class="num" id="n2">+૯૧ ૦૦૦૦૦ ૦૦૦૦૧</p>
+                            <button class="btn btn-line" type="button" data-copy="+91 00000 00001" data-target="n2">નંબર
+                                કૉપિ કરો</button>
+                        </div>
+                    </div>
+                    <div class="share">
+                        <a class="btn btn-solid" id="wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp
+                            પર નિમંત્રણ મોકલો</a>
+                        <p>સગા-સંબંધી અને સત્સંગી મિત્રોને આમંત્રણ મોકલો.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="foot">
+            <div class="wrap">
+                <b>સ્વામિનારાયણ ભગવાનની જય</b>
+                <p>શ્રી સ્વામિનારાયણ મંદિર · મૂર્તિ પ્રતિષ્ઠા મહોત્સવ સમિતિ</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        /* Change these two dates to match the real mahotsav (India time, +05:30). */
+        var CONFIG = { start: "2026-12-18T06:30:00+05:30", end: "2026-12-22T14:00:00+05:30" };
+        var GU = "૦૧૨૩૪૫૬૭૮૯";
+        function gu(n, pad) {
+            var s = String(n);
+            while (pad && s.length < pad) s = "0" + s;
+            return s.replace(/\d/g, function (d) { return GU.charAt(d); });
+        }
+
+        (function () {
+            var start = new Date(CONFIG.start).getTime();
+            var end = new Date(CONFIG.end).getTime();
+            var box = document.getElementById("count");
+            var cap = document.getElementById("count-cap");
+            var msg = document.getElementById("count-msg");
+            var d = document.getElementById("c-d"), h = document.getElementById("c-h"),
+                m = document.getElementById("c-m"), s = document.getElementById("c-s");
+            function tick() {
+                var now = Date.now();
+                if (now >= start) {
+                    box.hidden = true; cap.hidden = true; msg.hidden = false;
+                    msg.textContent = now >= end ? "મહોત્સવ સંપન્ન થયો. સૌનો હૃદયપૂર્વક આભાર." : "મહોત્સવ ચાલી રહ્યો છે. સૌને પધારવા નિમંત્રણ.";
+                    return;
+                }
+                var diff = Math.floor((start - now) / 1000);
+                d.textContent = gu(Math.floor(diff / 86400), 2);
+                h.textContent = gu(Math.floor((diff % 86400) / 3600), 2);
+                m.textContent = gu(Math.floor((diff % 3600) / 60), 2);
+                s.textContent = gu(diff % 60, 2);
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+
+        (function () {
+            var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+            var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+            function select(i, focus) {
+                tabs.forEach(function (t, j) {
+                    t.setAttribute("aria-selected", j === i ? "true" : "false");
+                    t.tabIndex = j === i ? 0 : -1;
+                    panels[j].hidden = j !== i;
+                });
+                if (focus) tabs[i].focus();
+            }
+            tabs.forEach(function (t, i) {
+                t.addEventListener("click", function () { select(i, false); });
+                t.addEventListener("keydown", function (e) {
+                    var vertical = window.matchMedia("(min-width: 860px)").matches;
+                    var next = vertical ? "ArrowDown" : "ArrowRight";
+                    var prev = vertical ? "ArrowUp" : "ArrowLeft";
+                    if (e.key === next) { e.preventDefault(); select((i + 1) % tabs.length, true); }
+                    else if (e.key === prev) { e.preventDefault(); select((i + tabs.length - 1) % tabs.length, true); }
+                    else if (e.key === "Home") { e.preventDefault(); select(0, true); }
+                    else if (e.key === "End") { e.preventDefault(); select(tabs.length - 1, true); }
+                });
+            });
+            var start = new Date(CONFIG.start).getTime();
+            var end = new Date(CONFIG.end).getTime();
+            var now = Date.now();
+            if (now >= start && now < end) select(Math.min(tabs.length - 1, Math.floor((now - start) / 86400000)), false);
+        })();
+
+        (function () {
+            var btns = document.querySelectorAll("[data-copy]");
+            Array.prototype.forEach.call(btns, function (b) {
+                var label = b.textContent, timer;
+                function flash(text) {
+                    b.textContent = text;
+                    clearTimeout(timer);
+                    timer = setTimeout(function () { b.textContent = label; }, 2200);
+                }
+                b.addEventListener("click", function () {
+                    var el = document.getElementById(b.getAttribute("data-target"));
+                    function fallback() {
+                        try {
+                            var r = document.createRange();
+                            r.selectNodeContents(el);
+                            var sel = window.getSelection();
+                            sel.removeAllRanges();
+                            sel.addRange(r);
+                        } catch (e) { }
+                        flash("નંબર પસંદ થયો, કૉપિ કરો");
+                    }
+                    try {
+                        navigator.clipboard.writeText(b.getAttribute("data-copy")).then(function () { flash("કૉપિ થયું"); }, fallback);
+                    } catch (e) { fallback(); }
+                });
+            });
+        })();
+
+        (function () {
+            var text = "જય સ્વામિનારાયણ! શ્રી સ્વામિનારાયણ મંદિરના મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં સપરિવાર પધારવા આપને હાર્દિક નિમંત્રણ છે. તારીખ: ૧૮ થી ૨૨ ડિસેમ્બર, ૨૦૨૬. મુખ્ય પ્રતિષ્ઠા દિવસ: ૨૧ ડિસેમ્બર. દરરોજ મહાપ્રસાદ.";
+            var a = document.getElementById("wa");
+            if (a) a.href = "https://wa.me/?text=" + encodeURIComponent(text);
+        })();
+
+        (function () {
+            var form = document.getElementById("sv-form");
+            var name = document.getElementById("sv-name");
+            var type = document.getElementById("sv-type");
+            var when = document.getElementById("sv-when");
+            var send = document.getElementById("sv-send");
+            var hint = document.getElementById("sv-hint");
+            function msg() {
+                return "જય સ્વામિનારાયણ! હું " + name.value.trim() + " મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં “" + type.value + "” માટે સેવા નોંધાવવા ઇચ્છું છું. સમય: " + when.value + ".";
+            }
+            function update() { send.href = "https://wa.me/?text=" + encodeURIComponent(msg()); }
+            form.addEventListener("input", update);
+            form.addEventListener("change", update);
+            form.addEventListener("submit", function (e) { e.preventDefault(); });
+            send.addEventListener("click", function (e) {
+                if (!name.value.trim()) { e.preventDefault(); hint.hidden = false; name.focus(); }
+                else { hint.hidden = true; update(); }
+            });
+            Array.prototype.forEach.call(document.querySelectorAll("[data-seva]"), function (a) {
+                a.addEventListener("click", function () { type.value = a.getAttribute("data-seva"); update(); });
+            });
+            update();
+        })();
+
+        /* 3D line-art mandir (tower + long wing, after the reference photo): lines draw themselves, then it rotates with a light running up the lines. */
+        (function () {
+            var cv = document.getElementById("temple3d");
+            if (!cv || !cv.getContext) return;
+            var ctx = cv.getContext("2d");
+            var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            /* ---------- geometry ---------- */
+            var segs = [];
+            function L(x1, y1, z1, x2, y2, z2, c) { segs.push({ x1: x1, y1: y1, z1: z1, x2: x2, y2: y2, z2: z2, c: c || 0, r: 0, k: 0 }); }
+            function S(p, q, c) { L(p[0], p[1], p[2], q[0], q[1], q[2], c); }
+            function rect(y, xa, xb, za, zb, c) {
+                L(xa, y, za, xb, y, za, c); L(xb, y, za, xb, y, zb, c); L(xb, y, zb, xa, y, zb, c); L(xa, y, zb, xa, y, za, c);
+            }
+            function box(xa, xb, ya, yb, za, zb, c) {
+                rect(ya, xa, xb, za, zb, c); rect(yb, xa, xb, za, zb, c);
+                L(xa, ya, za, xa, yb, za, c); L(xb, ya, za, xb, yb, za, c); L(xb, ya, zb, xb, yb, zb, c); L(xa, ya, zb, xa, yb, zb, c);
+            }
+            function ringXZ(cx, cy, cz, r, n, c) {
+                for (var i = 0; i < n; i++) {
+                    var a0 = (Math.PI * 2 * i) / n, a1 = (Math.PI * 2 * (i + 1)) / n;
+                    L(cx + r * Math.cos(a0), cy, cz + r * Math.sin(a0), cx + r * Math.cos(a1), cy, cz + r * Math.sin(a1), c);
+                }
+            }
+
+            /* face helpers: F(u, y, off) -> [x, y, z] on a wall plane, pushed outward by off */
+            function FX(sx) { return function (u, y, o) { return [sx * (2.0 + o), y, sx * u]; }; }
+            function FZ(sz) { return function (u, y, o) { return [u, y, sz * (1.9 + o)]; }; }
+
+            function archW(F, u, y0, w, h, o, c) {
+                var r = w / 2, yS = y0 + h - r * 0.8, i, prev, q, ang;
+                S(F(u - r, y0, o), F(u - r, yS, o), c);
+                S(F(u + r, y0, o), F(u + r, yS, o), c);
+                S(F(u - r, y0, o), F(u + r, y0, o), c);
+                prev = F(u - r, yS, o);
+                for (i = 1; i <= 4; i++) {
+                    ang = Math.PI - (Math.PI * i) / 4;
+                    q = F(u + r * Math.cos(ang), yS + r * 0.8 * Math.sin(ang), o);
+                    S(prev, q, c); prev = q;
+                }
+            }
+            function rectW(F, u, y0, w, h, o, c) {
+                var r = w / 2;
+                S(F(u - r, y0, o), F(u + r, y0, o), c); S(F(u + r, y0, o), F(u + r, y0 + h, o), c);
+                S(F(u + r, y0 + h, o), F(u - r, y0 + h, o), c); S(F(u - r, y0 + h, o), F(u - r, y0, o), c);
+            }
+
+            function chhatri(x, y, z, s) {
+                var p = 0.28 * s, h = 0.75 * s, e = 0.36 * s;
+                L(x - p, y, z - p, x - p, y + h, z - p); L(x + p, y, z - p, x + p, y + h, z - p);
+                L(x + p, y, z + p, x + p, y + h, z + p); L(x - p, y, z + p, x - p, y + h, z + p);
+                rect(y + h, x - e, x + e, z - e, z + e, 1);
+                var i, a, prev = [], cur;
+                for (var k = 1; k <= 3; k++) {
+                    var th = (k / 3) * 1.2, rr = e * Math.cos(th), yy = y + h + 0.5 * s * Math.sin(th);
+                    ringXZ(x, yy, z, rr, 8, 1);
+                    for (i = 0; i < 8; i++) {
+                        a = (Math.PI * 2 * i) / 8;
+                        var r0 = k === 1 ? e : e * Math.cos(((k - 1) / 3) * 1.2), y0 = k === 1 ? y + h : y + h + 0.5 * s * Math.sin(((k - 1) / 3) * 1.2);
+                        L(x + r0 * Math.cos(a), y0, z + r0 * Math.sin(a), x + rr * Math.cos(a), yy, z + rr * Math.sin(a), 1);
+                    }
+                }
+                var top = y + h + 0.5 * s * Math.sin(1.2);
+                L(x, top, z, x, top + 0.45 * s, z, 1);
+            }
+
+            var TW = 2.0, WH = 10.1, TH = 12.1, BASE = 0.5;
+
+            /* ground rings + plinth */
+            ringXZ(-3.3, 0, 0, 8.6, 72, 2);
+            ringXZ(-3.3, 0, 0, 9.5, 80, 2);
+            box(-10.6, 3.9, 0, BASE, -2.9, 2.9);
+
+            /* tower and wing bodies */
+            box(-TW, TW, BASE, TH, -TW, TW);
+            box(-10.0, -TW, BASE, WH, -1.9, 1.9);
+            var f, i, k;
+
+            /* parapets and cornices */
+            rect(WH, -10.15, -TW, -2.05, 2.05); rect(WH + 0.22, -10.15, -TW, -2.05, 2.05);
+            rect(TH, -2.2, 2.2, -2.2, 2.2); rect(TH + 0.25, -2.1, 2.1, -2.1, 2.1);
+
+            /* tower corner ledges (the projecting stone brackets in the photo) */
+            [[-1, -1], [-1, 1], [1, -1], [1, 1]].forEach(function (q) {
+                for (var y = 1.4; y < TH; y += 1.05) {
+                    L(q[0] * TW, y, q[1] * TW, q[0] * (TW + 0.17), y, q[1] * TW);
+                    L(q[0] * TW, y, q[1] * TW, q[0] * TW, y, q[1] * (TW + 0.17));
+                }
+            });
+            /* tower side (±z) faces: pilasters and bands */
+            [-1, 1].forEach(function (sz) {
+                [-1.3, 1.3].forEach(function (u) { L(u, BASE, sz * TW, u, TH, sz * TW); });
+                for (var y = 2.5; y < TH; y += 2.1) L(-TW, y, sz * TW, TW, y, sz * TW);
+            });
+
+            /* wing: floor bands, bay pilasters, windows */
+            for (i = 0; i <= 7; i++) {
+                var xp = -10.0 + i * (8.0 / 7);
+                L(xp, BASE, 1.9, xp, WH, 1.9); L(xp, BASE, -1.9, xp, WH, -1.9);
+            }
+            for (k = 0; k <= 10; k++) {
+                var yb = 0.82 + k * 0.84;
+                L(-10.0, yb, 1.9, -TW, yb, 1.9); L(-10.0, yb, -1.9, -TW, yb, -1.9);
+            }
+            var FZp = FZ(1), FZn = FZ(-1);
+            for (i = 0; i < 7; i++) {
+                var xc = -10.0 + (8.0 / 7) * (i + 0.5);
+                for (k = 0; k < 10; k++) {
+                    var y0 = 1.0 + k * 0.84;
+                    archW(FZp, xc - 0.16, y0, 0.42, 0.58, 0.02);
+                    rectW(FZp, xc + 0.3, y0, 0.2, 0.38, 0.02);
+                    rectW(FZn, xc, y0, 0.4, 0.5, 0.02);
+                }
+            }
+
+            /* tower end faces (±x): entrance porch, murti niche, stepped arched tiers */
+            [-1, 1].forEach(function (sx) {
+                var F = FX(sx);
+                /* porch */
+                box(sx * TW, sx * 3.3, BASE, 2.0, -1.95, 1.95);
+                rect(2.0, sx * 2.0, sx * 3.5, -2.1, 2.1); rect(2.2, sx * 2.0, sx * 3.5, -2.1, 2.1);
+                [-1.5, -0.75, 0, 0.75, 1.5].forEach(function (u) { archW(F, u, BASE + 0.05, 0.6, 1.25, 1.3); });
+                /* niche zone: central arch with murti, flanking arches */
+                archW(F, 0, 2.5, 1.7, 2.5, 0.04);
+                archW(F, -1.2, 2.55, 0.72, 1.7, 0.04); archW(F, 1.2, 2.55, 0.72, 1.7, 0.04);
+                archW(F, -0.42, 2.55, 0.32, 1.0, 0.1); archW(F, 0, 2.55, 0.36, 1.25, 0.1); archW(F, 0.42, 2.55, 0.32, 1.0, 0.1);
+                box(sx * TW, sx * (TW + 0.35), 5.0, 5.25, -1.75, 1.75);
+                /* tier A (wide) */
+                box(sx * TW, sx * (TW + 0.3), 5.25, 7.0, -1.5, 1.5);
+                [5.45, 6.25].forEach(function (y) { [-0.9, 0, 0.9].forEach(function (u) { archW(F, u, y, u === 0 ? 0.6 : 0.5, 0.68, 0.32); }); });
+                /* tier B */
+                box(sx * TW, sx * (TW + 0.45), 7.0, 8.6, -1.15, 1.15);
+                [7.2, 7.95].forEach(function (y) { [-0.6, 0, 0.6].forEach(function (u) { archW(F, u, y, u === 0 ? 0.46 : 0.4, 0.55, 0.47); }); });
+                /* tier C (tall narrow channel) */
+                box(sx * TW, sx * (TW + 0.28), 8.6, 11.9, -0.8, 0.8);
+                for (k = 0; k < 4; k++) {
+                    [-0.4, 0, 0.4].forEach(function (u) { archW(F, u, 8.8 + k * 0.8, u === 0 ? 0.4 : 0.32, 0.55, 0.3); });
+                }
+            });
+
+            /* rooftop: central domed pavilion + four corner chhatris */
+            var py = TH + 0.25, a, r0;
+            ringXZ(0, py, 0, 1.15, 8, 1); ringXZ(0, py + 1.0, 0, 1.15, 8, 1); ringXZ(0, py + 1.15, 0, 1.25, 8, 1);
+            for (i = 0; i < 8; i++) {
+                a = (Math.PI * 2 * i) / 8;
+                L(1.15 * Math.cos(a), py, 1.15 * Math.sin(a), 1.15 * Math.cos(a), py + 1.0, 1.15 * Math.sin(a), 1);
+                var a2 = (Math.PI * 2 * (i + 1)) / 8, am = (a + a2) / 2;
+                archXZ(1.15 * Math.cos(a), 1.15 * Math.sin(a), 1.15 * Math.cos(a2), 1.15 * Math.sin(a2), py + 0.35, 0.55, 1);
+            }
+            function archXZ(xa, za, xb, zb, y0, rise, c) {
+                var prev = [xa, y0, za], q;
+                for (var j = 1; j <= 4; j++) {
+                    var t = j / 4, e = Math.sin(Math.PI * t);
+                    q = [xa + (xb - xa) * t, y0 + rise * e, za + (zb - za) * t];
+                    L(prev[0], prev[1], prev[2], q[0], q[1], q[2], c); prev = q;
+                }
+            }
+            for (k = 1; k <= 4; k++) {
+                var th = (k / 4) * 1.25, rr = 1.25 * Math.cos(th), yy = py + 1.15 + 1.0 * Math.sin(th);
+                var thp = ((k - 1) / 4) * 1.25, rp = 1.25 * Math.cos(thp), yp = py + 1.15 + 1.0 * Math.sin(thp);
+                ringXZ(0, yy, 0, rr, 8, 1);
+                for (i = 0; i < 8; i++) {
+                    a = (Math.PI * 2 * i) / 8;
+                    L(rp * Math.cos(a), yp, rp * Math.sin(a), rr * Math.cos(a), yy, rr * Math.sin(a), 1);
+                }
+            }
+            var dy = py + 1.15 + 1.0 * Math.sin(1.25), fr = 0.17;
+            ringXZ(0, dy, 0, fr, 8, 1); ringXZ(0, dy + 0.18, 0, fr * 1.3, 8, 1); ringXZ(0, dy + 0.36, 0, fr * 0.8, 8, 1);
+            L(0, dy + 0.36, 0, 0, dy + 1.1, 0, 1);
+            L(0, dy + 1.1, 0, 0.7, dy + 0.98, 0, 1); L(0.7, dy + 0.98, 0, 0, dy + 0.86, 0, 1);
+            [[-1.6, -1.6], [1.6, -1.6], [-1.6, 1.6], [1.6, 1.6]].forEach(function (q) { chhatri(q[0], TH + 0.25, q[1], 1.0); });
+
+            /* draw order: bottom to top, with a gentle sweep along x */
+            segs.forEach(function (s) { s.k = Math.min(s.y1, s.y2) + 0.07 * (s.x1 + s.x2) * 0.5 + (s.c === 2 ? -9 : 0); });
+            var order = segs.slice().sort(function (a, b) { return a.k - b.k; });
+            order.forEach(function (s, idx) { s.r = idx / (order.length - 1); });
+
+            /* ---------- stars ---------- */
+            var seed = 7, stars = [];
+            function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+            for (i = 0; i < 46; i++) stars.push({ x: rnd(), y: rnd() * 0.7, r: 0.6 + rnd() * 1.1, p: rnd() * 6.28 });
+
+            /* ---------- render ---------- */
+            var DRAW = 9, SEG = 0.8, D = 32, TILT = 0.2, YC = 8.0, CXM = -3.3, HEIGHT = 16.6, SPAN = 19.2;
+            var YAW0 = -0.75;
+            var W = 0, H = 0, dpr = 1, yawOff = 0, yawTgt = 0, start = null, raf = 0, vis = true;
+            var A = { x: 0, y: 0, d: 0 }, Bp = { x: 0, y: 0, d: 0 };
+            var COL = ["242,193,78", "255,166,56", "242,193,78", "255,238,175"], LW = [1, 1.5, 2];
+            var batches = [], tips = [];
+            for (i = 0; i < 240; i++) batches.push([]);
+
+            function size() {
+                var r = cv.parentNode.getBoundingClientRect();
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                W = r.width; H = r.height;
+                cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+                if (reduce) draw(DRAW + 5, YAW0);
+            }
+            function add(g, c, a, lw, x1, y1, x2, y2) {
+                var ab = Math.round(a * 10); if (ab < 1) ab = 1; if (ab > 10) ab = 10;
+                batches[((g * 4 + c) * 10 + (ab - 1)) * 3 + lw].push(x1, y1, x2, y2);
+            }
+            function flush() {
+                for (var key = 0; key < 240; key++) {
+                    var arr = batches[key], n = arr.length;
+                    if (!n) continue;
+                    var lw = key % 3, t = (key - lw) / 3, ab = (t % 10) + 1, c = ((t - (ab - 1)) / 10) % 4;
+                    ctx.strokeStyle = "rgba(" + COL[c] + "," + ab / 10 + ")";
+                    ctx.lineWidth = LW[lw] * (c === 3 ? 1.8 : 1);
+                    ctx.beginPath();
+                    for (var j = 0; j < n; j += 4) { ctx.moveTo(arr[j], arr[j + 1]); ctx.lineTo(arr[j + 2], arr[j + 3]); }
+                    ctx.stroke();
+                    arr.length = 0;
+                }
+            }
+
+            function draw(t, yaw) {
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                ctx.clearRect(0, 0, W, H);
+                var s = Math.min((H * 0.88) / HEIGHT, (W * 0.92) / SPAN);
+                var cx = W / 2, cy = H * 0.54;
+
+                var g = ctx.createRadialGradient(cx, H * 0.62, 0, cx, H * 0.62, H * 0.9);
+                g.addColorStop(0, "rgba(240,138,36,0.26)"); g.addColorStop(1, "rgba(240,138,36,0)");
+                ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+                ctx.fillStyle = "#F2C14E";
+                for (var q = 0; q < stars.length; q++) {
+                    var st = stars[q];
+                    ctx.globalAlpha = reduce ? 0.6 : 0.3 + 0.5 * (0.5 + 0.5 * Math.sin(t * 1.5 + st.p));
+                    ctx.beginPath(); ctx.arc(st.x * W, st.y * H, st.r, 0, 6.2832); ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+
+                var ca = Math.cos(yaw), sa = Math.sin(yaw), ct = Math.cos(TILT), sn = Math.sin(TILT);
+                function P(x, y, z, o) {
+                    var xm = x - CXM, xr = xm * ca + z * sa, zr = -xm * sa + z * ca;
+                    var yu = (y - YC) * ct - zr * sn, d = (y - YC) * sn + zr * ct, k = D / (D - d);
+                    o.x = cx + xr * s * k; o.y = cy - yu * s * k; o.d = d;
+                }
+                var drawn = t >= DRAW + SEG;
+                var pp = reduce ? -1 : (t * 0.14) % 1;
+                ctx.lineCap = "round";
+                tips.length = 0;
+
+                for (var n = 0; n < segs.length; n++) {
+                    var sg = segs[n];
+                    P(sg.x1, sg.y1, sg.z1, A);
+                    var dm = (A.d + 9) / 18; if (dm < 0) dm = 0; if (dm > 1) dm = 1;
+                    var base = 0.3 + 0.7 * dm;
+                    if (sg.c === 2) base *= 0.45;
+                    var c = sg.c === 1 ? 1 : (sg.c === 2 ? 2 : 0);
+                    var lw = dm < 0.34 ? 0 : (dm < 0.67 ? 1 : 2);
+                    var p = drawn ? 1 : (t - sg.r * (DRAW - SEG)) / SEG;
+                    if (p > 1) p = 1;
+
+                    if (p < 1) {
+                        P(sg.x2, sg.y2, sg.z2, Bp);
+                        add(1, c, 0.13 * base, 0, A.x, A.y, Bp.x, Bp.y);
+                    }
+                    if (p <= 0) continue;
+                    P(sg.x1 + (sg.x2 - sg.x1) * p, sg.y1 + (sg.y2 - sg.y1) * p, sg.z1 + (sg.z2 - sg.z1) * p, Bp);
+
+                    var boost = 0;
+                    if (drawn && pp >= 0) { var dd = pp - sg.r; if (dd < 0) dd += 1; if (dd < 0.04) boost = 1 - dd / 0.04; }
+                    if (boost > 0.05) add(0, 3, Math.min(1, base + boost * 0.7), lw, A.x, A.y, Bp.x, Bp.y);
+                    else add(0, c, base, lw, A.x, A.y, Bp.x, Bp.y);
+                    if (p < 1) tips.push(Bp.x, Bp.y);
+                }
+                flush();
+                for (var j = 0; j < tips.length; j += 2) {
+                    ctx.fillStyle = "rgba(255,226,150,0.2)";
+                    ctx.beginPath(); ctx.arc(tips[j], tips[j + 1], 5, 0, 6.2832); ctx.fill();
+                    ctx.fillStyle = "rgba(255,244,205,0.95)";
+                    ctx.beginPath(); ctx.arc(tips[j], tips[j + 1], 1.8, 0, 6.2832); ctx.fill();
+                }
+            }
+
+            function loop(now) {
+                raf = 0;
+                if (!vis || document.hidden) return;
+                if (start === null) start = now;
+                var t = (now - start) / 1000;
+                yawOff += (yawTgt - yawOff) * 0.05;
+                draw(t, YAW0 + t * 0.17 + yawOff);
+                raf = requestAnimationFrame(loop);
+            }
+            function kick() { if (!raf && !reduce) raf = requestAnimationFrame(loop); }
+
+            size();
+            window.addEventListener("resize", size);
+            if (reduce) return;
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(function (e) { vis = e[0].isIntersecting; if (vis) kick(); }, { threshold: 0 }).observe(cv);
+            }
+            document.addEventListener("visibilitychange", kick);
+            cv.parentNode.addEventListener("pointermove", function (e) {
+                var r = cv.getBoundingClientRect();
+                yawTgt = ((e.clientX - r.left) / r.width - 0.5) * 0.8;
+            });
+            kick();
+        })();
+
+    </script>
+
+</body>
+
+</html>
