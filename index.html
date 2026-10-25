@@ -1170,6 +1170,229 @@
             opacity: 0.7;
         }
 
+        .sv2 .sv-h {
+            margin: 0.6rem 0 0;
+            color: var(--gold);
+            font-size: 1.05rem;
+            border-bottom: 1px solid var(--gold-line);
+            padding-bottom: 0.35rem;
+        }
+
+        .sv2 .sv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.9rem;
+        }
+
+        .sv2 .sv-full {
+            grid-column: 1 / -1;
+        }
+
+        .sv2 .req {
+            color: var(--gold);
+        }
+
+        .sv2 textarea {
+            border-radius: 0.7rem;
+            border: 1px solid var(--gold-line);
+            background: var(--hero-glass);
+            color: var(--hero-ink);
+            font: inherit;
+            padding: 0.6rem 0.9rem;
+            width: 100%;
+            resize: vertical;
+        }
+
+        .sv2 textarea::placeholder {
+            color: var(--hero-muted);
+            opacity: 0.7;
+        }
+
+        .sv2 .sv-bad {
+            border-color: #e0795f !important;
+        }
+
+        .sv2 .sv-err {
+            color: #f0a08a;
+            min-height: 0;
+        }
+
+        .sv2 .sv-err:empty {
+            display: none;
+        }
+
+        .sv2 .sv-day {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .sv2 .sv-submit {
+            width: 100%;
+            min-height: 52px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            border: 0;
+        }
+
+        .sv2 .sv-submit:disabled {
+            opacity: 0.65;
+            cursor: wait;
+        }
+
+        .sv2 .sv-note {
+            font-size: 0.85rem;
+            color: var(--hero-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 819px) {
+            .sv2 .sv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .reels-grid {
+            --rp: clamp(16px, 4vw, 32px);
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: var(--rp);
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            margin-inline: calc(-1 * var(--rp));
+            padding-inline: var(--rp);
+            padding-block: 0.25rem 0.9rem;
+        }
+
+        .reels-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .reel {
+            position: relative;
+            flex: 0 0 clamp(200px, 62%, 300px);
+            scroll-snap-align: center;
+            margin: 0;
+            border: 1px solid var(--gold-line);
+            border-radius: 1.15rem;
+            overflow: hidden;
+            background: var(--surface);
+            display: flex;
+            flex-direction: column;
+            aspect-ratio: 9 / 16;
+        }
+
+        .reel video {
+            width: 100%;
+            flex: 1 1 0%;
+            min-height: 0;
+            object-fit: cover;
+            display: block;
+            background: #000;
+        }
+
+        .reel figcaption {
+            flex: none;
+            padding: 0.55rem 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            line-height: 1.4;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            color: var(--head);
+            background: var(--surface);
+            border-top: 1px solid var(--gold-line);
+        }
+
+        .reel .dur {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.6rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.62);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .reels-hint {
+            margin: 0.1rem 0 0;
+            text-align: center;
+            color: var(--gold);
+            font-size: 0.86rem;
+            font-weight: 600;
+        }
+
+        @media (min-width: 1100px) {
+            .reels-hint {
+                display: none;
+            }
+        }
+
+        .reels-grid:not(:empty)+.reels-empty {
+            display: none;
+        }
+
+        .reels-empty {
+            text-align: center;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .reels-follow {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .reels-follow-t {
+            font-weight: 600;
+            color: var(--head);
+            margin-bottom: 0.85rem;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .reels-follow-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .rf {
+            gap: 0.5rem;
+            white-space: nowrap;
+            font-size: 0.92rem;
+            padding: 0.5rem 1.1rem;
+            min-height: 44px;
+        }
+
+        .rf svg {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+            flex: none;
+        }
+
+        @media (max-width: 480px) {
+            .rf {
+                font-size: 0.8rem;
+                padding: 0.5rem 0.8rem;
+                gap: 0.4rem;
+            }
+
+            .rf svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
         .hint {
             color: var(--gold);
             font-weight: 600;
@@ -1478,7 +1701,7 @@
             background: var(--gold);
             color: var(--hero-1);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
             outline: none;
         }
 
@@ -1486,6 +1709,12 @@
             width: 22px;
             height: 22px;
             fill: currentColor;
+        }
+
+        .social-note {
+            margin-top: 0.75rem;
+            font-size: 0.82rem;
+            opacity: 0.78;
         }
 
         @media (max-width: 819px) {
@@ -1885,10 +2114,10 @@
                 </a>
                 <nav class="nav" aria-label="મુખ્ય મેનુ">
                     <a href="#parichay">પરિચય</a>
-                    <a href="#vidhi">વિધિ</a>
+                    <a href="#reels">રીલ્સ</a>
                     <a href="#karyakram">કાર્યક્રમ</a>
                     <a href="#seva">સેવા</a>
-                    <a href="#suvidha">સુવિધા</a>
+                    <a href="#suvidha" hidden style="display: none;">સુવિધા</a>
                     <a href="#sampark">સંપર્ક</a>
                 </nav>
                 <a class="btn btn-gold" href="#karyakram">કાર્યક્રમ જુઓ</a>
@@ -2263,57 +2492,68 @@
                 </div>
             </section>
 
-            <section class="sec band" id="vidhi" aria-labelledby="vidhi-h">
+            <section class="sec band" id="reels" aria-labelledby="reels-h">
                 <div class="wrap">
                     <div class="sec-head">
-                        <span class="eyebrow">વિધિ</span>
-                        <h2 class="h2" id="vidhi-h">મૂર્તિ પ્રતિષ્ઠાની વિધિ</h2>
-                        <p>આઠ દિવસ દરમિયાન થતી મુખ્ય વિધિઓને સરળ ભાષામાં સમજો.</p>
+                        <span class="eyebrow">રીલ્સ</span>
+                        <h2 class="h2" id="reels-h">મહોત્સવની ઝલક</h2>
+                        <p>મહોત્સવની સુંદર પળો રીલ્સ સ્વરૂપે નિહાળો.</p>
                     </div>
-                    <ol class="steps">
-                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
-                                    <use href="#i-diya" />
-                                </svg></span>
-                            <div><span class="no">ચરણ ૧</span>
-                                <h3>ગણેશ પૂજન</h3>
-                                <p>દરેક શુભ કાર્યની શરૂઆત વિઘ્નહર્તા ગણપતિના પૂજનથી થાય છે.</p>
-                            </div>
-                        </li>
-                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
-                                    <use href="#i-kalash" />
-                                </svg></span>
-                            <div><span class="no">ચરણ ૨</span>
-                                <h3>કળશયાત્રા</h3>
-                                <p>પવિત્ર જળથી ભરેલા કળશ સાથે બહેનો શોભાયાત્રામાં જોડાય છે.</p>
-                            </div>
-                        </li>
-                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
-                                    <use href="#i-fire" />
-                                </svg></span>
-                            <div><span class="no">ચરણ ૩</span>
-                                <h3>યજ્ઞ</h3>
-                                <p>વૈદિક મંત્રો અને આહુતિ સાથે વાતાવરણ અને મન પવિત્ર થાય છે.</p>
-                            </div>
-                        </li>
-                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
-                                    <use href="#i-drops" />
-                                </svg></span>
-                            <div><span class="no">ચરણ ૪</span>
-                                <h3>અધિવાસ</h3>
-                                <p>મૂર્તિઓને જળ, અન્ન અને પુષ્પમાં વિધિપૂર્વક અધિવાસ કરાવાય છે.</p>
-                            </div>
-                        </li>
-                        <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
-                                    <use href="#i-lotus" />
-                                </svg></span>
-                            <div><span class="no">ચરણ ૫</span>
-                                <h3>પ્રતિષ્ઠા</h3>
-                                <p>શુભ મુહૂર્તે ભગવાનને ગર્ભગૃહમાં બિરાજમાન કરી પ્રતિષ્ઠા થાય છે.</p>
-                            </div>
-                        </li>
-                    </ol>
-                    <p class="step-note">છેલ્લા દિવસે (૧૬ જાન્યુઆરી) મૂર્તિ પ્રતિષ્ઠા, કથા પૂર્ણાહુતિ અને મહાપ્રસાદ સાથે
-                        મહોત્સવ સંપન્ન થાય છે.</p>
+                    <div class="reels-grid" id="reels-grid">
+                        <figure class="reel">
+                            <span class="dur">૦:૨૬</span>
+                            <video
+                                src="https://id-preview--5693c4c5-1ef6-435d-9334-e8eb7dbd36c5.lovable.app/__l5e/assets-v1/f9a3cadb-5d3d-4141-b550-d613880a0a3b/reel-1.mp4"
+                                poster="https://id-preview--5693c4c5-1ef6-435d-9334-e8eb7dbd36c5.lovable.app/__l5e/assets-v1/d53cb761-56b8-4bbf-b2e8-d487fc591f86/poster-1.jpg"
+                                controls playsinline preload="metadata"></video>
+                            <figcaption>મંચની પૂર્વ તૈયારી</figcaption>
+                        </figure>
+                        <figure class="reel">
+                            <span class="dur">૦:૩૪</span>
+                            <video
+                                src="https://id-preview--5693c4c5-1ef6-435d-9334-e8eb7dbd36c5.lovable.app/__l5e/assets-v1/c964ac96-1f8b-4370-bf84-46e663dc9bf4/reel-2.mp4"
+                                poster="https://id-preview--5693c4c5-1ef6-435d-9334-e8eb7dbd36c5.lovable.app/__l5e/assets-v1/640851e1-4dc3-4561-870e-91a5a9bf171a/poster-2.jpg"
+                                controls playsinline preload="metadata"></video>
+                            <figcaption>બાળ મૂર્તિનો શણગાર</figcaption>
+                        </figure>
+                        <figure class="reel">
+                            <span class="dur">૦:૨૩</span>
+                            <video
+                                src="https://id-preview--5693c4c5-1ef6-435d-9334-e8eb7dbd36c5.lovable.app/__l5e/assets-v1/8fdd7268-e379-483e-a220-28960407aa90/reel-3.mp4"
+                                poster="https://id-preview--5693c4c5-1ef6-435d-9334-e8eb7dbd36c5.lovable.app/__l5e/assets-v1/5470797a-78a5-45b3-9efa-41e542f1b869/poster-3.jpg"
+                                controls playsinline preload="metadata"></video>
+                            <figcaption>કિરણચોકમાં રાસ</figcaption>
+                        </figure>
+                    </div>
+                    <p class="reels-empty" id="reels-empty">ટૂંક સમયમાં રીલ્સ ઉપલબ્ધ થશે.</p>
+                    <p class="reels-hint">← વધુ રીલ્સ જોવા માટે બાજુએ સ્વાઇપ કરો →</p>
+
+                    <div class="reels-follow">
+                        <p class="reels-follow-t">વધુ રીલ્સ અમારા સોશિયલ મીડિયા પર:</p>
+                        <div class="reels-follow-btns">
+                            <a class="btn btn-line rf" href="https://www.instagram.com/swaminarayan_mandir_surat/"
+                                target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                                Instagram · swaminarayan_mandir_surat</a>
+                            <a class="btn btn-line rf" href="https://www.instagram.com/jivan_utkarsh/" target="_blank"
+                                rel="noopener">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                                Instagram · jivan_utkarsh</a>
+                            <a class="btn btn-line rf" href="https://www.youtube.com/@abhaydankatha4346" target="_blank"
+                                rel="noopener">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                                </svg>
+                                YouTube · abhaydankatha4346</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -2669,7 +2909,8 @@
                                     <span class="seva-num">01</span>
                                 </div>
                                 <h3 class="seva-title">મહાપ્રસાદ સેવા</h3>
-                                <p class="seva-desc">રસોઈ, પીરસણ અને પંગતની વ્યવસ્થામાં જોડાઈ હરિભક્તોને ભાવપૂર્વક જમાડવાનો પવિત્ર લહાવો.</p>
+                                <p class="seva-desc">રસોઈ, પીરસણ અને પંગતની વ્યવસ્થામાં જોડાઈ હરિભક્તોને ભાવપૂર્વક
+                                    જમાડવાનો પવિત્ર લહાવો.</p>
                                 <div class="seva-pills">
                                     <span class="seva-pill"><i class="dot"></i>રસોઈ સહાય</span>
                                     <span class="seva-pill"><i class="dot"></i>પંગત વ્યવસ્થા</span>
@@ -2693,7 +2934,8 @@
                                     <span class="seva-num">02</span>
                                 </div>
                                 <h3 class="seva-title">કળશયાત્રા અને જલસેવા</h3>
-                                <p class="seva-desc">મંગલ કળશ ધારણ કરી શોભાયાત્રાની શોભા વધારો તથા પરિસરમાં દર્શનાર્થીઓને શીતળ જળ પીરસો.</p>
+                                <p class="seva-desc">મંગલ કળશ ધારણ કરી શોભાયાત્રાની શોભા વધારો તથા પરિસરમાં
+                                    દર્શનાર્થીઓને શીતળ જળ પીરસો.</p>
                                 <div class="seva-pills">
                                     <span class="seva-pill"><i class="dot"></i>કળશ ધારણ</span>
                                     <span class="seva-pill"><i class="dot"></i>જલયાત્રા સંગાથ</span>
@@ -2710,7 +2952,8 @@
                                         <div class="seva-icon-box" aria-hidden="true">
                                             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                                 <circle cx="12" cy="12" r="10" />
-                                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                                                <polygon
+                                                    points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
                                             </svg>
                                         </div>
                                         <span class="seva-tag">વ્યવસ્થા સંચાલન</span>
@@ -2718,14 +2961,16 @@
                                     <span class="seva-num">03</span>
                                 </div>
                                 <h3 class="seva-title">માર્ગદર્શન અને વાહન વ્યવસ્થા</h3>
-                                <p class="seva-desc">દર્શન લાઈન, વાહન પાર્કિંગ અને સૂચના બોર્ડ દ્વારા ભક્તોને સુગમ અને સુરક્ષિત દર્શન કરાવો.</p>
+                                <p class="seva-desc">દર્શન લાઈન, વાહન પાર્કિંગ અને સૂચના બોર્ડ દ્વારા ભક્તોને સુગમ અને
+                                    સુરક્ષિત દર્શન કરાવો.</p>
                                 <div class="seva-pills">
                                     <span class="seva-pill"><i class="dot"></i>દર્શન લાઈન નિયમન</span>
                                     <span class="seva-pill"><i class="dot"></i>પાર્કિંગ વ્યવસ્થા</span>
                                     <span class="seva-pill"><i class="dot"></i>ભક્ત સહાયતા</span>
                                 </div>
                             </div>
-                            <a class="seva-btn" href="#seva-form" data-seva="માર્ગદર્શન અને વાહન વ્યવસ્થા">આ સેવા નોંધાવો →</a>
+                            <a class="seva-btn" href="#seva-form" data-seva="માર્ગદર્શન અને વાહન વ્યવસ્થા">આ સેવા
+                                નોંધાવો →</a>
                         </article>
 
                         <article class="seva-card">
@@ -2734,7 +2979,8 @@
                                     <div class="seva-badge-group">
                                         <div class="seva-icon-box" aria-hidden="true">
                                             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                                <path d="M12 2l2.4 5.6L20 10l-4.4 4 1.4 6-5-3.2L7 20l1.4-6L4 10l5.6-2.4z" />
+                                                <path
+                                                    d="M12 2l2.4 5.6L20 10l-4.4 4 1.4 6-5-3.2L7 20l1.4-6L4 10l5.6-2.4z" />
                                             </svg>
                                         </div>
                                         <span class="seva-tag">નિર્મળ પરિસર</span>
@@ -2742,7 +2988,8 @@
                                     <span class="seva-num">04</span>
                                 </div>
                                 <h3 class="seva-title">સ્વચ્છતા સેવા</h3>
-                                <p class="seva-desc">મંદિર પરિસર અને સભામંડપની સફાઈ વ્યવસ્થામાં હાથ બટાવી સમગ્ર મહોત્સવ સ્થળને પવિત્ર અને સ્વચ્છ રાખો.</p>
+                                <p class="seva-desc">મંદિર પરિસર અને સભામંડપની સફાઈ વ્યવસ્થામાં હાથ બટાવી સમગ્ર મહોત્સવ
+                                    સ્થળને પવિત્ર અને સ્વચ્છ રાખો.</p>
                                 <div class="seva-pills">
                                     <span class="seva-pill"><i class="dot"></i>સભામંડપ સફાઈ</span>
                                     <span class="seva-pill"><i class="dot"></i>પરિસર જાળવણી</span>
@@ -2758,35 +3005,58 @@
                             <h3>સેવા નોંધણી</h3>
                             <p>નામ અને સેવા પસંદ કરો. નોંધણી WhatsApp સંદેશ તરીકે મહોત્સવ સમિતિને મોકલી શકાશે.</p>
                         </div>
-                        <form class="form" id="sv-form" novalidate>
-                            <div class="field"><label for="sv-name">તમારું નામ</label><input id="sv-name" type="text"
-                                    autocomplete="name" placeholder="પૂરું નામ લખો"></div>
-                            <div class="field"><label for="sv-type">સેવાનો પ્રકાર</label>
+                        <form class="form sv2" id="sv-form" novalidate>
+                            <div class="field"><label for="sv-name">તમારું નામ <span class="req">*</span></label><input
+                                    id="sv-name" type="text" autocomplete="name" maxlength="100"
+                                    placeholder="પૂરું નામ લખો"><small class="sv-err" data-for="sv-name"></small></div>
+                            <div class="field"><label for="sv-mobile">મોબાઇલ નંબર <span
+                                        class="req">*</span></label><input id="sv-mobile" type="tel" inputmode="numeric"
+                                    maxlength="10" autocomplete="tel-national" placeholder="૧૦ અંકનો મોબાઇલ નંબર"><small
+                                    class="sv-err" data-for="sv-mobile"></small></div>
+                            <div class="field"><label for="sv-type">સેવાનો પ્રકાર <span class="req">*</span></label>
                                 <select id="sv-type">
+                                    <option value="">-- સેવા પસંદ કરો --</option>
                                     <option>મહાપ્રસાદ સેવા</option>
-                                    <option>કળશયાત્રા અને જલસેવા</option>
+                                    <option>કળશયાત્રા</option>
                                     <option>માર્ગદર્શન અને વાહન વ્યવસ્થા</option>
                                     <option>સ્વચ્છતા સેવા</option>
-                                    <option>અન્ય સેવા</option>
-                                </select>
+                                </select><small class="sv-err" data-for="sv-type"></small>
                             </div>
-                            <div class="field"><label for="sv-when">સમય</label>
+                            <div class="field" id="sv-sub-wrap" hidden><label for="sv-sub">પેટા સેવા</label><select
+                                    id="sv-sub"></select></div>
+                            <div class="field"><label for="sv-date">દિવસ અને તારીખ <span class="req">*</span></label>
+                                <select id="sv-date">
+                                    <option value="">-- દિવસ પસંદ કરો --</option>
+                                    <option>દિવસ ૧ – શનિવાર, ૯ જાન્યુઆરી</option>
+                                    <option>દિવસ ૨ – રવિવાર, ૧૦ જાન્યુઆરી</option>
+                                    <option>દિવસ ૩ – સોમવાર, ૧૧ જાન્યુઆરી</option>
+                                    <option>દિવસ ૪ – મંગળવાર, ૧૨ જાન્યુઆરી</option>
+                                    <option>દિવસ ૫ – બુધવાર, ૧૩ જાન્યુઆરી</option>
+                                    <option>દિવસ ૬ – ગુરુવાર, ૧૪ જાન્યુઆરી</option>
+                                    <option>દિવસ ૭ – શુક્રવાર, ૧૫ જાન્યુઆરી</option>
+                                    <option>દિવસ ૮ – શનિવાર, ૧૬ જાન્યુઆરી</option>
+                                    <option>આઠેય દિવસ</option>
+                                </select><small class="sv-err" data-for="sv-date"></small>
+                            </div>
+                            <div class="field"><label for="sv-when">સમય <span class="req">*</span></label>
                                 <select id="sv-when">
-                                    <option>આઠ દિવસ</option>
-                                    <option>ફક્ત સવારે</option>
-                                    <option>ફક્ત સાંજે</option>
-                                    <option>ફક્ત પ્રતિષ્ઠા દિવસે</option>
-                                </select>
+                                    <option value="">-- સમય પસંદ કરો --</option>
+                                    <option>સવારે</option>
+                                    <option>બપોરે</option>
+                                    <option>સાંજે</option>
+                                    <option>આખો દિવસ</option>
+                                </select><small class="sv-err" data-for="sv-when"></small>
                             </div>
-                            <p class="hint" id="sv-hint" hidden>પહેલા તમારું નામ લખો.</p>
-                            <a class="btn btn-gold" id="sv-send" href="https://wa.me/919900032000" target="_blank"
-                                rel="noopener">WhatsApp પર નોંધણી મોકલો</a>
+                            <p class="hint" id="sv-hint" hidden></p>
+                            <button class="btn btn-gold sv-submit" id="sv-send" type="submit">WhatsApp પર નોંધણી
+                                મોકલો</button>
                         </form>
                     </div>
                 </div>
             </section>
 
-            <section class="sec" id="suvidha" aria-labelledby="suvidha-h">
+            <!-- Suvidha Section (Hidden for now) -->
+            <section class="sec" id="suvidha" aria-labelledby="suvidha-h" hidden style="display: none;">
                 <div class="wrap">
                     <div class="sec-head">
                         <span class="eyebrow">સુવિધા</span>
@@ -2941,9 +3211,12 @@
                     <div class="contacts">
                         <div class="person">
                             <h3>સંપર્ક (WhatsApp)</h3>
-                            <p class="num" id="n1">+૯૧ ૯૯૦૦૦ ૩૨૦૦૦</p>
-                            <button class="btn btn-line" type="button" data-copy="+91 99000 32000" data-target="n1">નંબર
+                            <p class="num" id="n1">+૯૧ ૯૯૯૮૦ ૫૮૫૦૩</p>
+                            <button class="btn btn-line" type="button" data-copy="+91 99980 58503" data-target="n1">નંબર
                                 કૉપિ કરો</button>
+                            <a class="btn btn-solid" id="wa-dm"
+                                href="https://wa.me/919998058503?text=%E0%AA%9C%E0%AA%AF%20%E0%AA%B6%E0%AB%8D%E0%AA%B0%E0%AB%80%20%E0%AA%B8%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%AE%E0%AA%BF%E0%AA%A8%E0%AA%BE%E0%AA%B0%E0%AA%BE%E0%AA%AF%E0%AA%A3%21%20%E0%AA%B6%E0%AB%8D%E0%AA%B0%E0%AB%80%20%E0%AA%B8%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%AE%E0%AA%BF%E0%AA%A8%E0%AA%BE%E0%AA%B0%E0%AA%BE%E0%AA%AF%E0%AA%A3%20%E0%AA%AE%E0%AA%82%E0%AA%A6%E0%AA%BF%E0%AA%B0%2C%20%E0%AA%95%E0%AA%BF%E0%AA%B0%E0%AA%A3%E0%AA%9A%E0%AB%8B%E0%AA%95%20%28%E0%AA%B8%E0%AB%81%E0%AA%B0%E0%AA%A4%29%20%E0%AA%A8%E0%AA%BE%20%E0%AA%AE%E0%AB%82%E0%AA%B0%E0%AB%8D%E0%AA%A4%E0%AA%BF%20%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%A4%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%A0%E0%AA%BE%20%E0%AA%AE%E0%AA%B9%E0%AB%8B%E0%AA%A4%E0%AB%8D%E0%AA%B8%E0%AA%B5%20%E0%AA%B5%E0%AA%BF%E0%AA%B6%E0%AB%87%20%E0%AA%AE%E0%AA%A8%E0%AB%87%20%E0%AA%AE%E0%AA%BE%E0%AA%B9%E0%AA%BF%E0%AA%A4%E0%AB%80%20%E0%AA%9C%E0%AB%8B%E0%AA%88%E0%AA%8F%20%E0%AA%9B%E0%AB%87."
+                                target="_blank" rel="noopener">WhatsApp પર સંદેશ મોકલો</a>
                         </div>
                         <div class="person">
                             <h3>વેબસાઇટ</h3>
@@ -2971,34 +3244,46 @@
                 <div class="social-links" role="list" aria-label="Social media links">
 
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/sardhardham/" target="_blank" rel="noopener" role="listitem" aria-label="Instagram">
+                    <a href="https://www.instagram.com/swaminarayan_mandir_surat/" target="_blank" rel="noopener"
+                        role="listitem" aria-label="Instagram: swaminarayan_mandir_surat"
+                        title="Instagram: swaminarayan_mandir_surat">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/jivan_utkarsh/" target="_blank" rel="noopener" role="listitem"
+                        aria-label="Instagram: jivan_utkarsh" title="Instagram: jivan_utkarsh">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
 
                     <!-- YouTube -->
-                    <a href="https://www.youtube.com/@sardhardham" target="_blank" rel="noopener" role="listitem" aria-label="YouTube">
+                    <a href="https://www.youtube.com/@abhaydankatha4346" target="_blank" rel="noopener" role="listitem"
+                        aria-label="YouTube: abhaydankatha4346" title="YouTube: abhaydankatha4346">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
-                        </svg>
-                    </a>
-
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/sardhardham" target="_blank" rel="noopener" role="listitem" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            <path
+                                d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
                         </svg>
                     </a>
 
                     <!-- WhatsApp -->
-                    <a href="https://wa.me/919900032000" target="_blank" rel="noopener" role="listitem" aria-label="WhatsApp">
+                    <a id="wa-foot"
+                        href="https://wa.me/919998058503?text=%E0%AA%9C%E0%AA%AF%20%E0%AA%B6%E0%AB%8D%E0%AA%B0%E0%AB%80%20%E0%AA%B8%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%AE%E0%AA%BF%E0%AA%A8%E0%AA%BE%E0%AA%B0%E0%AA%BE%E0%AA%AF%E0%AA%A3%21%20%E0%AA%B6%E0%AB%8D%E0%AA%B0%E0%AB%80%20%E0%AA%B8%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%AE%E0%AA%BF%E0%AA%A8%E0%AA%BE%E0%AA%B0%E0%AA%BE%E0%AA%AF%E0%AA%A3%20%E0%AA%AE%E0%AA%82%E0%AA%A6%E0%AA%BF%E0%AA%B0%2C%20%E0%AA%95%E0%AA%BF%E0%AA%B0%E0%AA%A3%E0%AA%9A%E0%AB%8B%E0%AA%95%20%28%E0%AA%B8%E0%AB%81%E0%AA%B0%E0%AA%A4%29%20%E0%AA%A8%E0%AA%BE%20%E0%AA%AE%E0%AB%82%E0%AA%B0%E0%AB%8D%E0%AA%A4%E0%AA%BF%20%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AA%A4%E0%AA%BF%E0%AA%B7%E0%AB%8D%E0%AA%A0%E0%AA%BE%20%E0%AA%AE%E0%AA%B9%E0%AB%8B%E0%AA%A4%E0%AB%8D%E0%AA%B8%E0%AA%B5%20%E0%AA%B5%E0%AA%BF%E0%AA%B6%E0%AB%87%20%E0%AA%AE%E0%AA%A8%E0%AB%87%20%E0%AA%AE%E0%AA%BE%E0%AA%B9%E0%AA%BF%E0%AA%A4%E0%AB%80%20%E0%AA%9C%E0%AB%8B%E0%AA%88%E0%AA%8F%20%E0%AA%9B%E0%AB%87."
+                        target="_blank" rel="noopener" role="listitem" aria-label="WhatsApp">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
                         </svg>
                     </a>
 
                 </div>
+                <p class="social-note">Instagram: @swaminarayan_mandir_surat · @jivan_utkarsh · YouTube:
+                    @abhaydankatha4346</p>
             </div>
         </footer>
 
@@ -3103,27 +3388,154 @@
         })();
 
         (function () {
-            var form = document.getElementById("sv-form");
-            var name = document.getElementById("sv-name");
-            var type = document.getElementById("sv-type");
-            var when = document.getElementById("sv-when");
-            var send = document.getElementById("sv-send");
-            var hint = document.getElementById("sv-hint");
-            function msg() {
-                return "જય શ્રી સ્વામિનારાયણ! હું " + name.value.trim() + " મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં “" + type.value + "” માટે સેવા નોંધાવવા ઇચ્છું છું. સમય: " + when.value + ".";
+            // Temple WhatsApp number (already configured on this site). Change here if needed.
+            var TEMPLE_WHATSAPP_NUMBER = "919998058503";
+            var SUBS = {
+                "મહાપ્રસાદ સેવા": ["રસોડે સહાય", "પંગત વ્યવસ્થા", "પ્રસાદ વિતરણ", "અનાજ / સામગ્રી સેવા"],
+                "કળશયાત્રા": ["કળશ ધારણ", "જલયાત્રા સંગાથ", "જળસેવા", "શીતળ જળ વ્યવસ્થા"],
+                "માર્ગદર્શન અને વાહન વ્યવસ્થા": ["દર્શન લાઈન નિયમન", "પાર્કિંગ વ્યવસ્થા", "ભક્ત સહાયતા"],
+                "સ્વચ્છતા સેવા": ["સભામંડપ સફાઈ", "પરિસર જાળવણી", "કચરા મુક્ત આયોજન"]
+            };
+            var $ = function (id) { return document.getElementById(id); };
+            var form = $("sv-form"), type = $("sv-type"), sub = $("sv-sub"), subWrap = $("sv-sub-wrap"),
+                date = $("sv-date"),
+                send = $("sv-send"), hint = $("sv-hint"), busy = false;
+            function v(id) { return $(id).value.trim(); }
+            function fillSubs() {
+                var list = SUBS[type.value];
+                sub.innerHTML = "";
+                if (!list) { subWrap.hidden = true; return; }
+                sub.appendChild(new Option("-- (વૈકલ્પિક) પસંદ કરો --", ""));
+                list.forEach(function (s) { sub.appendChild(new Option(s, s)); });
+                subWrap.hidden = false;
             }
-            function update() { send.href = "https://wa.me/919900032000?text=" + encodeURIComponent(msg()); }
-            form.addEventListener("input", update);
-            form.addEventListener("change", update);
-            form.addEventListener("submit", function (e) { e.preventDefault(); });
-            send.addEventListener("click", function (e) {
-                if (!name.value.trim()) { e.preventDefault(); hint.hidden = false; name.focus(); }
-                else { hint.hidden = true; update(); }
+            function setErr(id, m) {
+                var el = form.querySelector('[data-for="' + id + '"]'); if (el) el.textContent = m || "";
+                $(id).classList.toggle("sv-bad", !!m);
+            }
+            function validate() {
+                var ok = true, first = null;
+                function chk(id, cond, m) { setErr(id, cond ? "" : m); if (!cond) { ok = false; first = first || $(id); } }
+                chk("sv-name", v("sv-name").length >= 2, "કૃપા કરી પૂરું નામ લખો.");
+                chk("sv-mobile", /^[6-9]\d{9}$/.test(v("sv-mobile")), "માન્ય ૧૦ અંકનો મોબાઇલ નંબર લખો.");
+                chk("sv-type", !!type.value, "કૃપા કરી સેવા કેટેગરી પસંદ કરો.");
+                chk("sv-date", !!date.value, "કૃપા કરી દિવસ પસંદ કરો.");
+                chk("sv-when", !!v("sv-when"), "કૃપા કરી સમય પસંદ કરો.");
+                if (first) first.focus();
+                return ok;
+            }
+            function msg() {
+                var L = ["જય શ્રી સ્વામિનારાયણ 🙏", "*મૂર્તિ પ્રતિષ્ઠા મહોત્સવ – સેવા નોંધણી*", "",
+                    "👤 નામ: " + v("sv-name"), "📱 મોબાઇલ: " + v("sv-mobile")];
+                L.push("", "🛕 સેવા: " + type.value);
+                if (sub.value) L.push("➤ પેટા-કેટેગરી: " + sub.value);
+                L.push("📅 દિવસ: " + date.value, "⏰ સમય: " + v("sv-when"));
+                return L.join("\n");
+            }
+            $("sv-mobile").addEventListener("input", function () { this.value = this.value.replace(/\D/g, "").slice(0, 10); });
+            type.addEventListener("change", fillSubs);
+            form.addEventListener("input", function (e) { if (e.target.id) setErr(e.target.id, ""); });
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                if (busy) return;
+                hint.hidden = true;
+                if (!validate()) { hint.textContent = "કૃપા કરી ફરજિયાત (*) વિગતો સાચી રીતે ભરો."; hint.hidden = false; return; }
+                busy = true; send.disabled = true; send.textContent = "તૈયાર થઈ રહ્યું છે...";
+                var url = "https://wa.me/" + TEMPLE_WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg());
+                var w = window.open(url, "_blank", "noopener");
+                if (!w) window.location.href = url;
+                setTimeout(function () {
+                    busy = false; send.disabled = false; send.textContent = "WhatsApp પર નોંધણી મોકલો";
+                    hint.textContent = "✓ WhatsApp માં સંદેશ તૈયાર છે. નોંધણી પૂર્ણ કરવા ત્યાં “Send” દબાવો.";
+                    hint.hidden = false;
+                }, 1500);
             });
             Array.prototype.forEach.call(document.querySelectorAll("[data-seva]"), function (a) {
-                a.addEventListener("click", function () { type.value = a.getAttribute("data-seva"); update(); });
+                a.addEventListener("click", function () {
+                    var s = a.getAttribute("data-seva");
+                    type.value = s.indexOf("કળશયાત્રા") === 0 ? "કળશયાત્રા" : s; fillSubs();
+                });
             });
-            update();
+        })();
+        (function () {
+            var grid = document.getElementById("reels-grid");
+            if (!grid) return;
+            var mm = function (q) { return window.matchMedia && window.matchMedia(q).matches; };
+            var reduce = mm("(prefers-reduced-motion: reduce)");
+            var hoverable = mm("(hover: hover)");
+            var visible = false, paused = false, playing = false, resumeT = 0;
+
+            // સતત (marquee જેવી) ઓટો-સ્ક્રોલ — સીમલેસ લૂપ; નવી રીલ્સ ઉમેરવાથી પણ ચાલુ રહે
+            if (!reduce && grid.querySelectorAll(".reel").length) {
+                var originals = Array.prototype.slice.call(grid.querySelectorAll(".reel"));
+                var SPEED = 38; // px પ્રતિ સેકન્ડ
+                grid.style.scrollSnapType = "none";
+
+                function setWidth() {
+                    var cs = getComputedStyle(grid);
+                    var gap = parseFloat(cs.columnGap || cs.gap) || 16;
+                    var w = 0;
+                    originals.forEach(function (c) { w += c.getBoundingClientRect().width; });
+                    return w + originals.length * gap;
+                }
+
+                // સીમલેસ લૂપ માટે જરૂર મુજબ આખો સેટ ક્લોન કરો
+                var guard = 0;
+                while (grid.scrollWidth - grid.clientWidth < setWidth() && guard++ < 6) {
+                    originals.forEach(function (c) {
+                        var cl = c.cloneNode(true);
+                        cl.setAttribute("aria-hidden", "true");
+                        Array.prototype.forEach.call(cl.querySelectorAll("video"), function (v) {
+                            v.removeAttribute("autoplay"); v.setAttribute("preload", "none"); v.tabIndex = -1;
+                        });
+                        Array.prototype.forEach.call(cl.querySelectorAll("a,button"), function (el) { el.tabIndex = -1; });
+                        grid.appendChild(cl);
+                    });
+                }
+                var setW = setWidth();
+                var last = 0;
+                (function frame(ts) {
+                    if (!last) last = ts;
+                    var dt = Math.min(ts - last, 100); last = ts;
+                    if (!paused && !playing && visible && !document.hidden && setW > 0) {
+                        if (grid.scrollLeft >= setW - 1) grid.scrollLeft -= setW;
+                        grid.scrollLeft += (SPEED * dt) / 1000;
+                    }
+                    requestAnimationFrame(frame);
+                })(0);
+                window.addEventListener("resize", function () { setW = setWidth(); });
+            }
+
+            function hold() {
+                paused = true;
+                clearTimeout(resumeT);
+                resumeT = setTimeout(function () { paused = false; }, 9000);
+            }
+            ["pointerdown", "touchstart", "wheel", "keydown"].forEach(function (ev) {
+                grid.addEventListener(ev, hold, { passive: true });
+            });
+            grid.addEventListener("play", function (e) {
+                playing = true;
+                // એક સાથે એક જ રીલ ચાલે — બીજી બધી બંધ કરો
+                Array.prototype.forEach.call(grid.querySelectorAll("video"), function (v) {
+                    if (v !== e.target && !v.paused) v.pause();
+                });
+            }, true);
+            grid.addEventListener("pause", function () { playing = false; }, true);
+            grid.addEventListener("ended", function () { playing = false; }, true);
+            // સ્ક્રોલ કરતાં જ ચાલતી રીલ બંધ થઈ જાય
+            grid.addEventListener("scroll", function () {
+                Array.prototype.forEach.call(grid.querySelectorAll("video"), function (v) {
+                    if (!v.paused) { v.pause(); playing = false; }
+                });
+            }, { passive: true });
+            if (hoverable) {
+                grid.addEventListener("mouseenter", function () { paused = true; clearTimeout(resumeT); });
+                grid.addEventListener("mouseleave", function () { paused = false; });
+            }
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }, { threshold: 0.35 }).observe(grid);
+            } else { visible = true; }
         })();
     </script>
 
