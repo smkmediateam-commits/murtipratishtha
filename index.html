@@ -364,16 +364,23 @@
 
         /* hero */
         .hero {
-            background: radial-gradient(60% 45% at 50% 86%, var(--glow-soft), transparent 72%), linear-gradient(180deg, var(--sky-top) 0%, var(--hero-1) 62%);
+            background: 
+                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(240, 138, 36, 0.28) 0%, rgba(240, 138, 36, 0.09) 45%, transparent 75%),
+                linear-gradient(180deg, var(--sky-top) 0%, var(--hero-1) 55%, #180407 100%);
             color: var(--hero-ink);
-            padding-top: clamp(2rem, 5vw, 3.5rem);
+            padding-block: clamp(2rem, 4vw, 3.5rem);
+            position: relative;
             overflow: hidden;
+        }
+
+        .hero .wrap {
+            width: min(1440px, 100%);
         }
 
         .hero-top {
             display: grid;
-            gap: 2rem;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: clamp(1.2rem, 2.2vw, 2.2rem);
+            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 1.25fr) minmax(0, 0.95fr);
             align-items: center;
         }
 
@@ -407,8 +414,8 @@
         .hero h1 {
             font-family: var(--display);
             font-weight: 400;
-            font-size: clamp(2.6rem, 7.4vw, 4.9rem);
-            line-height: 1.3;
+            font-size: clamp(2rem, 3.2vw, 3.2rem);
+            line-height: 1.28;
             text-wrap: balance;
         }
 
@@ -418,13 +425,16 @@
         }
 
         .temple {
-            font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
             font-weight: 600;
+            color: var(--gold);
         }
 
         .lead {
             color: var(--hero-muted);
-            max-width: 54ch;
+            max-width: 44ch;
+            font-size: 0.98rem;
+            line-height: 1.7;
         }
 
         .cta {
@@ -443,6 +453,9 @@
             display: grid;
             gap: 1rem;
             min-width: 0;
+            box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .invite::before {
@@ -523,19 +536,29 @@
         }
 
         .scene {
-            width: min(100%, 1500px);
-            margin: clamp(1rem, 3vw, 2rem) auto 0;
-            aspect-ratio: 1200 / 720;
-            max-height: 82vh;
+            width: 100%;
+            height: clamp(380px, 42vw, 540px);
+            min-height: 380px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .scene svg {
-            display: block;
-            width: 100%;
-            height: 100%;
+        .scene::before {
+            content: "";
+            position: absolute;
+            inset: 8%;
+            background: radial-gradient(circle, rgba(240, 138, 36, 0.28) 0%, rgba(240, 138, 36, 0.08) 50%, transparent 75%);
+            filter: blur(35px);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .scene canvas {
+            position: relative;
+            z-index: 1;
             display: block;
             width: 100%;
             height: 100%;
@@ -619,13 +642,35 @@
             background: conic-gradient(from -45deg at 50% 100%, var(--saffron) 0 90deg, transparent 0) 0 0 / 22px 22px repeat-x;
         }
 
-        @media (max-width: 859px) {
+        @media (max-width: 1040px) {
             .hero-top {
                 grid-template-columns: minmax(0, 1fr);
+                gap: 2.2rem;
+            }
+
+            .hero-copy {
+                justify-items: center;
+                text-align: center;
+            }
+
+            .hero-copy .cta {
+                justify-content: center;
+            }
+
+            .hero .lead {
+                max-width: 58ch;
             }
 
             .scene {
-                aspect-ratio: 5 / 4;
+                height: clamp(340px, 50vw, 460px);
+                min-height: 320px;
+                max-width: 560px;
+            }
+
+            .invite {
+                max-width: 480px;
+                margin-inline: auto;
+                width: 100%;
             }
         }
 
@@ -1540,7 +1585,7 @@
 
         <header class="top">
             <div class="wrap">
-                <a class="brand" href="#top" aria-label="શ્રી સ્વામિનારાયણ મંદિર">
+                <a class="brand" href="#top" aria-label="શ્રી સ્વામિનારાયણ મંદિર કિરણચોક, સુરત">
                     <svg viewBox="0 0 40 40" aria-hidden="true">
                         <g fill="none" stroke="#F2C14E" stroke-width="1.6">
                             <ellipse cx="20" cy="11" rx="4.2" ry="9" />
@@ -1552,7 +1597,7 @@
                         </g>
                         <circle cx="20" cy="20" r="3.2" fill="#F08A24" />
                     </svg>
-                    <span>શ્રી સ્વામિનારાયણ મંદિર</span>
+                    <span>શ્રી સ્વામિનારાયણ મંદિર કિરણચોક, સુરત</span>
                 </a>
                 <nav class="nav" aria-label="મુખ્ય મેનુ">
                     <a href="#parichay">પરિચય</a>
@@ -1573,7 +1618,7 @@
                     <div class="hero-copy">
                         <span class="hello"><i aria-hidden="true"></i>જય સ્વામિનારાયણ</span>
                         <h1 id="hero-title">મૂર્તિ પ્રતિષ્ઠા <span>મહોત્સવ</span></h1>
-                        <p class="temple">શ્રી સ્વામિનારાયણ મંદિર</p>
+                        <p class="temple">શ્રી સ્વામિનારાયણ મંદિર કિરણચોક, સુરત</p>
                         <p class="lead">ભગવાન શ્રી સ્વામિનારાયણની કૃપાથી ભવ્ય મંદિરમાં મૂર્તિ પ્રતિષ્ઠાનો અલૌકિક અવસર.
                             પાંચ દિવસના આ ભક્તિમય મહોત્સવમાં સપરિવાર પધારવા આપ સૌને હાર્દિક નિમંત્રણ.</p>
                         <div class="cta">
@@ -1581,6 +1626,8 @@
                             <a class="btn btn-ghost" href="#seva">સેવામાં જોડાઓ</a>
                         </div>
                     </div>
+
+                    <div class="scene" aria-hidden="true"><canvas id="temple3d"></canvas></div>
 
                     <div class="invite">
                         <h2>સહર્ષ નિમંત્રણ</h2>
@@ -1608,8 +1655,6 @@
                         </dl>
                     </div>
                 </div>
-
-                <div class="scene" aria-hidden="true"><canvas id="temple3d"></canvas></div>
             </section>
             <div class="toran" aria-hidden="true"></div>
             <section class="sec" id="parichay" aria-labelledby="parichay-h">
@@ -2599,9 +2644,13 @@
             for (i = 0; i < 46; i++) stars.push({ x: rnd(), y: rnd() * 0.7, r: 0.6 + rnd() * 1.1, p: rnd() * 6.28 });
 
             /* ---------- render ---------- */
-            var DRAW = 9, SEG = 0.8, D = 32, TILT = 0.2, YC = 8.0, CXM = -3.3, HEIGHT = 16.6, SPAN = 19.2;
+            var DRAW = 9, SEG = 0.8, D = 32, TILT0 = 0.22, YC = 8.0, CXM = -3.3, HEIGHT = 16.6, SPAN = 19.2;
             var YAW0 = -0.75;
-            var W = 0, H = 0, dpr = 1, yawOff = 0, yawTgt = 0, start = null, raf = 0, vis = true;
+            var W = 0, H = 0, dpr = 1, start = null, raf = 0, vis = true;
+            var curYaw = YAW0, curTilt = TILT0;
+            var yawTgt = YAW0, tiltTgt = TILT0;
+            var dragYaw = 0, dragTilt = 0;
+            var isDragging = false, startX = 0, startY = 0, startDragYaw = 0, startDragTilt = 0;
             var A = { x: 0, y: 0, d: 0 }, Bp = { x: 0, y: 0, d: 0 };
             var COL = ["242,193,78", "255,166,56", "242,193,78", "255,238,175"], LW = [1, 1.5, 2];
             var batches = [], tips = [];
@@ -2612,7 +2661,7 @@
                 dpr = Math.min(window.devicePixelRatio || 1, 2);
                 W = r.width; H = r.height;
                 cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-                if (reduce) draw(DRAW + 5, YAW0);
+                if (reduce) draw(DRAW + 5, YAW0, TILT0);
             }
             function add(g, c, a, lw, x1, y1, x2, y2) {
                 var ab = Math.round(a * 10); if (ab < 1) ab = 1; if (ab > 10) ab = 10;
@@ -2632,14 +2681,16 @@
                 }
             }
 
-            function draw(t, yaw) {
+            function draw(t, yaw, tilt) {
                 ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
                 ctx.clearRect(0, 0, W, H);
                 var s = Math.min((H * 0.88) / HEIGHT, (W * 0.92) / SPAN);
                 var cx = W / 2, cy = H * 0.54;
 
-                var g = ctx.createRadialGradient(cx, H * 0.62, 0, cx, H * 0.62, H * 0.9);
-                g.addColorStop(0, "rgba(240,138,36,0.26)"); g.addColorStop(1, "rgba(240,138,36,0)");
+                var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.58);
+                g.addColorStop(0, "rgba(240,138,36,0.22)"); 
+                g.addColorStop(0.55, "rgba(240,138,36,0.06)"); 
+                g.addColorStop(1, "rgba(240,138,36,0)");
                 ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 
                 ctx.fillStyle = "#F2C14E";
@@ -2650,7 +2701,8 @@
                 }
                 ctx.globalAlpha = 1;
 
-                var ca = Math.cos(yaw), sa = Math.sin(yaw), ct = Math.cos(TILT), sn = Math.sin(TILT);
+                var actualTilt = Math.max(0.04, Math.min(0.42, typeof tilt === "number" ? tilt : TILT0));
+                var ca = Math.cos(yaw), sa = Math.sin(yaw), ct = Math.cos(actualTilt), sn = Math.sin(actualTilt);
                 function P(x, y, z, o) {
                     var xm = x - CXM, xr = xm * ca + z * sa, zr = -xm * sa + z * ca;
                     var yu = (y - YC) * ct - zr * sn, d = (y - YC) * sn + zr * ct, k = D / (D - d);
@@ -2699,11 +2751,62 @@
                 if (!vis || document.hidden) return;
                 if (start === null) start = now;
                 var t = (now - start) / 1000;
-                yawOff += (yawTgt - yawOff) * 0.05;
-                draw(t, YAW0 + t * 0.17 + yawOff);
+                curYaw += (yawTgt - curYaw) * 0.08;
+                curTilt += (tiltTgt - curTilt) * 0.08;
+                var ambientYaw = Math.sin(t * 0.7) * 0.02;
+                var ambientTilt = Math.cos(t * 0.5) * 0.01;
+                draw(t, curYaw + ambientYaw, curTilt + ambientTilt);
                 raf = requestAnimationFrame(loop);
             }
             function kick() { if (!raf && !reduce) raf = requestAnimationFrame(loop); }
+
+            function onCursorMove(clientX, clientY) {
+                var r = cv.getBoundingClientRect();
+                var cx = r.left + r.width / 2;
+                var cy = r.top + r.height / 2;
+                var nx = (clientX - cx) / (window.innerWidth * 0.45);
+                var ny = (clientY - cy) / (window.innerHeight * 0.45);
+                nx = Math.max(-1.5, Math.min(1.5, nx));
+                ny = Math.max(-1.5, Math.min(1.5, ny));
+                yawTgt = YAW0 + nx * 1.45 + dragYaw;
+                tiltTgt = TILT0 + ny * 0.22 + dragTilt;
+            }
+
+            cv.style.cursor = "grab";
+            cv.style.touchAction = "none";
+
+            cv.addEventListener("pointerdown", function (e) {
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                startDragYaw = dragYaw;
+                startDragTilt = dragTilt;
+                cv.style.cursor = "grabbing";
+                try { cv.setPointerCapture(e.pointerId); } catch (err) {}
+            });
+
+            window.addEventListener("pointermove", function (e) {
+                if (isDragging) {
+                    var dx = e.clientX - startX;
+                    var dy = e.clientY - startY;
+                    dragYaw = startDragYaw + dx * 0.015;
+                    dragTilt = Math.max(-0.25, Math.min(0.25, startDragTilt + dy * 0.01));
+                    yawTgt = YAW0 + dragYaw;
+                    tiltTgt = TILT0 + dragTilt;
+                } else {
+                    onCursorMove(e.clientX, e.clientY);
+                }
+            }, { passive: true });
+
+            function stopDragging(e) {
+                if (isDragging) {
+                    isDragging = false;
+                    cv.style.cursor = "grab";
+                    try { cv.releasePointerCapture(e.pointerId); } catch (err) {}
+                }
+            }
+            window.addEventListener("pointerup", stopDragging);
+            window.addEventListener("pointercancel", stopDragging);
 
             size();
             window.addEventListener("resize", size);
@@ -2712,10 +2815,6 @@
                 new IntersectionObserver(function (e) { vis = e[0].isIntersecting; if (vis) kick(); }, { threshold: 0 }).observe(cv);
             }
             document.addEventListener("visibilitychange", kick);
-            cv.parentNode.addEventListener("pointermove", function (e) {
-                var r = cv.getBoundingClientRect();
-                yawTgt = ((e.clientX - r.left) / r.width - 0.5) * 0.8;
-            });
             kick();
         })();
 
