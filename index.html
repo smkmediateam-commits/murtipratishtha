@@ -1,27 +1,41 @@
 <!doctype html>
-<html lang="gu">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta charset=utf8>
+    <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
     <style>
         :root {
-            box-sizing: border-box
+            color-scheme: light;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px)
         }
 
         body {
             margin: 0;
-            padding: 0
+            padding: 0;
+            font: 14px -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #000
         }
 
-        [hidden] {
+        img {
+            max-width: 100%
+        }
+
+        [hidden]:not([hidden=until-found i]) {
             display: none !important
         }
     </style>
 </head>
 
 <body>
-    <title>મૂર્તિ પ્રતિષ્ઠા મહોત્સવ</title>
+    <title>મૂર્તિ પ્રતિષ્ઠા મહોત્સવ · શ્રી સ્વામિનારાયણ મંદિર, કિરણચોક (સુરત)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -330,6 +344,15 @@
             height: 30px;
         }
 
+        .brand-logo {
+            flex: none;
+            display: block;
+            height: 48px;
+            width: auto;
+            max-width: none;
+            margin-block: -2px;
+        }
+
         .brand span {
             overflow-wrap: anywhere;
         }
@@ -364,23 +387,16 @@
 
         /* hero */
         .hero {
-            background: 
-                radial-gradient(ellipse 70% 60% at 50% 50%, rgba(240, 138, 36, 0.28) 0%, rgba(240, 138, 36, 0.09) 45%, transparent 75%),
-                linear-gradient(180deg, var(--sky-top) 0%, var(--hero-1) 55%, #180407 100%);
+            background: radial-gradient(60% 45% at 50% 86%, var(--glow-soft), transparent 72%), linear-gradient(180deg, var(--sky-top) 0%, var(--hero-1) 62%);
             color: var(--hero-ink);
-            padding-block: clamp(2rem, 4vw, 3.5rem);
-            position: relative;
+            padding-top: clamp(2rem, 5vw, 3.5rem);
             overflow: hidden;
-        }
-
-        .hero .wrap {
-            width: min(1440px, 100%);
         }
 
         .hero-top {
             display: grid;
-            gap: clamp(1.2rem, 2.2vw, 2.2rem);
-            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 1.25fr) minmax(0, 0.95fr);
+            gap: 2rem;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
             align-items: center;
         }
 
@@ -414,8 +430,8 @@
         .hero h1 {
             font-family: var(--display);
             font-weight: 400;
-            font-size: clamp(2rem, 3.2vw, 3.2rem);
-            line-height: 1.28;
+            font-size: clamp(2.6rem, 7.4vw, 4.9rem);
+            line-height: 1.3;
             text-wrap: balance;
         }
 
@@ -425,16 +441,13 @@
         }
 
         .temple {
-            font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+            font-size: clamp(1.1rem, 2.6vw, 1.35rem);
             font-weight: 600;
-            color: var(--gold);
         }
 
         .lead {
             color: var(--hero-muted);
-            max-width: 44ch;
-            font-size: 0.98rem;
-            line-height: 1.7;
+            max-width: 54ch;
         }
 
         .cta {
@@ -453,9 +466,6 @@
             display: grid;
             gap: 1rem;
             min-width: 0;
-            box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
         }
 
         .invite::before {
@@ -536,29 +546,12 @@
         }
 
         .scene {
-            width: 100%;
-            height: clamp(380px, 42vw, 540px);
-            min-height: 380px;
-            margin: 0 auto;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: min(100%, 1500px);
+            margin: clamp(1rem, 3vw, 2rem) auto 0;
+            aspect-ratio: 1200 / 700;
         }
 
-        .scene::before {
-            content: "";
-            position: absolute;
-            inset: 8%;
-            background: radial-gradient(circle, rgba(240, 138, 36, 0.28) 0%, rgba(240, 138, 36, 0.08) 50%, transparent 75%);
-            filter: blur(35px);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .scene canvas {
-            position: relative;
-            z-index: 1;
+        .scene svg {
             display: block;
             width: 100%;
             height: 100%;
@@ -642,35 +635,13 @@
             background: conic-gradient(from -45deg at 50% 100%, var(--saffron) 0 90deg, transparent 0) 0 0 / 22px 22px repeat-x;
         }
 
-        @media (max-width: 1040px) {
+        @media (max-width: 859px) {
             .hero-top {
                 grid-template-columns: minmax(0, 1fr);
-                gap: 2.2rem;
-            }
-
-            .hero-copy {
-                justify-items: center;
-                text-align: center;
-            }
-
-            .hero-copy .cta {
-                justify-content: center;
-            }
-
-            .hero .lead {
-                max-width: 58ch;
             }
 
             .scene {
-                height: clamp(340px, 50vw, 460px);
-                min-height: 320px;
-                max-width: 560px;
-            }
-
-            .invite {
-                max-width: 480px;
-                margin-inline: auto;
-                width: 100%;
+                aspect-ratio: 5 / 4;
             }
         }
 
@@ -1435,6 +1406,270 @@
                 transition: none;
             }
         }
+
+        /* mandir line-art (vector) */
+        .scene svg path,
+        .scene svg rect,
+        .scene svg ellipse,
+        .scene svg circle {
+            vector-effect: non-scaling-stroke;
+        }
+
+        .m-s {
+            fill: var(--stone);
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+        .m-d {
+            fill: var(--hero-2);
+            stroke: var(--gold);
+            stroke-width: 1.3;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+        .m-k {
+            fill: var(--hero-1);
+            stroke: var(--gold);
+            stroke-width: 1.3;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+
+        .m-b {
+            fill: var(--hero-2);
+            stroke: var(--gold);
+            stroke-width: 1.2;
+            stroke-linejoin: round;
+            opacity: 0.9;
+        }
+
+        .m-r {
+            fill: var(--hero-1);
+            fill-opacity: 0.9;
+            stroke: var(--gold-line);
+            stroke-width: 1.2;
+        }
+
+        .m-st {
+            fill: var(--hero-2);
+            stroke: var(--gold);
+            stroke-width: 1.2;
+        }
+
+        .m-l {
+            fill: none;
+            stroke: var(--gold);
+            stroke-width: 1.3;
+            stroke-linecap: round;
+            opacity: 0.8;
+        }
+
+        .m-f {
+            fill: none;
+            stroke: var(--gold);
+            stroke-width: 1;
+            stroke-linecap: round;
+            opacity: 0.45;
+        }
+
+        .m-o {
+            fill: var(--saffron);
+            stroke: var(--gold);
+            stroke-width: 1;
+            stroke-linejoin: round;
+        }
+
+        .m-door {
+            fill: url(#mdoor);
+            stroke: var(--gold);
+            stroke-width: 1.4;
+            stroke-linejoin: round;
+        }
+
+        .m-fl {
+            fill: var(--saffron);
+            stroke: none;
+        }
+
+        .m-fi {
+            fill: var(--gold);
+            stroke: none;
+        }
+
+        .m-glow {
+            filter: drop-shadow(0 0 4px var(--saffron));
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .m-glow {
+                transform-box: fill-box;
+                transform-origin: 50% 100%;
+                animation: mflick 2.6s ease-in-out infinite;
+            }
+        }
+
+        @keyframes mflick {
+
+            0%,
+            100% {
+                transform: scale(1, 1);
+            }
+
+            50% {
+                transform: scale(0.94, 1.07);
+            }
+        }
+
+        /* date block (site theme: maroon + gold) - two identical capsules */
+        .dates {
+            --c: clamp(2.6rem, 9vw, 3.5rem);
+            display: grid;
+            gap: 0.6rem;
+            width: min(100%, 27.5rem);
+        }
+
+        .d-row {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: clamp(0.4rem, 1.8vw, 0.7rem);
+            padding: 0.25rem clamp(1rem, 3.4vw, 1.6rem) 0.25rem 0.25rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--hero-2), var(--stone));
+            border: 1px solid var(--gold);
+            box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.7);
+            color: var(--hero-ink);
+            text-shadow: none;
+            min-width: 0;
+        }
+
+        .d-1 {
+            justify-content: space-between;
+        }
+
+        .d-c {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: var(--c);
+            height: var(--c);
+            border-radius: 50%;
+            background: linear-gradient(180deg, var(--gold), #C99A2E);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: calc(var(--c) * 0.52);
+            line-height: 1;
+            color: var(--hero-1);
+        }
+
+        .d-c .ico {
+            width: 56%;
+            height: 56%;
+            stroke-width: 2.2;
+            color: var(--hero-1);
+        }
+
+        .d-t {
+            font-weight: 700;
+            font-size: clamp(0.95rem, 3.6vw, 1.25rem);
+        }
+
+        .d-m {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(1.05rem, 4.2vw, 1.7rem);
+            line-height: 1.4;
+            white-space: nowrap;
+            color: var(--gold);
+        }
+
+        .d-x {
+            flex: 1;
+            min-width: 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: clamp(0.8rem, 3.1vw, 1.1rem);
+            line-height: 1.5;
+            text-wrap: balance;
+        }
+
+        /* hero: balanced two-column layout + responsive invitation card */
+        .hero-top {
+            align-items: stretch;
+        }
+
+        .invite {
+            align-content: space-evenly;
+            gap: clamp(0.9rem, 2vw, 1.4rem);
+            padding-block: clamp(1.4rem, 3vw, 2.2rem);
+        }
+
+        @media (min-width: 1101px) {
+            .invite h2 {
+                font-size: 2rem;
+            }
+
+            .invite .cap-t {
+                font-size: 1.05rem;
+            }
+
+            .unit {
+                padding-block: 0.55rem 0.7rem;
+            }
+
+            .unit b {
+                font-size: clamp(2rem, 3vw, 2.6rem);
+            }
+
+            .rows>div {
+                padding-block: 0.8rem;
+            }
+        }
+
+        .rows>div {
+            grid-template-columns: minmax(3.6rem, 4.8rem) minmax(0, 1fr);
+        }
+
+        .rows dd {
+            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 1100px) and (min-width: 860px) {
+            .hero-top {
+                gap: 1.25rem;
+                grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            }
+
+            .invite {
+                padding-inline: 1rem;
+                align-self: center;
+                align-content: start;
+            }
+
+            .count {
+                gap: 0.4rem;
+            }
+
+            .unit b {
+                font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+            }
+
+            .invite h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 859px) {
+            .invite {
+                align-content: start;
+            }
+        }
     </style>
     <svg class="defs" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <defs>
@@ -1585,19 +1820,11 @@
 
         <header class="top">
             <div class="wrap">
-                <a class="brand" href="#top" aria-label="શ્રી સ્વામિનારાયણ મંદિર કિરણચોક, સુરત">
-                    <svg viewBox="0 0 40 40" aria-hidden="true">
-                        <g fill="none" stroke="#F2C14E" stroke-width="1.6">
-                            <ellipse cx="20" cy="11" rx="4.2" ry="9" />
-                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(60 20 20)" />
-                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(120 20 20)" />
-                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(180 20 20)" />
-                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(240 20 20)" />
-                            <ellipse cx="20" cy="11" rx="4.2" ry="9" transform="rotate(300 20 20)" />
-                        </g>
-                        <circle cx="20" cy="20" r="3.2" fill="#F08A24" />
-                    </svg>
-                    <span>શ્રી સ્વામિનારાયણ મંદિર કિરણચોક, સુરત</span>
+                <a class="brand" href="#top" aria-label="શ્રી સ્વામિનારાયણ મંદિર - કિરણચોક">
+                    <img class="brand-logo"
+                        src="data:image/png;base64,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"
+                        alt="" width="117" height="96">
+                    <span>શ્રી સ્વામિનારાયણ મંદિર - કિરણચોક</span>
                 </a>
                 <nav class="nav" aria-label="મુખ્ય મેનુ">
                     <a href="#parichay">પરિચય</a>
@@ -1616,18 +1843,28 @@
             <section class="hero" aria-labelledby="hero-title">
                 <div class="wrap hero-top">
                     <div class="hero-copy">
-                        <span class="hello"><i aria-hidden="true"></i>જય સ્વામિનારાયણ</span>
+                        <span class="hello"><i aria-hidden="true"></i>જય શ્રી સ્વામિનારાયણ</span>
                         <h1 id="hero-title">મૂર્તિ પ્રતિષ્ઠા <span>મહોત્સવ</span></h1>
-                        <p class="temple">શ્રી સ્વામિનારાયણ મંદિર કિરણચોક, સુરત</p>
+                        <div class="dates" role="group"
+                            aria-label="મહોત્સવ ૯ થી ૧૬ જાન્યુઆરી ૨૦૨૭. પ્રતિષ્ઠા દિવસ ૧૬ જાન્યુઆરી, પોષ સુદ ૮">
+                            <p class="d-row d-1"><b class="d-c">૦૯</b><span class="d-t">થી</span><b
+                                    class="d-c">૧૬</b><span class="d-m">જાન્યુઆરી ૨૦૨૭</span></p>
+                            <p class="d-row d-2"><span class="d-c" aria-hidden="true"><svg class="ico"
+                                        viewBox="0 0 48 48">
+                                        <use href="#i-diya" />
+                                    </svg></span><span class="d-x">પ્રતિષ્ઠા દિવસ : તા. ૧૬ જાન્યુઆરી, પોષ સુદ ૮</span>
+                            </p>
+                        </div>
+
+                        <p class="temple">શ્રી સરધારધામ સંચાલિત શ્રી સ્વામિનારાયણ મંદિર, કિરણચોક (સુરત)</p>
                         <p class="lead">ભગવાન શ્રી સ્વામિનારાયણની કૃપાથી ભવ્ય મંદિરમાં મૂર્તિ પ્રતિષ્ઠાનો અલૌકિક અવસર.
-                            પાંચ દિવસના આ ભક્તિમય મહોત્સવમાં સપરિવાર પધારવા આપ સૌને હાર્દિક નિમંત્રણ.</p>
+                            શ્રીમદ્ સત્સંગિજીવન કથા અને ઘરસભા (૨૪૬૨ થી ૨૪૬૯ મી) સાથે આઠ દિવસના આ ભક્તિમય મહોત્સવમાં
+                            સપરિવાર પધારવા આપ સૌને હાર્દિક નિમંત્રણ.</p>
                         <div class="cta">
                             <a class="btn btn-gold" href="#karyakram">કાર્યક્રમ જુઓ</a>
                             <a class="btn btn-ghost" href="#seva">સેવામાં જોડાઓ</a>
                         </div>
                     </div>
-
-                    <div class="scene" aria-hidden="true"><canvas id="temple3d"></canvas></div>
 
                     <div class="invite">
                         <h2>સહર્ષ નિમંત્રણ</h2>
@@ -1642,18 +1879,289 @@
                         <dl class="rows">
                             <div>
                                 <dt>તારીખ</dt>
-                                <dd>૧૮ થી ૨૨ ડિસેમ્બર, ૨૦૨૬</dd>
+                                <dd>૯ થી ૧૬ જાન્યુઆરી, ૨૦૨૭ <span style="white-space:nowrap">(પોષ સુદ ૨ થી ૮)</span>
+                                </dd>
                             </div>
                             <div>
                                 <dt>પ્રતિષ્ઠા</dt>
-                                <dd>સોમવાર, ૨૧ ડિસેમ્બર</dd>
+                                <dd>શનિવાર, ૧૬ જાન્યુઆરી (પોષ સુદ ૮)</dd>
                             </div>
                             <div>
                                 <dt>સ્થળ</dt>
-                                <dd>શ્રી સ્વામિનારાયણ મંદિર પરિસર</dd>
+                                <dd>શ્રી સ્વામિનારાયણ મંદિર, કિરણચોક - યોગીચોક, સુરત</dd>
                             </div>
                         </dl>
                     </div>
+                </div>
+
+                <div class="scene" aria-hidden="true">
+                    <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                        <g class="stars">
+                            <circle cx="80" cy="60" r="1.6" style="--d:0s" />
+                            <circle cx="150" cy="130" r="1.2" style="--d:.7s" />
+                            <circle cx="230" cy="40" r="1.8" style="--d:1.4s" />
+                            <circle cx="330" cy="100" r="1.2" style="--d:2.1s" />
+                            <circle cx="430" cy="28" r="1.6" style="--d:.4s" />
+                            <circle cx="520" cy="72" r="1.2" style="--d:1.1s" />
+                            <circle cx="700" cy="30" r="1.6" style="--d:1.8s" />
+                            <circle cx="790" cy="108" r="1.2" style="--d:.2s" />
+                            <circle cx="880" cy="38" r="1.8" style="--d:1.5s" />
+                            <circle cx="975" cy="92" r="1.2" style="--d:2.4s" />
+                            <circle cx="1060" cy="55" r="1.6" style="--d:.9s" />
+                            <circle cx="1130" cy="125" r="1.2" style="--d:1.9s" />
+                            <circle cx="60" cy="200" r="1.2" style="--d:2.6s" />
+                            <circle cx="1150" cy="205" r="1.6" style="--d:.5s" />
+                        </g>
+                        <g class="m-f" stroke-linecap="round">
+                            <path
+                                d="M190 120q7 -8 14 0q7 -8 14 0M225 150q6 -7 12 0q6 -7 12 0M980 140q7 -8 14 0q7 -8 14 0M945 112q6 -7 12 0q6 -7 12 0" />
+                        </g>
+                        <defs>
+                            <linearGradient id="mdoor" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0" style="stop-color:var(--gold)" />
+                                <stop offset=".45" style="stop-color:var(--saffron)" />
+                                <stop offset="1" style="stop-color:#B4540E" />
+                            </linearGradient>
+                            <radialGradient id="mglow" cx=".5" cy=".5" r=".5">
+                                <stop offset="0" style="stop-color:var(--saffron);stop-opacity:.50" />
+                                <stop offset="1" style="stop-color:var(--saffron);stop-opacity:0" />
+                            </radialGradient>
+                            <radialGradient id="mhalo" cx=".5" cy=".5" r=".5">
+                                <stop offset="0" style="stop-color:var(--saffron);stop-opacity:.16" />
+                                <stop offset="1" style="stop-color:var(--saffron);stop-opacity:0" />
+                            </radialGradient>
+                            <g id="mflame">
+                                <path class="m-fl" d="M0 0C-9 -8 -7 -18 0 -29C7 -18 9 -8 0 0Z" />
+                                <path class="m-fi" d="M0 -2C-4 -6 -3 -12 0 -17C3 -12 4 -6 0 -2Z" />
+                            </g>
+                        </defs>
+                        <ellipse cx="600" cy="230" rx="330" ry="330" fill="url(#mhalo)" />
+                        <circle class="m-f" cx="600" cy="232" r="205" />
+                        <circle class="m-f" cx="600" cy="232" r="228" stroke-dasharray="1.5 9" />
+                        <ellipse cx="600" cy="540" rx="470" ry="150" fill="url(#mglow)" opacity=".5" />
+                        <rect class="gnd" x="0" y="640" width="1200" height="60" />
+                        <path class="m-f" d="M0 660H1200M120 680H1080" />
+                        <path class="m-l" d="M30 640H1170" />
+                        <path class="m-b"
+                            d="M62 616C48 600 62 580 84 584C78 560 108 546 128 560C140 538 176 546 178 572C200 570 212 596 198 616Z" />
+                        <path class="m-b"
+                            d="M 1138 616C 1152 600 1138 580 1116 584C 1122 560 1092 546 1072 560C 1060 538 1024 546 1022 572C 1000 570 988 596 1002 616Z" />
+                        <path class="m-f"
+                            d="M84 612C80 598 92 590 104 596M128 560C126 574 134 584 146 586M178 572C176 586 184 596 192 600" />
+                        <path class="m-f"
+                            d="M 1116 612C 1120 598 1108 590 1096 596M 1072 560C 1074 574 1066 584 1054 586M 1022 572C 1024 586 1016 596 1008 600" />
+                        <path class="m-s"
+                            d="M710 392C708 370.7 720.8 352.8 731.1 341.6L734 336L736.9 341.6C747.2 352.8 760 370.7 758 392Z" />
+                        <path class="m-s"
+                            d="M 490 392C 492 370.7 479.2 352.8 468.9 341.6L 466 336L 463.1 341.6C 452.8 352.8 440 370.7 442 392Z" />
+                        <path class="m-f" d="M734 386V351.7M722.0 388Q723.9 364.0 731.6 347.2" />
+                        <path class="m-f" d="M 466 386V 351.7M 478 388Q 476.1 364 468.4 347.2" />
+                        <path class="m-f" d="M710 379.7Q734 386.7 758 379.7" />
+                        <path class="m-f" d="M 490 379.7Q 466 386.7 442 379.7" />
+                        <path class="m-s"
+                            d="M662 376C660 349.4 673.7 327.0 684.9 313.0L688 306L691.1 313.0C702.3 327.0 716 349.4 714 376Z" />
+                        <path class="m-s"
+                            d="M 538 376C 540 349.4 526.3 327 515.1 313L 512 306L 508.9 313C 497.7 327 484 349.4 486 376Z" />
+                        <path class="m-f" d="M688 370V325.6M675.0 372Q677.1 341.0 685.4 320.0" />
+                        <path class="m-f" d="M 512 370V 325.6M 525 372Q 522.9 341 514.6 320" />
+                        <path class="m-f" d="M662 360.6Q688 367.6 714 360.6" />
+                        <path class="m-f" d="M 538 360.6Q 512 367.6 486 360.6" />
+                        <path class="m-s"
+                            d="M530 340C522 272 530 206 560 160C578 134 591 118 594 104H606C609 118 622 134 640 160C670 206 678 272 670 340Z" />
+                        <path class="m-f" d="M542 336C536 272 544 208 570 168M554 334C550 278 556 220 578 180" />
+                        <path class="m-f" d="M 658 336C 664 272 656 208 630 168M 646 334C 650 278 644 220 622 180" />
+                        <path class="m-f" d="M529 300Q600 313 671 300" />
+                        <path class="m-f" d="M531 250Q600 262 669 250" />
+                        <path class="m-f" d="M540 204Q600 214 660 204" />
+                        <path class="m-f" d="M556 168Q600 176 644 168" />
+                        <path class="m-k" d="M584 304V256Q584 230 600 214Q616 230 616 256V304Z" />
+                        <path class="m-f" d="M590 304V258Q590 238 600 224Q610 238 610 258V304Z" />
+                        <g transform="translate(600 292) scale(1.15)">
+                            <use class="m-glow" href="#mflame" />
+                        </g>
+                        <path class="m-l" d="M592 316H608M588 322H612" />
+                        <path class="m-s" d="M522 338H678L686 348H514Z" />
+                        <path class="m-s" d="M586 110Q593 100 600 106Q607 100 614 110Z" />
+                        <ellipse class="m-s" cx="600" cy="98" rx="21" ry="6" />
+                        <ellipse class="m-s" cx="600" cy="88" rx="15" ry="5" />
+                        <path class="m-s" d="M594 83C589 74 596 68 600 62C604 68 611 74 606 83Z" />
+                        <path class="m-l" d="M600 62V30" />
+                        <path class="m-o" d="M600 30L642 40L600 50Z" />
+                        <path class="m-s" d="M498 376H700V392H498Z" />
+                        <path class="m-f"
+                            d="M506 380V388M515 380V388M524 380V388M533 380V388M542 380V388M551 380V388M560 380V388M569 380V388M578 380V388M587 380V388M596 380V388M605 380V388M614 380V388M623 380V388M632 380V388M641 380V388M650 380V388M659 380V388M668 380V388M677 380V388M686 380V388" />
+                        <path class="m-s" d="M516 359H684V376H516Z" />
+                        <path class="m-f"
+                            d="M524 363V372M533 363V372M542 363V372M551 363V372M560 363V372M569 363V372M578 363V372M587 363V372M596 363V372M605 363V372M614 363V372M623 363V372M632 363V372M641 363V372M650 363V372M659 363V372M668 363V372M677 363V372" />
+                        <path class="m-s" d="M534 343H666V359H534Z" />
+                        <path class="m-f"
+                            d="M542 347V355M551 347V355M560 347V355M569 347V355M578 347V355M587 347V355M596 347V355M605 347V355M614 347V355M623 347V355M632 347V355M641 347V355M650 347V355M659 347V355" />
+                        <path class="m-s" d="M436 406L456 392H744L764 406Z" />
+                        <path class="m-d" d="M468 406H732V448H468Z" />
+                        <path class="m-k" d="M515 448V428Q515 416 532 411Q549 416 549 428V448Z" />
+                        <path class="m-k" d="M583 448V428Q583 416 600 411Q617 416 617 428V448Z" />
+                        <path class="m-k" d="M651 448V428Q651 416 668 411Q685 416 685 428V448Z" />
+                        <path class="m-f" d="M500 410V448" />
+                        <path class="m-f" d="M566 410V448" />
+                        <path class="m-f" d="M634 410V448" />
+                        <path class="m-f" d="M700 410V448" />
+                        <path class="m-s" d="M750 430H862V446H750Z" />
+                        <path class="m-s" d="M 450 430H 338V 446H 450Z" />
+                        <path class="m-s" d="M760 414H852V430H760Z" />
+                        <path class="m-s" d="M 440 414H 348V 430H 440Z" />
+                        <path class="m-f" d="M770 422H842M770 438H842" />
+                        <path class="m-f" d="M 430 422H 358M 430 438H 358" />
+                        <path class="m-s"
+                            d="M766 414C761 372 769 336 789 312C797 302 799 294 799 285H813C813 294 815 302 823 312C843 336 851 372 846 414Z" />
+                        <path class="m-s"
+                            d="M 434 414C 439 372 431 336 411 312C 403 302 401 294 401 285H 387C 387 294 385 302 377 312C 357 336 349 372 354 414Z" />
+                        <path class="m-f" d="M784 410C781 372 788 342 800 324M828 410C831 372 824 342 812 324" />
+                        <path class="m-f" d="M 416 410C 419 372 412 342 400 324M 372 410C 369 372 376 342 388 324" />
+                        <path class="m-k" d="M796 408V372Q796 360 806 352Q816 360 816 372V408Z" />
+                        <path class="m-k" d="M 404 408V 372Q 404 360 394 352Q 384 360 384 372V 408Z" />
+                        <path class="m-f" d="M768 394Q806 404 844 394M772 360Q806 369 840 360" />
+                        <path class="m-f" d="M 432 394Q 394 404 356 394M 428 360Q 394 369 360 360" />
+                        <ellipse class="m-s" cx="806" cy="283" rx="13" ry="4" />
+                        <ellipse class="m-s" cx="394" cy="283" rx="13" ry="4" />
+                        <ellipse class="m-s" cx="806" cy="276" rx="10" ry="3.5" />
+                        <ellipse class="m-s" cx="394" cy="276" rx="10" ry="3.5" />
+                        <path class="m-s" d="M801 271C799 264 803 260 806 256C809 260 813 264 811 271Z" />
+                        <path class="m-s" d="M 399 271C 401 264 397 260 394 256C 391 260 387 264 389 271Z" />
+                        <path class="m-l" d="M806 256V218" />
+                        <path class="m-l" d="M 394 256V 218" />
+                        <path class="m-o" d="M806 218L836 225L806 232Z" />
+                        <path class="m-o" d="M 394 218L 364 225L 394 232Z" />
+                        <path class="m-k" d="M272 464H928V562H272Z" stroke="none" />
+                        <ellipse cx="600" cy="530" rx="90" ry="72" fill="url(#mglow)" />
+                        <path class="m-d" d="M668 562V508Q668 492 701.0 482Q734 492 734 508V562Z" />
+                        <path class="m-d" d="M 532 562V 508Q 532 492 499 482Q 466 492 466 508V 562Z" />
+                        <path class="m-f" d="M675 562V512Q675 500 701.0 491Q727 500 727 512V562Z" />
+                        <path class="m-f" d="M 525 562V 512Q 525 500 499 491Q 473 500 473 512V 562Z" />
+                        <path class="m-d" d="M746 562V508Q746 492 781.0 482Q816 492 816 508V562Z" />
+                        <path class="m-d" d="M 454 562V 508Q 454 492 419 482Q 384 492 384 508V 562Z" />
+                        <path class="m-f" d="M753 562V512Q753 500 781.0 491Q809 500 809 512V562Z" />
+                        <path class="m-f" d="M 447 562V 512Q 447 500 419 491Q 391 500 391 512V 562Z" />
+                        <path class="m-d" d="M828 562V508Q828 492 861.0 482Q894 492 894 508V562Z" />
+                        <path class="m-d" d="M 372 562V 508Q 372 492 339 482Q 306 492 306 508V 562Z" />
+                        <path class="m-f" d="M835 562V512Q835 500 861.0 491Q887 500 887 512V562Z" />
+                        <path class="m-f" d="M 365 562V 512Q 365 500 339 491Q 313 500 313 512V 562Z" />
+                        <path class="m-d" d="M544 562V510Q544 484 600 466Q656 484 656 510V562Z" />
+                        <path class="m-f" d="M556 562V516Q556 496 600 482Q644 496 644 516V562Z" />
+                        <path class="m-door" d="M570 562V522Q570 506 600 496Q630 506 630 522V562Z" />
+                        <path class="m-f" d="M600 498V562M584 530V562M616 530V562" />
+                        <path class="m-l" d="M590 466Q600 456 610 466" />
+                        <path class="m-s" d="M246 466L270 446H930L954 466Z" />
+                        <path class="m-f" d="M262 457H938" />
+                        <path class="m-f"
+                            d="M270 459V464M280 459V464M290 459V464M300 459V464M310 459V464M320 459V464M330 459V464M340 459V464M350 459V464M360 459V464M370 459V464M380 459V464M390 459V464M400 459V464M410 459V464M420 459V464M430 459V464M440 459V464M450 459V464M460 459V464M470 459V464M480 459V464M490 459V464M500 459V464M510 459V464M520 459V464M530 459V464M540 459V464M550 459V464M560 459V464M570 459V464M580 459V464M590 459V464M600 459V464M610 459V464M620 459V464M630 459V464M640 459V464M650 459V464M660 459V464M670 459V464M680 459V464M690 459V464M700 459V464M710 459V464M720 459V464M730 459V464M740 459V464M750 459V464M760 459V464M770 459V464M780 459V464M790 459V464M800 459V464M810 459V464M820 459V464M830 459V464M840 459V464M850 459V464M860 459V464M870 459V464M880 459V464M890 459V464M900 459V464M910 459V464M920 459V464M930 459V464" />
+                        <path class="m-s" d="M496 482L514 468H686L704 482Z" />
+                        <path class="m-s" d="M532 476H544V560H532Z" />
+                        <path class="m-s" d="M527 476V468H549V476Z" />
+                        <path class="m-s" d="M527 468L523 462H553L549 468Z" />
+                        <path class="m-s" d="M528 554H548V562H528Z" />
+                        <path class="m-f" d="M538 478V552" />
+                        <path class="m-s" d="M656 476H668V560H656Z" />
+                        <path class="m-s" d="M651 476V468H673V476Z" />
+                        <path class="m-s" d="M651 468L647 462H677L673 468Z" />
+                        <path class="m-s" d="M652 554H672V562H652Z" />
+                        <path class="m-f" d="M662 478V552" />
+                        <path class="m-s" d="M454 476H466V560H454Z" />
+                        <path class="m-s" d="M449 476V468H471V476Z" />
+                        <path class="m-s" d="M449 468L445 462H475L471 468Z" />
+                        <path class="m-s" d="M450 554H470V562H450Z" />
+                        <path class="m-f" d="M460 478V552" />
+                        <path class="m-s" d="M734 476H746V560H734Z" />
+                        <path class="m-s" d="M729 476V468H751V476Z" />
+                        <path class="m-s" d="M729 468L725 462H755L751 468Z" />
+                        <path class="m-s" d="M730 554H750V562H730Z" />
+                        <path class="m-f" d="M740 478V552" />
+                        <path class="m-s" d="M372 476H384V560H372Z" />
+                        <path class="m-s" d="M367 476V468H389V476Z" />
+                        <path class="m-s" d="M367 468L363 462H393L389 468Z" />
+                        <path class="m-s" d="M368 554H388V562H368Z" />
+                        <path class="m-f" d="M378 478V552" />
+                        <path class="m-s" d="M816 476H828V560H816Z" />
+                        <path class="m-s" d="M811 476V468H833V476Z" />
+                        <path class="m-s" d="M811 468L807 462H837L833 468Z" />
+                        <path class="m-s" d="M812 554H832V562H812Z" />
+                        <path class="m-f" d="M822 478V552" />
+                        <path class="m-s" d="M294 476H306V560H294Z" />
+                        <path class="m-s" d="M289 476V468H311V476Z" />
+                        <path class="m-s" d="M289 468L285 462H315L311 468Z" />
+                        <path class="m-s" d="M290 554H310V562H290Z" />
+                        <path class="m-f" d="M300 478V552" />
+                        <path class="m-s" d="M894 476H906V560H894Z" />
+                        <path class="m-s" d="M889 476V468H911V476Z" />
+                        <path class="m-s" d="M889 468L885 462H915L911 468Z" />
+                        <path class="m-s" d="M890 554H910V562H890Z" />
+                        <path class="m-f" d="M900 478V552" />
+                        <path class="m-r" d="M268 538H520V562H268Z" />
+                        <path class="m-l" d="M268 543H520" />
+                        <path class="m-f"
+                            d="M274 546V560M283 546V560M292 546V560M301 546V560M310 546V560M319 546V560M328 546V560M337 546V560M346 546V560M355 546V560M364 546V560M373 546V560M382 546V560M391 546V560M400 546V560M409 546V560M418 546V560M427 546V560M436 546V560M445 546V560M454 546V560M463 546V560M472 546V560M481 546V560M490 546V560M499 546V560M508 546V560M517 546V560" />
+                        <path class="m-r" d="M680 538H932V562H680Z" />
+                        <path class="m-l" d="M680 543H932" />
+                        <path class="m-f"
+                            d="M686 546V560M695 546V560M704 546V560M713 546V560M722 546V560M731 546V560M740 546V560M749 546V560M758 546V560M767 546V560M776 546V560M785 546V560M794 546V560M803 546V560M812 546V560M821 546V560M830 546V560M839 546V560M848 546V560M857 546V560M866 546V560M875 546V560M884 546V560M893 546V560M902 546V560M911 546V560M920 546V560M929 546V560" />
+                        <path class="m-s" d="M248 562H952V590H248Z" />
+                        <path class="m-k" d="M255 590V580Q255 572 268 567Q281 572 281 580V590Z" />
+                        <path class="m-k" d="M 945 590V 580Q 945 572 932 567Q 919 572 919 580V 590Z" />
+                        <path class="m-k" d="M291 590V580Q291 572 304 567Q317 572 317 580V590Z" />
+                        <path class="m-k" d="M 909 590V 580Q 909 572 896 567Q 883 572 883 580V 590Z" />
+                        <path class="m-k" d="M327 590V580Q327 572 340 567Q353 572 353 580V590Z" />
+                        <path class="m-k" d="M 873 590V 580Q 873 572 860 567Q 847 572 847 580V 590Z" />
+                        <path class="m-k" d="M363 590V580Q363 572 376 567Q389 572 389 580V590Z" />
+                        <path class="m-k" d="M 837 590V 580Q 837 572 824 567Q 811 572 811 580V 590Z" />
+                        <path class="m-k" d="M399 590V580Q399 572 412 567Q425 572 425 580V590Z" />
+                        <path class="m-k" d="M 801 590V 580Q 801 572 788 567Q 775 572 775 580V 590Z" />
+                        <path class="m-k" d="M435 590V580Q435 572 448 567Q461 572 461 580V590Z" />
+                        <path class="m-k" d="M 765 590V 580Q 765 572 752 567Q 739 572 739 580V 590Z" />
+                        <path class="m-k" d="M471 590V580Q471 572 484 567Q497 572 497 580V590Z" />
+                        <path class="m-k" d="M 729 590V 580Q 729 572 716 567Q 703 572 703 580V 590Z" />
+                        <path class="m-d" d="M168 590H1032V614H168Z" />
+                        <path class="m-f"
+                            d="M180 596V608M194 596V608M208 596V608M222 596V608M236 596V608M250 596V608M264 596V608M278 596V608M292 596V608M306 596V608M320 596V608M334 596V608M348 596V608M362 596V608M376 596V608M390 596V608M404 596V608M418 596V608M432 596V608M446 596V608M460 596V608M474 596V608M488 596V608M502 596V608M516 596V608M530 596V608M544 596V608M558 596V608M572 596V608M586 596V608M600 596V608M614 596V608M628 596V608M642 596V608M656 596V608M670 596V608M684 596V608M698 596V608M712 596V608M726 596V608M740 596V608M754 596V608M768 596V608M782 596V608M796 596V608M810 596V608M824 596V608M838 596V608M852 596V608M866 596V608M880 596V608M894 596V608M908 596V608M922 596V608M936 596V608M950 596V608M964 596V608M978 596V608M992 596V608M1006 596V608M1020 596V608" />
+                        <path class="m-s" d="M86 614H1114V638H86Z" />
+                        <path class="m-f"
+                            d="M98 620V632M118 620V632M138 620V632M158 620V632M178 620V632M198 620V632M218 620V632M238 620V632M258 620V632M278 620V632M298 620V632M318 620V632M338 620V632M358 620V632M378 620V632M398 620V632M418 620V632M438 620V632M458 620V632M478 620V632M498 620V632M518 620V632M538 620V632M558 620V632M578 620V632M598 620V632M618 620V632M638 620V632M658 620V632M678 620V632M698 620V632M718 620V632M738 620V632M758 620V632M778 620V632M798 620V632M818 620V632M838 620V632M858 620V632M878 620V632M898 620V632M918 620V632M938 620V632M958 620V632M978 620V632M998 620V632M1018 620V632M1038 620V632M1058 620V632M1078 620V632M1098 620V632" />
+                        <path class="m-st" d="M530 562.0H670V573.4H530Z" />
+                        <path class="m-st" d="M521 573.1H679V584.5H521Z" />
+                        <path class="m-st" d="M512 584.2H688V595.6H512Z" />
+                        <path class="m-st" d="M503 595.3H697V606.6999999999999H503Z" />
+                        <path class="m-st" d="M494 606.4H706V617.8H494Z" />
+                        <path class="m-st" d="M485 617.5H715V628.9H485Z" />
+                        <path class="m-st" d="M476 628.6H724V640.0H476Z" />
+                        <path class="m-l" d="M530 562L476 640M670 562L724 640" />
+                        <path class="m-s" d="M204 592L210 578H234L240 592Z" />
+                        <path class="m-s" d="M216 578V556H228V578Z" />
+                        <path class="m-f" d="M213 566H231" />
+                        <path class="m-s" d="M202 546H242Q240 560 222 562Q204 560 202 546Z" />
+                        <g transform="translate(222 547)">
+                            <use class="m-glow" href="#mflame" />
+                        </g>
+                        <path class="m-s" d="M960 592L966 578H990L996 592Z" />
+                        <path class="m-s" d="M972 578V556H984V578Z" />
+                        <path class="m-f" d="M969 566H987" />
+                        <path class="m-s" d="M958 546H998Q996 560 978 562Q960 560 958 546Z" />
+                        <g transform="translate(978 547)">
+                            <use class="m-glow" href="#mflame" />
+                        </g>
+                        <path class="m-s" d="M101 592H123V616H101Z" />
+                        <path class="m-s" d="M98 592H126L122 584H102Z" />
+                        <g transform="translate(112 584) scale(.62)">
+                            <use class="m-glow" href="#mflame" />
+                        </g>
+                        <path class="m-s" d="M1077 592H1099V616H1077Z" />
+                        <path class="m-s" d="M1074 592H1102L1098 584H1078Z" />
+                        <g transform="translate(1088 584) scale(.62)">
+                            <use class="m-glow" href="#mflame" />
+                        </g>
+                        <path class="m-r" d="M124 598H166V614H124Z" />
+                        <path class="m-r" d="M 1076 598H 1034V 614H 1076Z" />
+                        <path class="m-f" d="M130 602V612M138 602V612M146 602V612M154 602V612M162 602V612" />
+                        <path class="m-f"
+                            d="M 1070 602V 612M 1062 602V 612M 1054 602V 612M 1046 602V 612M 1038 602V 612" />
+                    </svg>
                 </div>
             </section>
             <div class="toran" aria-hidden="true"></div>
@@ -1665,13 +2173,30 @@
                         <p>ભગવાન શ્રી સ્વામિનારાયણની અસીમ કૃપાથી અમારા મંદિરમાં મૂર્તિ પ્રતિષ્ઠાનો મંગલ અવસર આવી
                             પહોંચ્યો છે. ઊંચા શિખર, કોતરણીવાળા થાંભલા અને ભવ્ય મંડપથી શોભતું આ મંદિર ભક્તિ અને કળાનો
                             સુંદર સંગમ છે.</p>
-                        <p>પાંચ દિવસ સુધી પોથીયાત્રા, કળશયાત્રા, યજ્ઞ, અધિવાસ, પ્રતિષ્ઠા વિધિ, કથા અને સત્સંગ સભાનો લાભ
-                            મળશે. આપ સૌ સપરિવાર પધારી દર્શન, સેવા અને મહાપ્રસાદનો લાભ લો એવી નમ્ર વિનંતી.</p>
+                        <p>આઠ દિવસ સુધી શ્રીમદ્ સત્સંગિજીવન કથા, ઘરસભા (૨૪૬૨ થી ૨૪૬૯ મી), પોથીયાત્રા, કળશયાત્રા, યજ્ઞ,
+                            અધિવાસ અને પ્રતિષ્ઠા વિધિનો લાભ મળશે. આપ સૌ સપરિવાર પધારી દર્શન, સેવા અને મહાપ્રસાદનો લાભ લો
+                            એવી નમ્ર વિનંતી.</p>
                     </div>
                     <dl class="facts">
                         <div>
                             <dt>મુખ્ય પ્રતિષ્ઠા દિવસ</dt>
-                            <dd>સોમવાર, ૨૧ ડિસેમ્બર ૨૦૨૬</dd>
+                            <dd>શનિવાર, ૧૬ જાન્યુઆરી ૨૦૨૭ (પોષ સુદ ૮)</dd>
+                        </div>
+                        <div>
+                            <dt>પ્રેરક</dt>
+                            <dd>પૂ. સ.ગુ. સ્વામી શ્રી નિત્યસ્વરૂપદાસજી</dd>
+                        </div>
+                        <div>
+                            <dt>નિમંત્રક</dt>
+                            <dd>સાધુ મુક્તસ્વરૂપદાસજી (મહંતશ્રી) તથા સાધુ પ્રેમદર્શનદાસજી (કોઠારીશ્રી)</dd>
+                        </div>
+                        <div>
+                            <dt>મંદિર</dt>
+                            <dd>શ્રી સ્વામિનારાયણ મંદિર, કિરણચોક - યોગીચોક, સુરત</dd>
+                        </div>
+                        <div>
+                            <dt>કથા સ્થળ</dt>
+                            <dd>યોગીચોક ગ્રાઉન્ડ, યોગીરાજ સોસાયટીની સામે, સુરત</dd>
                         </div>
                         <div>
                             <dt>દૈનિક મહાપ્રસાદ</dt>
@@ -1680,10 +2205,6 @@
                         <div>
                             <dt>પ્રવેશ</dt>
                             <dd>સૌ માટે નિઃશુલ્ક</dd>
-                        </div>
-                        <div>
-                            <dt>સ્થળ</dt>
-                            <dd>શ્રી સ્વામિનારાયણ મંદિર પરિસર</dd>
                         </div>
                     </dl>
                 </div>
@@ -1694,7 +2215,7 @@
                     <div class="sec-head">
                         <span class="eyebrow">વિધિ</span>
                         <h2 class="h2" id="vidhi-h">મૂર્તિ પ્રતિષ્ઠાની વિધિ</h2>
-                        <p>પાંચ દિવસ દરમિયાન થતી મુખ્ય વિધિઓને સરળ ભાષામાં સમજો.</p>
+                        <p>આઠ દિવસ દરમિયાન થતી મુખ્ય વિધિઓને સરળ ભાષામાં સમજો.</p>
                     </div>
                     <ol class="steps">
                         <li class="step"><span class="ring"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true">
@@ -1738,7 +2259,8 @@
                             </div>
                         </li>
                     </ol>
-                    <p class="step-note">છેલ્લા દિવસે અન્નકૂટ દર્શન અને પૂર્ણાહુતિ આરતી સાથે મહોત્સવ સંપન્ન થાય છે.</p>
+                    <p class="step-note">છેલ્લા દિવસે (૧૬ જાન્યુઆરી) મૂર્તિ પ્રતિષ્ઠા, કથા પૂર્ણાહુતિ અને મહાપ્રસાદ સાથે
+                        મહોત્સવ સંપન્ન થાય છે.</p>
                 </div>
             </section>
 
@@ -1752,19 +2274,28 @@
                     <div class="tabs">
                         <div class="tablist" role="tablist" aria-label="મહોત્સવના દિવસો">
                             <button class="tab" role="tab" id="t0" aria-controls="p0" aria-selected="true"><span
-                                    class="d">દિવસ ૧</span><span class="s">શુક્રવાર, ૧૮ ડિસેમ્બર</span></button>
+                                    class="d">દિવસ ૧</span><span class="s">શનિવાર, ૯ જાન્યુઆરી</span></button>
                             <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="false"
-                                tabindex="-1"><span class="d">દિવસ ૨</span><span class="s">શનિવાર, ૧૯
-                                    ડિસેમ્બર</span></button>
+                                tabindex="-1"><span class="d">દિવસ ૨</span><span class="s">રવિવાર, ૧૦
+                                    જાન્યુઆરી</span></button>
                             <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false"
-                                tabindex="-1"><span class="d">દિવસ ૩</span><span class="s">રવિવાર, ૨૦
-                                    ડિસેમ્બર</span></button>
+                                tabindex="-1"><span class="d">દિવસ ૩</span><span class="s">સોમવાર, ૧૧
+                                    જાન્યુઆરી</span></button>
                             <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false"
-                                tabindex="-1"><span class="d">દિવસ ૪</span><span class="s">સોમવાર, ૨૧
-                                    ડિસેમ્બર</span></button>
+                                tabindex="-1"><span class="d">દિવસ ૪</span><span class="s">મંગળવાર, ૧૨
+                                    જાન્યુઆરી</span></button>
                             <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false"
-                                tabindex="-1"><span class="d">દિવસ ૫</span><span class="s">મંગળવાર, ૨૨
-                                    ડિસેમ્બર</span></button>
+                                tabindex="-1"><span class="d">દિવસ ૫</span><span class="s">બુધવાર, ૧૩
+                                    જાન્યુઆરી</span></button>
+                            <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૬</span><span class="s">ગુરુવાર, ૧૪
+                                    જાન્યુઆરી</span></button>
+                            <button class="tab" role="tab" id="t6" aria-controls="p6" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૭</span><span class="s">શુક્રવાર, ૧૫
+                                    જાન્યુઆરી</span></button>
+                            <button class="tab" role="tab" id="t7" aria-controls="p7" aria-selected="false"
+                                tabindex="-1"><span class="d">દિવસ ૮</span><span class="s">શનિવાર, ૧૬
+                                    જાન્યુઆરી</span></button>
                         </div>
                         <div>
                             <div class="panel" role="tabpanel" id="p0" aria-labelledby="t0">
@@ -1804,13 +2335,124 @@
                                     </li>
                                     <li class="ev"><time>સાંજે ૭:૩૦</time>
                                         <div>
-                                            <h4>ઉદ્ઘાટન સત્સંગ સભા</h4>
-                                            <p>સંતોના આશીર્વચન અને મહોત્સવનો પરિચય.</p>
+                                            <h4>શ્રીમદ્ સત્સંગિજીવન કથા પ્રારંભ</h4>
+                                            <p>સંતોના આશીર્વચન અને કથાનો મંગલ પ્રારંભ.</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1" hidden>
+                                <div class="panel-head">
+                                    <h3>યજ્ઞ અને સત્સંગિજીવન કથા</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૮:૦૦</time>
+                                        <div>
+                                            <h4>યજ્ઞ</h4>
+                                            <p>વૈદિક મંત્રોચ્ચાર સાથે હવન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>સમૂહ આરતી અને સ્તુતિ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>રાત્રે ૮:૦૦</time>
+                                        <div>
+                                            <h4>શ્રીમદ્ સત્સંગિજીવન કથા</h4>
+                                            <p>સંતોના મુખે કથાનું રસપાન.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+                                <div class="panel-head">
+                                    <h3>યજ્ઞ અને સત્સંગિજીવન કથા</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૮:૦૦</time>
+                                        <div>
+                                            <h4>યજ્ઞ</h4>
+                                            <p>વૈદિક મંત્રોચ્ચાર સાથે હવન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>સમૂહ આરતી અને સ્તુતિ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>રાત્રે ૮:૦૦</time>
+                                        <div>
+                                            <h4>શ્રીમદ્ સત્સંગિજીવન કથા</h4>
+                                            <p>સંતોના મુખે કથાનું રસપાન.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+                                <div class="panel-head">
+                                    <h3>યજ્ઞ અને સત્સંગિજીવન કથા</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૮:૦૦</time>
+                                        <div>
+                                            <h4>યજ્ઞ</h4>
+                                            <p>વૈદિક મંત્રોચ્ચાર સાથે હવન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>સમૂહ આરતી અને સ્તુતિ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>રાત્રે ૮:૦૦</time>
+                                        <div>
+                                            <h4>શ્રીમદ્ સત્સંગિજીવન કથા</h4>
+                                            <p>સંતોના મુખે કથાનું રસપાન.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
                                 <div class="panel-head">
                                     <h3>યજ્ઞ અને જલાધિવાસ</h3>
                                 </div>
@@ -1823,7 +2465,7 @@
                                     </li>
                                     <li class="ev"><time>સવારે ૮:૦૦</time>
                                         <div>
-                                            <h4>યજ્ઞ પ્રારંભ</h4>
+                                            <h4>યજ્ઞ</h4>
                                             <p>વૈદિક મંત્રોચ્ચાર સાથે હવન.</p>
                                         </div>
                                     </li>
@@ -1847,15 +2489,15 @@
                                     </li>
                                     <li class="ev"><time>રાત્રે ૮:૦૦</time>
                                         <div>
-                                            <h4>કથા અને કીર્તન</h4>
-                                            <p>સંતો દ્વારા કથાવાર્તા અને ભક્તિસંગીત.</p>
+                                            <h4>શ્રીમદ્ સત્સંગિજીવન કથા</h4>
+                                            <p>સંતોના મુખે કથાનું રસપાન.</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+                            <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
                                 <div class="panel-head">
-                                    <h3>અધિવાસ અને સાંસ્કૃતિક સંધ્યા</h3>
+                                    <h3>અન્નાધિવાસ અને યજ્ઞ</h3>
                                 </div>
                                 <ul>
                                     <li class="ev"><time>સવારે ૬:૩૦</time>
@@ -1868,6 +2510,43 @@
                                         <div>
                                             <h4>અન્નાધિવાસ અને યજ્ઞ</h4>
                                             <p>મૂર્તિઓનો અન્નમાં અધિવાસ અને હવન.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>બપોરે ૧૨:૦૦</time>
+                                        <div>
+                                            <h4>મહાપ્રસાદ</h4>
+                                            <p>સૌ ભક્તો માટે.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સાંજે ૬:૩૦</time>
+                                        <div>
+                                            <h4>સંધ્યા આરતી</h4>
+                                            <p>સમૂહ આરતી અને સ્તુતિ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>રાત્રે ૮:૦૦</time>
+                                        <div>
+                                            <h4>શ્રીમદ્ સત્સંગિજીવન કથા</h4>
+                                            <p>સંતોના મુખે કથાનું રસપાન.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="panel" role="tabpanel" id="p6" aria-labelledby="t6" hidden>
+                                <div class="panel-head">
+                                    <h3>પુષ્પાધિવાસ અને સાંસ્કૃતિક સંધ્યા</h3>
+                                </div>
+                                <ul>
+                                    <li class="ev"><time>સવારે ૬:૩૦</time>
+                                        <div>
+                                            <h4>મંગળા આરતી</h4>
+                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
+                                        </div>
+                                    </li>
+                                    <li class="ev"><time>સવારે ૮:૦૦</time>
+                                        <div>
+                                            <h4>યજ્ઞ</h4>
+                                            <p>વૈદિક મંત્રોચ્ચાર સાથે હવન.</p>
                                         </div>
                                     </li>
                                     <li class="ev"><time>બપોરે ૧૨:૦૦</time>
@@ -1896,9 +2575,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+                            <div class="panel" role="tabpanel" id="p7" aria-labelledby="t7" hidden>
                                 <div class="panel-head">
-                                    <h3>મૂર્તિ પ્રતિષ્ઠા</h3><span class="badge">મુખ્ય દિવસ</span>
+                                    <h3>મૂર્તિ પ્રતિષ્ઠા અને પૂર્ણાહુતિ</h3><span class="badge">મુખ્ય દિવસ</span>
                                 </div>
                                 <ul>
                                     <li class="ev"><time>સવારે ૫:૦૦</time>
@@ -1927,7 +2606,7 @@
                                     </li>
                                     <li class="ev"><time>સાંજે ૫:૦૦</time>
                                         <div>
-                                            <h4>સંતોના આશીર્વચન</h4>
+                                            <h4>કથા પૂર્ણાહુતિ અને આશીર્વચન</h4>
                                             <p>પધારેલા સંતો દ્વારા આશીર્વચન સભા.</p>
                                         </div>
                                     </li>
@@ -1935,43 +2614,6 @@
                                         <div>
                                             <h4>સંધ્યા આરતી</h4>
                                             <p>પ્રતિષ્ઠા દિવસની વિશેષ આરતી.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
-                                <div class="panel-head">
-                                    <h3>અન્નકૂટ અને પૂર્ણાહુતિ</h3>
-                                </div>
-                                <ul>
-                                    <li class="ev"><time>સવારે ૬:૩૦</time>
-                                        <div>
-                                            <h4>મંગળા આરતી</h4>
-                                            <p>પ્રાતઃ પૂજન સાથે દિવસનો આરંભ.</p>
-                                        </div>
-                                    </li>
-                                    <li class="ev"><time>સવારે ૯:૦૦</time>
-                                        <div>
-                                            <h4>અન્નકૂટ દર્શન</h4>
-                                            <p>ભગવાનને ધરાવેલા વિવિધ ભોગનાં દર્શન.</p>
-                                        </div>
-                                    </li>
-                                    <li class="ev"><time>સવારે ૧૧:૦૦</time>
-                                        <div>
-                                            <h4>પૂર્ણાહુતિ આરતી</h4>
-                                            <p>સેવકો અને સંતોનું સન્માન.</p>
-                                        </div>
-                                    </li>
-                                    <li class="ev"><time>બપોરે ૧:૦૦</time>
-                                        <div>
-                                            <h4>મહાપ્રસાદ</h4>
-                                            <p>મહોત્સવનો અંતિમ મહાપ્રસાદ.</p>
-                                        </div>
-                                    </li>
-                                    <li class="ev"><time>બપોરે ૩:૦૦</time>
-                                        <div>
-                                            <h4>પ્રસાદ વિતરણ અને વિદાય</h4>
-                                            <p>સૌ ભક્તોને પ્રસાદ આપી ભાવભીની વિદાય.</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -2154,14 +2796,14 @@
                             </div>
                             <div class="field"><label for="sv-when">સમય</label>
                                 <select id="sv-when">
-                                    <option>પાંચ દિવસ</option>
+                                    <option>આઠ દિવસ</option>
                                     <option>ફક્ત સવારે</option>
                                     <option>ફક્ત સાંજે</option>
                                     <option>ફક્ત પ્રતિષ્ઠા દિવસે</option>
                                 </select>
                             </div>
                             <p class="hint" id="sv-hint" hidden>પહેલા તમારું નામ લખો.</p>
-                            <a class="btn btn-gold" id="sv-send" href="https://wa.me/" target="_blank"
+                            <a class="btn btn-gold" id="sv-send" href="https://wa.me/919900032000" target="_blank"
                                 rel="noopener">WhatsApp પર નોંધણી મોકલો</a>
                         </form>
                     </div>
@@ -2250,8 +2892,8 @@
                         </details>
                         <details>
                             <summary>મહાપ્રસાદ કેટલા વાગ્યે મળશે?</summary>
-                            <p>સામાન્ય રીતે દરરોજ બપોરે ૧૨:૦૦ વાગ્યાથી. પ્રતિષ્ઠા દિવસે ૧૨:૩૦ અને છેલ્લા દિવસે ૧:૦૦
-                                વાગ્યે મહાપ્રસાદ શરૂ થશે.</p>
+                            <p>સામાન્ય રીતે દરરોજ બપોરે ૧૨:૦૦ વાગ્યાથી. પ્રતિષ્ઠા દિવસે (૧૬ જાન્યુઆરી) ૧૨:૩૦ વાગ્યે
+                                મહાપ્રસાદ શરૂ થશે.</p>
                         </details>
                         <details>
                             <summary>બહેનો કળશયાત્રામાં કેવી રીતે જોડાઈ શકે?</summary>
@@ -2268,6 +2910,15 @@
                             <p>વડીલો માટે બેઠક વ્યવસ્થા અને સ્વયંસેવકોની સહાય ઉપલબ્ધ રહેશે. જરૂર પડે તો સહાય કેન્દ્રનો
                                 સંપર્ક કરો.</p>
                         </details>
+                        <details>
+                            <summary>કથા ક્યાં થશે?</summary>
+                            <p>શ્રીમદ્ સત્સંગિજીવન કથા યોગીચોક ગ્રાઉન્ડ, યોગીરાજ સોસાયટીની સામે, સુરત ખાતે થશે.</p>
+                        </details>
+                        <details>
+                            <summary>કથાનું જીવંત પ્રસારણ ક્યાં જોઈ શકાય?</summary>
+                            <p>આસ્થા ભજન, હમારા લક્ષ્ય, કલ્યાણ ટીવી, સરધાર (Sardharkatha YouTube) અને આસ્થા ગુજરાતી ચેનલ
+                                પર લાઈવ પ્રસારણ થશે.</p>
+                        </details>
                     </div>
                 </div>
             </section>
@@ -2275,15 +2926,23 @@
                 <div class="wrap">
                     <div class="sec-head">
                         <span class="eyebrow">સ્થળ</span>
-                        <h2 class="h2" id="sthal-h">મંદિર સુધી પહોંચવા માટે</h2>
+                        <h2 class="h2" id="sthal-h">મહોત્સવ સ્થળ સુધી પહોંચવા માટે</h2>
                     </div>
                     <div class="place">
                         <div class="addr">
-                            <address>શ્રી સ્વામિનારાયણ મંદિર<br>મંદિર માર્ગ, ગામ/શહેરનું નામ<br>ગુજરાત, ૦૦૦૦૦૦</address>
-                            <p>નકશામાં મંદિરનું સ્થાન જોઈ સીધું માર્ગદર્શન મેળવો.</p>
-                            <a class="btn btn-solid"
-                                href="https://www.google.com/maps/search/?api=1&amp;query=Swaminarayan+Mandir"
-                                target="_blank" rel="noopener">Google નકશામાં જુઓ</a>
+                            <address><b>મંદિર</b><br>શ્રી સ્વામિનારાયણ મંદિર<br>કિરણચોક - યોગીચોક, સુરત, ગુજરાત
+                            </address>
+                            <address style="margin-top:1rem"><b>કથા સ્થળ</b><br>યોગીચોક ગ્રાઉન્ડ<br>યોગીરાજ સોસાયટીની
+                                સામે, સુરત</address>
+                            <p>નકશામાં સ્થાન જોઈ સીધું માર્ગદર્શન મેળવો.</p>
+                            <div class="cta">
+                                <a class="btn btn-solid"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Swaminarayan+Mandir+Kiranchowk+Yogichowk+Surat"
+                                    target="_blank" rel="noopener">મંદિર નકશામાં જુઓ</a>
+                                <a class="btn btn-line"
+                                    href="https://www.google.com/maps/search/?api=1&amp;query=Yogichowk+Ground+Surat"
+                                    target="_blank" rel="noopener">કથા સ્થળ નકશામાં જુઓ</a>
+                            </div>
                         </div>
                         <div class="aarti">
                             <h3>નિત્ય આરતીનો સમય</h3>
@@ -2308,16 +2967,16 @@
                     </div>
                     <div class="contacts">
                         <div class="person">
-                            <h3>મંદિર કાર્યાલય</h3>
-                            <p class="num" id="n1">+૯૧ ૦૦૦૦૦ ૦૦૦૦૦</p>
-                            <button class="btn btn-line" type="button" data-copy="+91 00000 00000" data-target="n1">નંબર
+                            <h3>સંપર્ક (WhatsApp)</h3>
+                            <p class="num" id="n1">+૯૧ ૯૯૦૦૦ ૩૨૦૦૦</p>
+                            <button class="btn btn-line" type="button" data-copy="+91 99000 32000" data-target="n1">નંબર
                                 કૉપિ કરો</button>
                         </div>
                         <div class="person">
-                            <h3>મહોત્સવ સમિતિ</h3>
-                            <p class="num" id="n2">+૯૧ ૦૦૦૦૦ ૦૦૦૦૧</p>
-                            <button class="btn btn-line" type="button" data-copy="+91 00000 00001" data-target="n2">નંબર
-                                કૉપિ કરો</button>
+                            <h3>વેબસાઇટ</h3>
+                            <p class="num" id="n2">sardhardham.org</p>
+                            <a class="btn btn-line" href="https://sardhardham.org" target="_blank"
+                                rel="noopener">વેબસાઇટ ખોલો</a>
                         </div>
                     </div>
                     <div class="share">
@@ -2333,7 +2992,7 @@
         <footer class="foot">
             <div class="wrap">
                 <b>સ્વામિનારાયણ ભગવાનની જય</b>
-                <p>શ્રી સ્વામિનારાયણ મંદિર · મૂર્તિ પ્રતિષ્ઠા મહોત્સવ સમિતિ</p>
+                <p>શ્રી સરધારધામ સંચાલિત શ્રી સ્વામિનારાયણ મંદિર, કિરણચોક (સુરત) · sardhardham.org</p>
             </div>
         </footer>
 
@@ -2341,7 +3000,7 @@
 
     <script>
         /* Change these two dates to match the real mahotsav (India time, +05:30). */
-        var CONFIG = { start: "2026-12-18T06:30:00+05:30", end: "2026-12-22T14:00:00+05:30" };
+        var CONFIG = { start: "2027-01-09T06:30:00+05:30", end: "2027-01-16T21:00:00+05:30" };
         var GU = "૦૧૨૩૪૫૬૭૮૯";
         function gu(n, pad) {
             var s = String(n);
@@ -2432,7 +3091,7 @@
         })();
 
         (function () {
-            var text = "જય સ્વામિનારાયણ! શ્રી સ્વામિનારાયણ મંદિરના મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં સપરિવાર પધારવા આપને હાર્દિક નિમંત્રણ છે. તારીખ: ૧૮ થી ૨૨ ડિસેમ્બર, ૨૦૨૬. મુખ્ય પ્રતિષ્ઠા દિવસ: ૨૧ ડિસેમ્બર. દરરોજ મહાપ્રસાદ.";
+            var text = "જય શ્રી સ્વામિનારાયણ! શ્રી સરધારધામ સંચાલિત શ્રી સ્વામિનારાયણ મંદિર, કિરણચોક (સુરત) ના મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં સપરિવાર પધારવા આપને હાર્દિક નિમંત્રણ છે. તારીખ: ૯ થી ૧૬ જાન્યુઆરી, ૨૦૨૭ (પોષ સુદ ૨ થી ૮). પ્રતિષ્ઠા દિવસ: ૧૬ જાન્યુઆરી. કથા સ્થળ: યોગીચોક ગ્રાઉન્ડ, યોગીરાજ સોસાયટીની સામે, સુરત.";
             var a = document.getElementById("wa");
             if (a) a.href = "https://wa.me/?text=" + encodeURIComponent(text);
         })();
@@ -2445,9 +3104,9 @@
             var send = document.getElementById("sv-send");
             var hint = document.getElementById("sv-hint");
             function msg() {
-                return "જય સ્વામિનારાયણ! હું " + name.value.trim() + " મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં “" + type.value + "” માટે સેવા નોંધાવવા ઇચ્છું છું. સમય: " + when.value + ".";
+                return "જય શ્રી સ્વામિનારાયણ! હું " + name.value.trim() + " મૂર્તિ પ્રતિષ્ઠા મહોત્સવમાં “" + type.value + "” માટે સેવા નોંધાવવા ઇચ્છું છું. સમય: " + when.value + ".";
             }
-            function update() { send.href = "https://wa.me/?text=" + encodeURIComponent(msg()); }
+            function update() { send.href = "https://wa.me/919900032000?text=" + encodeURIComponent(msg()); }
             form.addEventListener("input", update);
             form.addEventListener("change", update);
             form.addEventListener("submit", function (e) { e.preventDefault(); });
@@ -2460,364 +3119,6 @@
             });
             update();
         })();
-
-        /* 3D line-art mandir (tower + long wing, after the reference photo): lines draw themselves, then it rotates with a light running up the lines. */
-        (function () {
-            var cv = document.getElementById("temple3d");
-            if (!cv || !cv.getContext) return;
-            var ctx = cv.getContext("2d");
-            var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-            /* ---------- geometry ---------- */
-            var segs = [];
-            function L(x1, y1, z1, x2, y2, z2, c) { segs.push({ x1: x1, y1: y1, z1: z1, x2: x2, y2: y2, z2: z2, c: c || 0, r: 0, k: 0 }); }
-            function S(p, q, c) { L(p[0], p[1], p[2], q[0], q[1], q[2], c); }
-            function rect(y, xa, xb, za, zb, c) {
-                L(xa, y, za, xb, y, za, c); L(xb, y, za, xb, y, zb, c); L(xb, y, zb, xa, y, zb, c); L(xa, y, zb, xa, y, za, c);
-            }
-            function box(xa, xb, ya, yb, za, zb, c) {
-                rect(ya, xa, xb, za, zb, c); rect(yb, xa, xb, za, zb, c);
-                L(xa, ya, za, xa, yb, za, c); L(xb, ya, za, xb, yb, za, c); L(xb, ya, zb, xb, yb, zb, c); L(xa, ya, zb, xa, yb, zb, c);
-            }
-            function ringXZ(cx, cy, cz, r, n, c) {
-                for (var i = 0; i < n; i++) {
-                    var a0 = (Math.PI * 2 * i) / n, a1 = (Math.PI * 2 * (i + 1)) / n;
-                    L(cx + r * Math.cos(a0), cy, cz + r * Math.sin(a0), cx + r * Math.cos(a1), cy, cz + r * Math.sin(a1), c);
-                }
-            }
-
-            /* face helpers: F(u, y, off) -> [x, y, z] on a wall plane, pushed outward by off */
-            function FX(sx) { return function (u, y, o) { return [sx * (2.0 + o), y, sx * u]; }; }
-            function FZ(sz) { return function (u, y, o) { return [u, y, sz * (1.9 + o)]; }; }
-
-            function archW(F, u, y0, w, h, o, c) {
-                var r = w / 2, yS = y0 + h - r * 0.8, i, prev, q, ang;
-                S(F(u - r, y0, o), F(u - r, yS, o), c);
-                S(F(u + r, y0, o), F(u + r, yS, o), c);
-                S(F(u - r, y0, o), F(u + r, y0, o), c);
-                prev = F(u - r, yS, o);
-                for (i = 1; i <= 4; i++) {
-                    ang = Math.PI - (Math.PI * i) / 4;
-                    q = F(u + r * Math.cos(ang), yS + r * 0.8 * Math.sin(ang), o);
-                    S(prev, q, c); prev = q;
-                }
-            }
-            function rectW(F, u, y0, w, h, o, c) {
-                var r = w / 2;
-                S(F(u - r, y0, o), F(u + r, y0, o), c); S(F(u + r, y0, o), F(u + r, y0 + h, o), c);
-                S(F(u + r, y0 + h, o), F(u - r, y0 + h, o), c); S(F(u - r, y0 + h, o), F(u - r, y0, o), c);
-            }
-
-            function chhatri(x, y, z, s) {
-                var p = 0.28 * s, h = 0.75 * s, e = 0.36 * s;
-                L(x - p, y, z - p, x - p, y + h, z - p); L(x + p, y, z - p, x + p, y + h, z - p);
-                L(x + p, y, z + p, x + p, y + h, z + p); L(x - p, y, z + p, x - p, y + h, z + p);
-                rect(y + h, x - e, x + e, z - e, z + e, 1);
-                var i, a, prev = [], cur;
-                for (var k = 1; k <= 3; k++) {
-                    var th = (k / 3) * 1.2, rr = e * Math.cos(th), yy = y + h + 0.5 * s * Math.sin(th);
-                    ringXZ(x, yy, z, rr, 8, 1);
-                    for (i = 0; i < 8; i++) {
-                        a = (Math.PI * 2 * i) / 8;
-                        var r0 = k === 1 ? e : e * Math.cos(((k - 1) / 3) * 1.2), y0 = k === 1 ? y + h : y + h + 0.5 * s * Math.sin(((k - 1) / 3) * 1.2);
-                        L(x + r0 * Math.cos(a), y0, z + r0 * Math.sin(a), x + rr * Math.cos(a), yy, z + rr * Math.sin(a), 1);
-                    }
-                }
-                var top = y + h + 0.5 * s * Math.sin(1.2);
-                L(x, top, z, x, top + 0.45 * s, z, 1);
-            }
-
-            var TW = 2.0, WH = 10.1, TH = 12.1, BASE = 0.5;
-
-            /* ground rings + plinth */
-            ringXZ(-3.3, 0, 0, 8.6, 72, 2);
-            ringXZ(-3.3, 0, 0, 9.5, 80, 2);
-            box(-10.6, 3.9, 0, BASE, -2.9, 2.9);
-
-            /* tower and wing bodies */
-            box(-TW, TW, BASE, TH, -TW, TW);
-            box(-10.0, -TW, BASE, WH, -1.9, 1.9);
-            var f, i, k;
-
-            /* parapets and cornices */
-            rect(WH, -10.15, -TW, -2.05, 2.05); rect(WH + 0.22, -10.15, -TW, -2.05, 2.05);
-            rect(TH, -2.2, 2.2, -2.2, 2.2); rect(TH + 0.25, -2.1, 2.1, -2.1, 2.1);
-
-            /* tower corner ledges (the projecting stone brackets in the photo) */
-            [[-1, -1], [-1, 1], [1, -1], [1, 1]].forEach(function (q) {
-                for (var y = 1.4; y < TH; y += 1.05) {
-                    L(q[0] * TW, y, q[1] * TW, q[0] * (TW + 0.17), y, q[1] * TW);
-                    L(q[0] * TW, y, q[1] * TW, q[0] * TW, y, q[1] * (TW + 0.17));
-                }
-            });
-            /* tower side (±z) faces: pilasters and bands */
-            [-1, 1].forEach(function (sz) {
-                [-1.3, 1.3].forEach(function (u) { L(u, BASE, sz * TW, u, TH, sz * TW); });
-                for (var y = 2.5; y < TH; y += 2.1) L(-TW, y, sz * TW, TW, y, sz * TW);
-            });
-
-            /* wing: floor bands, bay pilasters, windows */
-            for (i = 0; i <= 7; i++) {
-                var xp = -10.0 + i * (8.0 / 7);
-                L(xp, BASE, 1.9, xp, WH, 1.9); L(xp, BASE, -1.9, xp, WH, -1.9);
-            }
-            for (k = 0; k <= 10; k++) {
-                var yb = 0.82 + k * 0.84;
-                L(-10.0, yb, 1.9, -TW, yb, 1.9); L(-10.0, yb, -1.9, -TW, yb, -1.9);
-            }
-            var FZp = FZ(1), FZn = FZ(-1);
-            for (i = 0; i < 7; i++) {
-                var xc = -10.0 + (8.0 / 7) * (i + 0.5);
-                for (k = 0; k < 10; k++) {
-                    var y0 = 1.0 + k * 0.84;
-                    archW(FZp, xc - 0.16, y0, 0.42, 0.58, 0.02);
-                    rectW(FZp, xc + 0.3, y0, 0.2, 0.38, 0.02);
-                    rectW(FZn, xc, y0, 0.4, 0.5, 0.02);
-                }
-            }
-
-            /* tower end faces (±x): entrance porch, murti niche, stepped arched tiers */
-            [-1, 1].forEach(function (sx) {
-                var F = FX(sx);
-                /* porch */
-                box(sx * TW, sx * 3.3, BASE, 2.0, -1.95, 1.95);
-                rect(2.0, sx * 2.0, sx * 3.5, -2.1, 2.1); rect(2.2, sx * 2.0, sx * 3.5, -2.1, 2.1);
-                [-1.5, -0.75, 0, 0.75, 1.5].forEach(function (u) { archW(F, u, BASE + 0.05, 0.6, 1.25, 1.3); });
-                /* niche zone: central arch with murti, flanking arches */
-                archW(F, 0, 2.5, 1.7, 2.5, 0.04);
-                archW(F, -1.2, 2.55, 0.72, 1.7, 0.04); archW(F, 1.2, 2.55, 0.72, 1.7, 0.04);
-                archW(F, -0.42, 2.55, 0.32, 1.0, 0.1); archW(F, 0, 2.55, 0.36, 1.25, 0.1); archW(F, 0.42, 2.55, 0.32, 1.0, 0.1);
-                box(sx * TW, sx * (TW + 0.35), 5.0, 5.25, -1.75, 1.75);
-                /* tier A (wide) */
-                box(sx * TW, sx * (TW + 0.3), 5.25, 7.0, -1.5, 1.5);
-                [5.45, 6.25].forEach(function (y) { [-0.9, 0, 0.9].forEach(function (u) { archW(F, u, y, u === 0 ? 0.6 : 0.5, 0.68, 0.32); }); });
-                /* tier B */
-                box(sx * TW, sx * (TW + 0.45), 7.0, 8.6, -1.15, 1.15);
-                [7.2, 7.95].forEach(function (y) { [-0.6, 0, 0.6].forEach(function (u) { archW(F, u, y, u === 0 ? 0.46 : 0.4, 0.55, 0.47); }); });
-                /* tier C (tall narrow channel) */
-                box(sx * TW, sx * (TW + 0.28), 8.6, 11.9, -0.8, 0.8);
-                for (k = 0; k < 4; k++) {
-                    [-0.4, 0, 0.4].forEach(function (u) { archW(F, u, 8.8 + k * 0.8, u === 0 ? 0.4 : 0.32, 0.55, 0.3); });
-                }
-            });
-
-            /* rooftop: central domed pavilion + four corner chhatris */
-            var py = TH + 0.25, a, r0;
-            ringXZ(0, py, 0, 1.15, 8, 1); ringXZ(0, py + 1.0, 0, 1.15, 8, 1); ringXZ(0, py + 1.15, 0, 1.25, 8, 1);
-            for (i = 0; i < 8; i++) {
-                a = (Math.PI * 2 * i) / 8;
-                L(1.15 * Math.cos(a), py, 1.15 * Math.sin(a), 1.15 * Math.cos(a), py + 1.0, 1.15 * Math.sin(a), 1);
-                var a2 = (Math.PI * 2 * (i + 1)) / 8, am = (a + a2) / 2;
-                archXZ(1.15 * Math.cos(a), 1.15 * Math.sin(a), 1.15 * Math.cos(a2), 1.15 * Math.sin(a2), py + 0.35, 0.55, 1);
-            }
-            function archXZ(xa, za, xb, zb, y0, rise, c) {
-                var prev = [xa, y0, za], q;
-                for (var j = 1; j <= 4; j++) {
-                    var t = j / 4, e = Math.sin(Math.PI * t);
-                    q = [xa + (xb - xa) * t, y0 + rise * e, za + (zb - za) * t];
-                    L(prev[0], prev[1], prev[2], q[0], q[1], q[2], c); prev = q;
-                }
-            }
-            for (k = 1; k <= 4; k++) {
-                var th = (k / 4) * 1.25, rr = 1.25 * Math.cos(th), yy = py + 1.15 + 1.0 * Math.sin(th);
-                var thp = ((k - 1) / 4) * 1.25, rp = 1.25 * Math.cos(thp), yp = py + 1.15 + 1.0 * Math.sin(thp);
-                ringXZ(0, yy, 0, rr, 8, 1);
-                for (i = 0; i < 8; i++) {
-                    a = (Math.PI * 2 * i) / 8;
-                    L(rp * Math.cos(a), yp, rp * Math.sin(a), rr * Math.cos(a), yy, rr * Math.sin(a), 1);
-                }
-            }
-            var dy = py + 1.15 + 1.0 * Math.sin(1.25), fr = 0.17;
-            ringXZ(0, dy, 0, fr, 8, 1); ringXZ(0, dy + 0.18, 0, fr * 1.3, 8, 1); ringXZ(0, dy + 0.36, 0, fr * 0.8, 8, 1);
-            L(0, dy + 0.36, 0, 0, dy + 1.1, 0, 1);
-            L(0, dy + 1.1, 0, 0.7, dy + 0.98, 0, 1); L(0.7, dy + 0.98, 0, 0, dy + 0.86, 0, 1);
-            [[-1.6, -1.6], [1.6, -1.6], [-1.6, 1.6], [1.6, 1.6]].forEach(function (q) { chhatri(q[0], TH + 0.25, q[1], 1.0); });
-
-            /* draw order: bottom to top, with a gentle sweep along x */
-            segs.forEach(function (s) { s.k = Math.min(s.y1, s.y2) + 0.07 * (s.x1 + s.x2) * 0.5 + (s.c === 2 ? -9 : 0); });
-            var order = segs.slice().sort(function (a, b) { return a.k - b.k; });
-            order.forEach(function (s, idx) { s.r = idx / (order.length - 1); });
-
-            /* ---------- stars ---------- */
-            var seed = 7, stars = [];
-            function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
-            for (i = 0; i < 46; i++) stars.push({ x: rnd(), y: rnd() * 0.7, r: 0.6 + rnd() * 1.1, p: rnd() * 6.28 });
-
-            /* ---------- render ---------- */
-            var DRAW = 9, SEG = 0.8, D = 32, TILT0 = 0.22, YC = 8.0, CXM = -3.3, HEIGHT = 16.6, SPAN = 19.2;
-            var YAW0 = -0.75;
-            var W = 0, H = 0, dpr = 1, start = null, raf = 0, vis = true;
-            var curYaw = YAW0, curTilt = TILT0;
-            var yawTgt = YAW0, tiltTgt = TILT0;
-            var dragYaw = 0, dragTilt = 0;
-            var isDragging = false, startX = 0, startY = 0, startDragYaw = 0, startDragTilt = 0;
-            var A = { x: 0, y: 0, d: 0 }, Bp = { x: 0, y: 0, d: 0 };
-            var COL = ["242,193,78", "255,166,56", "242,193,78", "255,238,175"], LW = [1, 1.5, 2];
-            var batches = [], tips = [];
-            for (i = 0; i < 240; i++) batches.push([]);
-
-            function size() {
-                var r = cv.parentNode.getBoundingClientRect();
-                dpr = Math.min(window.devicePixelRatio || 1, 2);
-                W = r.width; H = r.height;
-                cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-                if (reduce) draw(DRAW + 5, YAW0, TILT0);
-            }
-            function add(g, c, a, lw, x1, y1, x2, y2) {
-                var ab = Math.round(a * 10); if (ab < 1) ab = 1; if (ab > 10) ab = 10;
-                batches[((g * 4 + c) * 10 + (ab - 1)) * 3 + lw].push(x1, y1, x2, y2);
-            }
-            function flush() {
-                for (var key = 0; key < 240; key++) {
-                    var arr = batches[key], n = arr.length;
-                    if (!n) continue;
-                    var lw = key % 3, t = (key - lw) / 3, ab = (t % 10) + 1, c = ((t - (ab - 1)) / 10) % 4;
-                    ctx.strokeStyle = "rgba(" + COL[c] + "," + ab / 10 + ")";
-                    ctx.lineWidth = LW[lw] * (c === 3 ? 1.8 : 1);
-                    ctx.beginPath();
-                    for (var j = 0; j < n; j += 4) { ctx.moveTo(arr[j], arr[j + 1]); ctx.lineTo(arr[j + 2], arr[j + 3]); }
-                    ctx.stroke();
-                    arr.length = 0;
-                }
-            }
-
-            function draw(t, yaw, tilt) {
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                ctx.clearRect(0, 0, W, H);
-                var s = Math.min((H * 0.88) / HEIGHT, (W * 0.92) / SPAN);
-                var cx = W / 2, cy = H * 0.54;
-
-                var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.58);
-                g.addColorStop(0, "rgba(240,138,36,0.22)"); 
-                g.addColorStop(0.55, "rgba(240,138,36,0.06)"); 
-                g.addColorStop(1, "rgba(240,138,36,0)");
-                ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-
-                ctx.fillStyle = "#F2C14E";
-                for (var q = 0; q < stars.length; q++) {
-                    var st = stars[q];
-                    ctx.globalAlpha = reduce ? 0.6 : 0.3 + 0.5 * (0.5 + 0.5 * Math.sin(t * 1.5 + st.p));
-                    ctx.beginPath(); ctx.arc(st.x * W, st.y * H, st.r, 0, 6.2832); ctx.fill();
-                }
-                ctx.globalAlpha = 1;
-
-                var actualTilt = Math.max(0.04, Math.min(0.42, typeof tilt === "number" ? tilt : TILT0));
-                var ca = Math.cos(yaw), sa = Math.sin(yaw), ct = Math.cos(actualTilt), sn = Math.sin(actualTilt);
-                function P(x, y, z, o) {
-                    var xm = x - CXM, xr = xm * ca + z * sa, zr = -xm * sa + z * ca;
-                    var yu = (y - YC) * ct - zr * sn, d = (y - YC) * sn + zr * ct, k = D / (D - d);
-                    o.x = cx + xr * s * k; o.y = cy - yu * s * k; o.d = d;
-                }
-                var drawn = t >= DRAW + SEG;
-                var pp = reduce ? -1 : (t * 0.14) % 1;
-                ctx.lineCap = "round";
-                tips.length = 0;
-
-                for (var n = 0; n < segs.length; n++) {
-                    var sg = segs[n];
-                    P(sg.x1, sg.y1, sg.z1, A);
-                    var dm = (A.d + 9) / 18; if (dm < 0) dm = 0; if (dm > 1) dm = 1;
-                    var base = 0.3 + 0.7 * dm;
-                    if (sg.c === 2) base *= 0.45;
-                    var c = sg.c === 1 ? 1 : (sg.c === 2 ? 2 : 0);
-                    var lw = dm < 0.34 ? 0 : (dm < 0.67 ? 1 : 2);
-                    var p = drawn ? 1 : (t - sg.r * (DRAW - SEG)) / SEG;
-                    if (p > 1) p = 1;
-
-                    if (p < 1) {
-                        P(sg.x2, sg.y2, sg.z2, Bp);
-                        add(1, c, 0.13 * base, 0, A.x, A.y, Bp.x, Bp.y);
-                    }
-                    if (p <= 0) continue;
-                    P(sg.x1 + (sg.x2 - sg.x1) * p, sg.y1 + (sg.y2 - sg.y1) * p, sg.z1 + (sg.z2 - sg.z1) * p, Bp);
-
-                    var boost = 0;
-                    if (drawn && pp >= 0) { var dd = pp - sg.r; if (dd < 0) dd += 1; if (dd < 0.04) boost = 1 - dd / 0.04; }
-                    if (boost > 0.05) add(0, 3, Math.min(1, base + boost * 0.7), lw, A.x, A.y, Bp.x, Bp.y);
-                    else add(0, c, base, lw, A.x, A.y, Bp.x, Bp.y);
-                    if (p < 1) tips.push(Bp.x, Bp.y);
-                }
-                flush();
-                for (var j = 0; j < tips.length; j += 2) {
-                    ctx.fillStyle = "rgba(255,226,150,0.2)";
-                    ctx.beginPath(); ctx.arc(tips[j], tips[j + 1], 5, 0, 6.2832); ctx.fill();
-                    ctx.fillStyle = "rgba(255,244,205,0.95)";
-                    ctx.beginPath(); ctx.arc(tips[j], tips[j + 1], 1.8, 0, 6.2832); ctx.fill();
-                }
-            }
-
-            function loop(now) {
-                raf = 0;
-                if (!vis || document.hidden) return;
-                if (start === null) start = now;
-                var t = (now - start) / 1000;
-                curYaw += (yawTgt - curYaw) * 0.08;
-                curTilt += (tiltTgt - curTilt) * 0.08;
-                var ambientYaw = Math.sin(t * 0.7) * 0.02;
-                var ambientTilt = Math.cos(t * 0.5) * 0.01;
-                draw(t, curYaw + ambientYaw, curTilt + ambientTilt);
-                raf = requestAnimationFrame(loop);
-            }
-            function kick() { if (!raf && !reduce) raf = requestAnimationFrame(loop); }
-
-            function onCursorMove(clientX, clientY) {
-                var r = cv.getBoundingClientRect();
-                var cx = r.left + r.width / 2;
-                var cy = r.top + r.height / 2;
-                var nx = (clientX - cx) / (window.innerWidth * 0.45);
-                var ny = (clientY - cy) / (window.innerHeight * 0.45);
-                nx = Math.max(-1.5, Math.min(1.5, nx));
-                ny = Math.max(-1.5, Math.min(1.5, ny));
-                yawTgt = YAW0 + nx * 1.45 + dragYaw;
-                tiltTgt = TILT0 + ny * 0.22 + dragTilt;
-            }
-
-            cv.style.cursor = "grab";
-            cv.style.touchAction = "none";
-
-            cv.addEventListener("pointerdown", function (e) {
-                isDragging = true;
-                startX = e.clientX;
-                startY = e.clientY;
-                startDragYaw = dragYaw;
-                startDragTilt = dragTilt;
-                cv.style.cursor = "grabbing";
-                try { cv.setPointerCapture(e.pointerId); } catch (err) {}
-            });
-
-            window.addEventListener("pointermove", function (e) {
-                if (isDragging) {
-                    var dx = e.clientX - startX;
-                    var dy = e.clientY - startY;
-                    dragYaw = startDragYaw + dx * 0.015;
-                    dragTilt = Math.max(-0.25, Math.min(0.25, startDragTilt + dy * 0.01));
-                    yawTgt = YAW0 + dragYaw;
-                    tiltTgt = TILT0 + dragTilt;
-                } else {
-                    onCursorMove(e.clientX, e.clientY);
-                }
-            }, { passive: true });
-
-            function stopDragging(e) {
-                if (isDragging) {
-                    isDragging = false;
-                    cv.style.cursor = "grab";
-                    try { cv.releasePointerCapture(e.pointerId); } catch (err) {}
-                }
-            }
-            window.addEventListener("pointerup", stopDragging);
-            window.addEventListener("pointercancel", stopDragging);
-
-            size();
-            window.addEventListener("resize", size);
-            if (reduce) return;
-            if ("IntersectionObserver" in window) {
-                new IntersectionObserver(function (e) { vis = e[0].isIntersecting; if (vis) kick(); }, { threshold: 0 }).observe(cv);
-            }
-            document.addEventListener("visibilitychange", kick);
-            kick();
-        })();
-
     </script>
 
 </body>
