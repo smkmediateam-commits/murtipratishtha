@@ -942,101 +942,167 @@
             }
         }
 
-        /* seva */
+        /* seva - modern cards inspired by reference */
         .seva-grid {
             display: grid;
-            gap: clamp(1rem, 3vw, 1.75rem);
+            gap: clamp(1.2rem, 3vw, 1.85rem);
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .seva-card {
             background: var(--surface);
             border: 1px solid var(--line);
-            border-radius: 1.2rem;
-            overflow: hidden;
-            display: grid;
-            align-content: start;
+            border-radius: 1.6rem;
+            padding: clamp(1.4rem, 3vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             min-width: 0;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            position: relative;
+            box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .seva-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
+            transform: translateY(-4px);
+            border-color: rgba(240, 138, 36, 0.65);
+            box-shadow: 0 16px 36px -10px rgba(240, 138, 36, 0.2);
         }
 
-        .seva-art {
-            background: var(--surface-2);
-            border-bottom: 1px solid var(--line);
+        .seva-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.35rem;
         }
 
-        .seva-art svg {
-            display: block;
-            width: 100%;
-            height: auto;
+        .seva-badge-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 0;
         }
 
-        .seva-art .halo {
-            fill: var(--halo);
-            stroke: none;
+        .seva-icon-box {
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #F08A24 0%, #D86B12 100%);
+            display: grid;
+            place-items: center;
+            color: #FFFFFF;
+            flex: none;
+            box-shadow: 0 6px 14px -3px rgba(240, 138, 36, 0.45);
         }
 
-        .seva-art .gline {
-            fill: none;
-            stroke: var(--line);
-            stroke-width: 2;
-            stroke-linecap: round;
+        .seva-icon-box .ico {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2.2;
+            color: #FFFFFF;
         }
 
-        .seva-art .fig2 {
-            fill: var(--surface);
-            stroke: var(--head);
-            stroke-width: 1.9;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .seva-art .fig2 *,
-        .seva-art .gline {
-            vector-effect: non-scaling-stroke;
-        }
-
-        .seva-art .board {
-            fill: var(--accent);
-            stroke: none;
-        }
-
-        .seva-art text {
-            fill: var(--accent-ink);
+        .seva-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.32rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.76rem;
             font-weight: 700;
-            font-size: 15px;
+            letter-spacing: 0.03em;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--mark);
+            white-space: nowrap;
+        }
+
+        .seva-num {
+            font-family: var(--display), sans-serif;
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--gold);
+            opacity: 0.22;
+            letter-spacing: -0.02em;
+            user-select: none;
+        }
+
+        :root:not([data-theme="dark"]) .seva-num {
+            color: var(--muted);
+            opacity: 0.28;
+        }
+
+        .seva-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--head);
+            margin: 0 0 0.65rem 0;
             font-family: var(--body);
         }
 
-        .seva-art .arrow {
-            fill: none;
-            stroke: var(--accent-ink);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .seva-body {
-            padding: 1.1rem 1.3rem 1.4rem;
-            display: grid;
-            gap: 0.5rem;
-            justify-items: start;
-        }
-
-        .seva-body h3 {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            color: var(--head);
-            font-weight: 700;
-        }
-
-        .seva-body p {
+        .seva-desc {
+            font-size: 0.95rem;
+            line-height: 1.65;
             color: var(--muted);
+            margin: 0 0 1.35rem 0;
+            flex-grow: 1;
+        }
+
+        .seva-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .seva-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.32rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            white-space: nowrap;
+        }
+
+        .seva-pill .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #F08A24;
+            flex: none;
+            box-shadow: 0 0 6px 1px rgba(240, 138, 36, 0.4);
+        }
+
+        .seva-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.65rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid var(--gold-line);
+            background: transparent;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .seva-btn:hover {
+            background: linear-gradient(135deg, #F08A24 0%, #D86B12 100%);
+            color: #FFFFFF;
+            border-color: transparent;
+            box-shadow: 0 6px 18px -4px rgba(240, 138, 36, 0.5);
+            transform: translateY(-2px);
         }
 
         .reg {
@@ -2550,146 +2616,104 @@
 
                     <div class="seva-grid">
                         <article class="seva-card">
-                            <div class="seva-art">
-                                <svg viewBox="0 0 320 240" role="img" aria-label="સ્વયંસેવકો મહાપ્રસાદ પીરસતા">
-                                    <circle class="halo" cx="160" cy="120" r="100" />
-                                    <path class="gline" d="M16 210 H304" />
-                                    <g class="fig2">
-                                        <path d="M214 112 H290" />
-                                        <path d="M218 112 C206 132 214 164 230 172 H274 C290 164 298 132 286 112" />
-                                        <circle cx="212" cy="122" r="4" fill="none" />
-                                        <circle cx="292" cy="122" r="4" fill="none" />
-                                        <path d="M222 172 L216 196 M282 172 L288 196 M212 196 H292" fill="none" />
-                                        <path
-                                            d="M236 102 C230 94 242 90 236 80 M252 102 C246 94 258 90 252 80 M268 102 C262 94 274 90 268 80"
-                                            fill="none" />
-                                        <use href="#flame" transform="translate(236 196) scale(1.3)" />
-                                        <use href="#flame" transform="translate(252 196) scale(1.3)" />
-                                        <use href="#flame" transform="translate(268 196) scale(1.3)" />
-                                    </g>
-                                    <g class="fig2" transform="translate(180 210) scale(1.75)">
-                                        <use href="#fm" />
-                                        <path d="M-9 -41 L-22 -34 L-32 -30 M-32 -30 L-40 -42 M9 -41 L14 -26"
-                                            fill="none" />
-                                        <path d="M-45 -45 Q-41 -35 -35 -42" fill="none" />
-                                    </g>
-                                    <g class="fig2" transform="translate(76 210) scale(1.75)">
-                                        <use href="#fw" />
-                                        <path d="M8 -42 Q20 -36 28 -32 M-8 -42 Q6 -34 22 -31" fill="none" />
-                                        <ellipse cx="30" cy="-31" rx="12" ry="3.5" />
-                                        <path d="M22 -34 Q30 -43 38 -34" fill="none" />
-                                    </g>
-                                </svg>
+                            <div>
+                                <div class="seva-card-top">
+                                    <div class="seva-badge-group">
+                                        <div class="seva-icon-box" aria-hidden="true">
+                                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                                                <line x1="6" y1="1" x2="6" y2="4" />
+                                                <line x1="10" y1="1" x2="10" y2="4" />
+                                                <line x1="14" y1="1" x2="14" y2="4" />
+                                            </svg>
+                                        </div>
+                                        <span class="seva-tag">અન્નક્ષેત્ર સેવા</span>
+                                    </div>
+                                    <span class="seva-num">01</span>
+                                </div>
+                                <h3 class="seva-title">મહાપ્રસાદ સેવા</h3>
+                                <p class="seva-desc">રસોઈ, પીરસણ અને પંગતની વ્યવસ્થામાં જોડાઈ હરિભક્તોને ભાવપૂર્વક જમાડવાનો પવિત્ર લહાવો.</p>
+                                <div class="seva-pills">
+                                    <span class="seva-pill"><i class="dot"></i>રસોઈ સહાય</span>
+                                    <span class="seva-pill"><i class="dot"></i>પંગત વ્યવસ્થા</span>
+                                    <span class="seva-pill"><i class="dot"></i>પ્રસાદ વિતરણ</span>
+                                </div>
                             </div>
-                            <div class="seva-body">
-                                <h3>મહાપ્રસાદ સેવા</h3>
-                                <p>રસોઈ, પીરસણ અને પંગતની વ્યવસ્થામાં જોડાઈ ભક્તોને પ્રેમથી જમાડો.</p>
-                                <a class="btn btn-line" href="#seva-form" data-seva="મહાપ્રસાદ સેવા">આ સેવા નોંધાવો</a>
-                            </div>
+                            <a class="seva-btn" href="#seva-form" data-seva="મહાપ્રસાદ સેવા">આ સેવા નોંધાવો →</a>
                         </article>
 
                         <article class="seva-card">
-                            <div class="seva-art">
-                                <svg viewBox="0 0 320 240" role="img"
-                                    aria-label="બહેનો કળશયાત્રામાં કળશ ધારણ કરીને ચાલતી">
-                                    <circle class="halo" cx="160" cy="120" r="100" />
-                                    <path class="gline" d="M16 212 H304" />
-                                    <path class="gline" d="M0 52 Q80 22 160 52 T320 52" />
-                                    <path class="sari" d="M44 40 H60 L52 56 Z" />
-                                    <path class="sari" d="M110 40 H126 L118 56 Z" />
-                                    <path class="sari" d="M192 40 H208 L200 56 Z" />
-                                    <path class="sari" d="M262 40 H278 L270 56 Z" />
-                                    <g class="fig2" transform="translate(70 214) scale(1.85)">
-                                        <use href="#fw" />
-                                        <path d="M-8 -42 Q-17 -54 -5 -62 M8 -42 Q17 -54 5 -62" fill="none" />
-                                        <use href="#kalash" transform="translate(0 -58)" />
-                                    </g>
-                                    <g class="fig2" transform="translate(160 214) scale(1.85)">
-                                        <use href="#fw" />
-                                        <path d="M-8 -42 Q-17 -54 -5 -62 M8 -42 Q17 -54 5 -62" fill="none" />
-                                        <use href="#kalash" transform="translate(0 -58)" />
-                                    </g>
-                                    <g class="fig2" transform="translate(250 214) scale(1.85)">
-                                        <use href="#fw" />
-                                        <path d="M-8 -42 Q-17 -54 -5 -62 M8 -42 Q17 -54 5 -62" fill="none" />
-                                        <use href="#kalash" transform="translate(0 -58)" />
-                                    </g>
-                                    <g class="fig2">
-                                        <use href="#flame" transform="translate(30 224) scale(.5)" />
-                                        <use href="#flame" transform="translate(112 226) scale(.5)" />
-                                        <use href="#flame" transform="translate(205 226) scale(.5)" />
-                                        <use href="#flame" transform="translate(290 224) scale(.5)" />
-                                    </g>
-                                </svg>
+                            <div>
+                                <div class="seva-card-top">
+                                    <div class="seva-badge-group">
+                                        <div class="seva-icon-box" aria-hidden="true">
+                                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                                            </svg>
+                                        </div>
+                                        <span class="seva-tag">શોભાયાત્રા &amp; જલ</span>
+                                    </div>
+                                    <span class="seva-num">02</span>
+                                </div>
+                                <h3 class="seva-title">કળશયાત્રા અને જલસેવા</h3>
+                                <p class="seva-desc">મંગલ કળશ ધારણ કરી શોભાયાત્રાની શોભા વધારો તથા પરિસરમાં દર્શનાર્થીઓને શીતળ જળ પીરસો.</p>
+                                <div class="seva-pills">
+                                    <span class="seva-pill"><i class="dot"></i>કળશ ધારણ</span>
+                                    <span class="seva-pill"><i class="dot"></i>જલયાત્રા સંગાથ</span>
+                                    <span class="seva-pill"><i class="dot"></i>શીતળ જળ વ્યવસ્થા</span>
+                                </div>
                             </div>
-                            <div class="seva-body">
-                                <h3>કળશયાત્રા અને જલસેવા</h3>
-                                <p>કળશ ધારણ કરી શોભાયાત્રામાં જોડાઓ અથવા દર્શનાર્થીઓને શીતળ જળ પીરસો.</p>
-                                <a class="btn btn-line" href="#seva-form" data-seva="કળશયાત્રા અને જલસેવા">આ સેવા
-                                    નોંધાવો</a>
-                            </div>
+                            <a class="seva-btn" href="#seva-form" data-seva="કળશયાત્રા અને જલસેવા">આ સેવા નોંધાવો →</a>
                         </article>
 
                         <article class="seva-card">
-                            <div class="seva-art">
-                                <svg viewBox="0 0 320 240" role="img" aria-label="સ્વયંસેવકો ભક્તોને માર્ગ બતાવતા">
-                                    <circle class="halo" cx="160" cy="120" r="100" />
-                                    <path class="gline" d="M16 210 H304" />
-                                    <path class="gline" d="M262 60 V210" />
-                                    <rect class="board" x="206" y="40" width="104" height="38" rx="7" />
-                                    <text x="218" y="65">દર્શન</text>
-                                    <path class="arrow" d="M280 59 H298 M292 52 L298 59 L292 66" />
-                                    <rect class="board" x="206" y="88" width="104" height="38" rx="7" />
-                                    <text x="244" y="113">પાર્કિંગ</text>
-                                    <path class="arrow" d="M236 107 H218 M224 100 L218 107 L224 114" />
-                                    <g class="fig2" transform="translate(150 210) scale(1.85)">
-                                        <use href="#fm" />
-                                        <path d="M9 -41 L26 -50 L38 -58 M-9 -41 L-14 -27" fill="none" />
-                                    </g>
-                                    <g class="fig2" transform="translate(70 210) scale(1.85)">
-                                        <use href="#fw" />
-                                        <path d="M9 -40 L14 -30 M14 -30 V-92 M-8 -42 L-12 -28" fill="none" />
-                                        <path class="sari" d="M14 -92 L40 -85 L14 -78 Z" />
-                                    </g>
-                                </svg>
+                            <div>
+                                <div class="seva-card-top">
+                                    <div class="seva-badge-group">
+                                        <div class="seva-icon-box" aria-hidden="true">
+                                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                                            </svg>
+                                        </div>
+                                        <span class="seva-tag">વ્યવસ્થા સંચાલન</span>
+                                    </div>
+                                    <span class="seva-num">03</span>
+                                </div>
+                                <h3 class="seva-title">માર્ગદર્શન અને વાહન વ્યવસ્થા</h3>
+                                <p class="seva-desc">દર્શન લાઈન, વાહન પાર્કિંગ અને સૂચના બોર્ડ દ્વારા ભક્તોને સુગમ અને સુરક્ષિત દર્શન કરાવો.</p>
+                                <div class="seva-pills">
+                                    <span class="seva-pill"><i class="dot"></i>દર્શન લાઈન નિયમન</span>
+                                    <span class="seva-pill"><i class="dot"></i>પાર્કિંગ વ્યવસ્થા</span>
+                                    <span class="seva-pill"><i class="dot"></i>ભક્ત સહાયતા</span>
+                                </div>
                             </div>
-                            <div class="seva-body">
-                                <h3>માર્ગદર્શન અને વાહન વ્યવસ્થા</h3>
-                                <p>દર્શન લાઈન, પાર્કિંગ અને સૂચના બોર્ડ દ્વારા ભક્તોને સાચો માર્ગ બતાવો.</p>
-                                <a class="btn btn-line" href="#seva-form" data-seva="માર્ગદર્શન અને વાહન વ્યવસ્થા">આ
-                                    સેવા નોંધાવો</a>
-                            </div>
+                            <a class="seva-btn" href="#seva-form" data-seva="માર્ગદર્શન અને વાહન વ્યવસ્થા">આ સેવા નોંધાવો →</a>
                         </article>
 
                         <article class="seva-card">
-                            <div class="seva-art">
-                                <svg viewBox="0 0 320 240" role="img" aria-label="સ્વયંસેવકો સફાઈ અને પાણીની સેવા કરતા">
-                                    <circle class="halo" cx="160" cy="120" r="100" />
-                                    <path class="gline" d="M16 210 H304" />
-                                    <g class="fig2" transform="translate(76 210) scale(1.85)">
-                                        <use href="#fm" />
-                                        <path d="M9 -41 L18 -32 M-9 -41 L12 -34 M16 -34 L36 2" fill="none" />
-                                        <path d="M30 -6 L44 -2 L48 6 L34 8 Z" />
-                                    </g>
-                                    <g class="fig2" transform="translate(176 210) scale(1.85)">
-                                        <use href="#fw" />
-                                        <path d="M8 -41 Q20 -38 26 -34 M-8 -42 L-12 -28" fill="none" />
-                                        <path d="M22 -40 H32 L30 -28 H24 Z" />
-                                    </g>
-                                    <g class="fig2">
-                                        <path
-                                            d="M236 142 H266 M240 142 C226 152 228 184 244 192 H258 C274 184 276 152 262 142" />
-                                        <path d="M232 192 L226 210 M270 192 L276 210 M230 200 H272 M266 168 H282 V176"
-                                            fill="none" />
-                                        <path d="M283 182 Q280 188 283 192 M289 182 Q286 188 289 192" fill="none" />
-                                    </g>
-                                </svg>
+                            <div>
+                                <div class="seva-card-top">
+                                    <div class="seva-badge-group">
+                                        <div class="seva-icon-box" aria-hidden="true">
+                                            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path d="M12 2l2.4 5.6L20 10l-4.4 4 1.4 6-5-3.2L7 20l1.4-6L4 10l5.6-2.4z" />
+                                            </svg>
+                                        </div>
+                                        <span class="seva-tag">નિર્મળ પરિસર</span>
+                                    </div>
+                                    <span class="seva-num">04</span>
+                                </div>
+                                <h3 class="seva-title">સ્વચ્છતા સેવા</h3>
+                                <p class="seva-desc">મંદિર પરિસર અને સભામંડપની સફાઈ વ્યવસ્થામાં હાથ બટાવી સમગ્ર મહોત્સવ સ્થળને પવિત્ર અને સ્વચ્છ રાખો.</p>
+                                <div class="seva-pills">
+                                    <span class="seva-pill"><i class="dot"></i>સભામંડપ સફાઈ</span>
+                                    <span class="seva-pill"><i class="dot"></i>પરિસર જાળવણી</span>
+                                    <span class="seva-pill"><i class="dot"></i>કચરા મુક્ત આયોજન</span>
+                                </div>
                             </div>
-                            <div class="seva-body">
-                                <h3>સ્વચ્છતા સેવા</h3>
-                                <p>પરિસર અને સભામંડપની સ્વચ્છતા વ્યવસ્થામાં હાથ બટાવી મહોત્સવને નિર્મળ રાખો.</p>
-                                <a class="btn btn-line" href="#seva-form" data-seva="સ્વચ્છતા સેવા">આ સેવા નોંધાવો</a>
-                            </div>
+                            <a class="seva-btn" href="#seva-form" data-seva="સ્વચ્છતા સેવા">આ સેવા નોંધાવો →</a>
                         </article>
                     </div>
 
